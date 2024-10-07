@@ -1,0 +1,1477 @@
+
+<!DOCTYPE HTML>
+<html   lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="msvalidate.01" content="E3B00D3ABE2353FE945BC05A8B3D6AB6" />
+
+<link rel="canonical" href="index.html" >
+<title>SEG SKILLS</title>
+<meta name="description" content="SEG SKILLS is a leading testing and assessment solution provider and is trusted by customers across the globe. We offer hassle-free Online Assessment service and support." />
+<meta name="keywords" content=" online assessment, computer based tests, computer based testing, computer based testing platform, cbt platform, best cbt platform, computer based test platform, online assessment company, online examination software, omr solutions, omr software, online exam platform, online examination platform, online examination software, online assessment platform, online testing software, online assessment solution, online assessment test‎, online assessment software, testing and assessment company, online exam conducting companies in india, assessment companies in india, computer based assessments, assessment platform, test platform" >
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.SEGwebs.com/" />
+            <meta property="og:image" content="https://www.SEGwebs.com/images/logo.png" />
+            <meta property="og:site_name" content="SEG SKILLS" />
+            <meta property="og:description" content="SEG SKILLS is the most trusted online assessment company, providing advanced and secure computer based testing platform, online examination system, OMR based solutions and more." />
+            <meta property="og:latitude" content="28.628476" />
+            <meta property="og:longitude" content=" 77.381676" />
+            <meta property="og:street-address" content="SEG SKILLS, A-43, Sector 63 Rd, A Block" />
+            <meta property="og:locality" content="Noida" />
+            <meta property="og:region" content="Uttar Pradesh" />
+            <meta property="og:postal-code" content="201307" />
+            <meta property="og:country-name" content="india" />
+            <meta property="og:email" content="sales@SEGwebs.com" />
+            <meta property="og:phone_number" content="+91 (120) 4161515 / 516" />
+
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:site" content="@SEG_Webs" />
+            <meta name="twitter:creator" content="@SEG_Webs" />
+            <meta property="og:url" content="https://www.SEGwebs.com/" />
+            <meta property="og:title" content="Online Assessment Company, Computer Based Test, CBT Platform - SEG SKILLS" />
+            <meta property="og:description" content="SEG SKILLS is the most trusted online assessment company, providing advanced and secure computer based testing platform, online examination system, OMR based solutions and more" />
+            <meta property="og:image" content="https://www.SEGwebs.com/images/logo.png" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<!--<script src="http://www.SEGwebs.com/js/jquery.min.js" charset="utf-8"></script>-->   
+<script src="js/jquery.min.js"></script>
+<!--<script>
+    $(document).ready(function() {
+        CaptchaHeader();
+        var headerTop = $('#header').offset().top;
+        var headerBottom = headerTop + 120; // Sub-menu should appear after this distance from top.
+        $(window).scroll(function () {
+            var scrollTop = $(window).scrollTop(); // Current vertical scroll position from the top
+            if (scrollTop > headerBottom) { // Check to see if we have scrolled more than headerBottom
+                if (($("#subMenu").is(":visible") === false)) {
+                    $('#subMenu').slideDown('medium');
+                    //$("#subMenu").css("display" , "block");
+                }
+            } else {
+                if ($("#subMenu").is(":visible")) {
+                    $('#subMenu').slideUp('medium');
+                }
+            }
+        });
+    });
+        
+</script>-->
+<script>
+    function countryChange(value)
+    {
+    //alert(value);return false
+    //var uniqueCountry=value;
+        if(value=='India')
+        {
+//            $(".selectState").each(function () {
+//    this.style.setProperty('display','block', 'important' );
+//                    });
+//            $(".city").each(function () {
+//    this.style.setProperty('display','block', 'important' );
+//    });
+    
+           $(".selectState").removeAttr('disabled') ;
+            $(".city").removeAttr('disabled') ;
+        }
+    
+        else
+        {
+            //alert('in');
+//            $(".selectState").each(function () {
+//    this.style.setProperty(' disabled',' disabled', 'important' );
+//            });
+//            $(".city").each(function () {
+//    this.style.setProperty(' disabled',' disabled', 'important' );
+//            });
+            $(".selectState").attr('disabled','disabled') ;
+            $(".city").attr('disabled','disabled') ;
+        
+        }
+
+    }
+                                    
+    function stateChange()
+       {
+           
+          var state= $("#selectStateValueInner").val();
+          var dataString = 'state='+ state;
+         // alert(dataString);
+          $.ajax({
+            type: "POST",
+            url: "stateAjax.php",
+            data: dataString,
+            success: function(result) {
+                 //alert(result);
+                     $(".city").html(result);
+            },error: function (result) {
+                       // alert(result);
+                    }
+        });
+        
+    }
+
+
+
+</script>
+<script>
+    
+function gettouch_show(htm){
+        $("#gettouchform").css("display" , "block");
+    $(".contact_form").removeClass("pop_hide");
+    $(".contact_form").addClass("pop_show");
+        $("#selectSolnInner").val(htm);
+        $("#selectStateValue").val('0');
+    }
+function gettouch_hide(){
+    $(".contact_form").addClass("pop_hide");
+    setTimeout(function(){  
+        $("#gettouchform").css("display" , "none");
+    }, 500);
+        
+        
+//        $('#getInTouchForm').each(function(){ 
+//        this.reset();
+//});
+//        $("#getInTouch").each(function () {
+//    this.style.setProperty( 'color', '#e55739', 'important' );
+//});
+    
+    }
+    
+</script>
+    <script>
+    
+    function gettouch_fb(htm){
+        $("#gettouchfb").css("display" , "block");
+    $(".fb_page").removeClass("pop_hide");
+    $(".fb_page").addClass("pop_show");
+        $("#selectSolnInner").val(htm);
+        $("#selectStateValue").val('0');
+    }
+function gettouch_hide_fb(){
+    $(".fb_page").addClass("pop_hide");
+    $("#fb-root1").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb").css("display" , "none");
+        
+    }, 200);
+    }
+        
+function gettouch_hide_fb(){
+    $(".fb_page").addClass("pop_hide");
+    $("#fb-root2").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb").css("display" , "none");
+        
+    }, 200);
+   
+        
+        
+//        $('#getInTouchForm').each(function(){ 
+//        this.reset();
+//});
+//        $("#getInTouch").each(function () {
+//    this.style.setProperty( 'color', '#e55739', 'important' );
+//});
+    
+    }
+
+</script>
+    
+        <script>
+    
+      function gettouch_fb_Contact(htm){
+        $("#gettouchfb_contact").css("display" , "block");
+    $(".fb_page").removeClass("pop_hide");
+    $(".fb_page").addClass("pop_show");
+        $("#selectSolnInner").val(htm);
+        $("#selectStateValue").val('0');
+    }
+function gettouch_hide_fb_Contact(){
+    $(".fb_page").addClass("pop_hide");
+     $("#fb-root1").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb_contact").css("display" , "none");
+       
+    }, 200);
+    }
+function gettouch_hide_fb_Contact(){
+    $(".fb_page").addClass("pop_hide");
+     $("#fb-root2").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb_contact").css("display" , "none");
+       
+    }, 200);
+        
+        
+//        $('#getInTouchForm').each(function(){ 
+//        this.reset();
+//});
+//        $("#getInTouch").each(function () {
+//    this.style.setProperty( 'color', '#e55739', 'important' );
+//});
+    
+    }
+
+</script>
+<script src="js/jquery-1.9.1.min.js"></script> 
+<script src="https://www.SEGwebs.com/js/jquery-ui.js"></script> 
+<script src="js/jquery.js"></script> 
+<link href="css/style.css@v=5.css" rel="stylesheet" type="text/css" />
+<link href="css/screen.css@v=5.css" rel="stylesheet" type="text/css" />
+
+    <!--[if gte IE 9]>
+
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<!--[if IE]>
+    <script src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script><![endif]-->
+
+</head>
+
+<body>
+
+<div class="main-header" id="nav-anchor">
+  <header class="top-header nav_fixed">
+      <div class="header-topSection">
+          <div class="wrapper-fix header">
+              <ul class="desktop-view">
+                  <li>Enquiry: <strong>+91-9818841348</strong></li>
+                 <!--<li>Support: <strong>+91 8750519933</strong></li>-->
+                  <li>Support: <strong>+91-9891100043</strong></li>
+                  <li>Email Us: <strong><a href="mailto:info@sgtu.ac.in" style="text-decoration: underline;">info@sgtu.ac.in</a></strong></li>
+              </ul>
+              <ul class="mobile-view">
+                  <li>Enquiry: <strong>+91-9818841348</strong></li>
+                  <li>Support: <strong><a href="callto:+91-9891100043" style="text-decoration: underline;">+91-9891100043</a></strong></li>
+                  <li>Email Us: <strong><a href="mailto:info@sgtu.ac.in" style="text-decoration: underline;">info@sgtu.ac.in</a></strong></li>
+              </ul>
+          </div>
+      </div>
+    <div class="wrapper-fix header">
+<a class="logo" href="index.php.html">
+ <img src="images/logo.png" title="SEG SKILLS" alt="SEG SKILLS" />
+     <!--  <a class="logo" href="index.php" >
+     <img src="images/logo.png" title="SEG SKILLS" alt="SEG SKILLS" />-->
+      </a>
+    <nav class="top_nav">
+     <a class="toggleMenu" href="index.php.html#">
+      <span class="tgl_mnu_txt">Menu</span>
+      <span class="menu_icon">
+       <i></i>
+       <i class="two"></i>
+       <i></i>
+          <i></i>
+      </span>
+     </a>
+     <ul class="nav bold_font">
+      <li class="home_res_mob"><a href="index.php.html" style="border:none;">Home</a></li>
+      <li><a href="about-seg/who-we-are.php.html" id="aboutUs">About</a>
+          <!--
+            <li><a href="http://www.SEGwebs.com/about-seg/who-we-are.php" id="aboutUs" >About</a>
+          -->
+       <ul class="about sub-menu">
+        <li><a href="about-seg/who-we-are.php.html" class="border-none">Who we are</a></li>
+        <li><a href="about-seg/what-we-do.php.html">What we do</a></li>
+        <li><a href="about-seg/why-us.php.html">Why us</a></li>
+        <!--<li><a href="SEG_team.php">SEG Team</a></li>-->
+        <li><a href="about-seg/news.php.html">News</a></li>
+        
+        <li><a href="../contact-seg.php.html">Contact</a></li>
+        
+       </ul>
+      </li>
+      
+    <li ><a href="solutions/computer-based-test.php.html" id="CBTSolution">Solutions</a>
+     <ul class="solution sub-menu">
+        <li><a href="solutions/computer-based-test.php.html" class="border-none">Computer Based Test</a>
+          <ul>
+          <li><a href="solutions/computer-based-test.php.html">Overview</a></li>
+              <li><a href="solutions/computer-based-test-solution.php.html">Solution</a></li>
+              <li><a href="solutions/computer-based-test-casestudy.php.html">Case Studies</a></li>
+              <li><a href="index.php.html#a" id="getInTouch17" onClick="gettouch_show($('#lefSolnCBT a label').html())">Get in touch</a></li>
+       </ul>
+         </li>
+     <li><a href="solutions/skill-assesment.php.html" class="border-none">Skill Assessment Platform</a>
+<!--
+          <ul>
+          <li><a href="http://www.SEGwebs.com/solutions/computer-based-test.php" >Overview</a></li>
+              <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-solution.php" >Solution</a></li>
+              <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>
+              <li><a href="#a" id="getInTouch17" onClick="gettouch_show($('#lefSolnCBT a label').html())">Get in touch</a></li>
+       </ul>
+-->
+     </li>
+        <li><a href="solutions/application_processing.php.html">Application Processing</a>
+          <ul>
+           <li><a href="solutions/application_processing.php.html">Overview</a></li>
+            <li><a href="solutions/application-processing-solution.php.html">Solution</a></li>
+              <li><a href="solutions/application-processing-strength.php.html">Our Strength</a></li>
+                <li><a href="index.php.html#a" id="getInTouch16" onClick="gettouch_show($('#lftSolnAP a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="solutions/omr-sheet-processing.php.html">OMR Sheets Processing</a>
+         <ul>
+           <li><a href="solutions/omr-sheet-processing.php.html">Overview</a></li>
+            <li><a href="solutions/omr-sheet-processing-solution.php.html">Solution</a></li>
+              <li><a href="solutions/omr-sheet-processing-strength.php.html">Our Strength</a></li>
+<!--                <li><a href="http://www.SEGwebs.com/solutions/omr-sheet-processing-centralized.php" >Centralized</a></li>
+                  <li><a href="http://www.SEGwebs.com/solutions/omr-sheet-processing-dcentralized.php" >Decentralized</a></li>-->
+                    <li><a href="solutions/omr-sheet-processing-casestudy.php.html">Case Studies</a></li>
+                      <li><a href="index.php.html#a" id="getInTouch15" onClick="gettouch_show($('#lftSolnOMR a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="solutions/customize_testing_portal_overview.php.html">Customized testing portal</a>
+          <ul>
+           <li><a href="solutions/customize_testing_portal_overview.php.html">Overview</a></li>
+            <li><a href="solutions/customize-testing-portal-solution.php.html">Solution</a></li>
+              <li><a href="solutions/customize-testing-portal-benifits.php.html">Benefits</a></li>
+               <li><a href="solutions/customize-testing-portal-casestudy.php.html">Case Studies</a></li>
+                <li><a href="index.php.html#a" id="getInTouch14" onClick="gettouch_show($('#lefSolnCTP a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="solutions/advance-omr-application.php.html">Advance OMR Application</a>
+          <ul>
+           <li><a href="solutions/advance-omr-application.php.html">Overview</a></li>
+            <!--<li><a href="http://www.SEGwebs.com/solutions/computer-based-test-solution.php" >Solution</a></li>
+              <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="index.php.html#a" id="getInTouch13" onClick="gettouch_show($('#lftSOlnAOA a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="solutions/recruitment-test-software.php.html">Recruitment Test</a>
+          <ul>
+           <li><a href="solutions/recruitment-test-software.php.html">Overview</a></li>
+            <li><a href="solutions/recruitment-solution.php.html">Solution</a></li>
+             <!-- <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="index.php.html#a" id="getInTouch12" onClick="gettouch_show($('#lftSolnRT a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="solutions/employee-assessment.php.html">Employee Assessment</a>
+         <ul>
+           <li><a href="solutions/employee-assessment.php.html">Overview</a></li>
+            <li><a href="solutions/employee_assessment_solution.php.html">Solution</a></li>
+            <!--<li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="index.php.html#a" id="getInTouch11" onClick="gettouch_show($('#lftSolnEA a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="solutions/test-labs.php.html">Test Labs</a>
+         <ul>
+           <li><a href="solutions/test-labs.php.html">Overview</a></li>
+            <!--<li><a href="http://www.SEGwebs.com/solutions/employee_assessment_solution.php" >Solution</a></li>-->
+            <!--<li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="index.php.html#a" id="getInTouch10" onClick="gettouch_show($('#lftSolnEA a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+       <!--<li><a href="http://www.SEGwebs.com/solutions/recruitment_consultant.php">Recruitment Consultant</a>
+         <ul>
+           <li><a href="http://www.SEGwebs.com/solutions/recruitment_consultant.php" >Overview</a></li>            
+                <li><a href="#a" id="getInTouch9" onClick="gettouch_show($('#lftSolnEA a label').html())">Get in touch</a></li>
+     </ul>
+         </li>-->
+       </ul>
+    </li>    
+    <li ><a href="products/verificare.php.html" id="product">Products </a>
+      <ul class="sub-menu" >
+        <li><a href="products/verificare.php.html" class="border-none">Verificare</a>
+          <ul>
+               <li><a href="products/verificare.php.html#1">Overview</a></li>
+                <li><a href="products/verificare-casestudy.php.html">Download Brochure</a></li>
+                <li><a href="http://www.omrhome.com/free-download-omr-sheet-scanner.php" target="_blank" id="getInTouch8">Download Demo</a></li>
+          </ul>
+          </li>
+        <li><a href="products/test_analytics.php.html">Test Analytics</a>
+           <ul>
+               <li><a href="products/test_analytics.php.html">Overview</a></li>
+                <li><a href="products/test-analytics-casestudy.php.html">Download Brochure</a></li>
+                <li><a href="http://www.omrhome.com/free-download-omr-sheet-scanner.php" target="_blank" id="getInTouch7" >Download Demo</a></li>
+          </ul>
+          
+          </li>
+<!--        <li><a href="http://www.SEGwebs.com/products/question-bank.php">Question Bank</a>
+           <ul>
+               <li><a href="http://www.SEGwebs.com/products/question-bank.php" >Overview</a></li>
+                <li><a href="http://www.SEGwebs.com/products/question-bank-casestudy.php" >Download Brochure</a></li>
+                <li><a href="#a" id="getInTouch" onClick="gettouch_show($('#lefProdV a label').html())">Download Demo</a></li>
+          </ul>
+          
+          </li>-->
+        <li><a href="products/think-exam-web.php.html">Think Exam</a>
+           <ul>
+               <li><a href="products/think-exam-web.php.html">Overview</a></li>
+                <li><a href="products/think-exam-casestudy.php.html">Download Brochure</a></li>
+                <li><a href="index.php.html#a" id="getInTouch6" onClick="gettouch_show($('#lefProdV a label').html())">Download Demo</a></li>
+          </ul>
+          
+          </li>
+        <li><a href="products/mobile_tablet.php.html">Mobile & Tablet</a></li>
+       </ul>
+    </li>
+    <li><a href="clients/client-list.php.html" id="clientList">Clients</a>
+     <ul class="client sub-menu">
+      <li><a href="clients/client-list.php.html" class="border-none">Client List</a></li>
+      <li><a href="clients/clients-speak.php.html">Client's Speak</a></li>
+     </ul>
+    </li>
+    
+    <li ><a href="../contact-seg.php.html" id="contactUs">Contact</a></li>
+
+    <li><a href="seg_erp.html" class="bcmeprtnerlnk">Request A Demo</a></li>
+    
+   </ul>
+  </nav>
+  </div>  
+  <!--<div id="subMenu" style="display:none;">
+     <div class="hdr_sw_itm light_font">
+      <span class="hdr_lnk_name">If you have any question? <a class="blue" href="#" onclick="show()">Send an <b>enquiry</b><span class="sprite submnu_icon1"></span></a>
+       <span style="margin:0 16px;">or</span>Call us at <strong>9871871211</strong>
+      </span>
+      <span class="hdr_lnk_name"><a class="green" href="#" onclick="return popitup('http://www.omrhome.com/phplive/phplive.php?d=0&token=0aeb69e1e3536c1a62ba22b575772678&onpage=hphp%3A%2F%2Fwww.omrhome.com%2F&title=OMR%20Software%20for%20Scanning%20%26%20Sheet%20Reading&&popout=0&theme=&js_name=&js_email=&&custom=')">Live Chat <b>Online</b><span class="sprite submnu_icon2"></span></a></span>
+      <span class="hdr_lnk_name">
+       <a class="orange last" href="get_a_quote.php">Get a <b>quote</b><span class="sprite submnu_icon3"></span></a>
+      </span>
+     </div>
+    </div>-->
+    
+  </header>
+  <!--Get in touch popup start-->
+  <div id="gettouchform" class="getin_touchpop" style="display:none;">
+  <div id="gtformhid1" class="contact_form">
+   <span class="popclose" onClick="gettouch_hide()"></span>
+    <div class="getpophdr">
+<!--     <h1>Get in touch with us</h1>-->
+     <h3>Get in touch with us</h3>
+     <p>Send us your question or requirement and the appropriate SEG SKILLS <br>team member will contact you the soon.
+</p>
+    </div>
+   
+     <div class="rgt_pg_cnct">
+          <aside class="form_fld1">
+           <input type="text" placeholder="Name*" id="headName" maxlength="50">
+          </aside>
+          <aside class="form_fld1 last">
+           <input type="text" placeholder="Organization Name*" id="headOrgName" maxlength="150">
+          </aside>
+          
+          <aside class="form_fld1">
+           <input type="text" placeholder="Email*" id="headEmailId">
+          </aside>
+          <aside class="form_fld1 last">
+              <input type="text" placeholder="Phone*" id="headMobileNo" maxlength="10">
+          </aside>
+          <aside class="form_fld1 ctc_msg" >
+           <input type="text" placeholder="Address" id="headAddress">
+          </aside>
+          <aside class="form_fld1" style="width: 101.5%;" >
+        
+<!--           <input type="text" placeholder="Zip Code" class="zipcode" id='zipCode'>-->
+              <select name="country"   size="1" class="selectcity ctcCountry" id="selectCountryValueInner" onchange="countryChange(this.value)">
+           <!--<select name="country"   size="1" class="selectcity ctcCountry" id="selectCountryValueInner" onchange="clientCountryChange(this.value)">-->
+          <option value="country">Select Country*</option>
+          <option value="Afghanistan">Afghanistan</option>
+          <option value="Albania">Albania</option>
+          <option value="Algeria">Algeria</option>
+          <option value="Andorra">Andorra</option>
+          <option value="Australia">Australia</option>
+          <option value="Austria">Austria</option>
+          <option value="Bahamas">Bahamas</option>
+
+          <option value="Bahrain">Bahrain</option>
+          <option value="Bangladesh">Bangladesh</option>
+          <option value="Barbados">Barbados</option>
+          <option value="Belarus">Belarus</option>
+          <option value="Belgium">Belgium</option>
+          <option value="Belize">Belize</option>
+
+          <option value="Benin">Benin</option>
+          <option value="Bermuda">Bermuda</option>
+          <option value="Bhutan">Bhutan</option>
+          <option value="Bolivia">Bolivia</option>
+          <option value="Botswana">Botswana</option>
+          <option value="Brazil">Brazil</option>
+
+          <option value="Brunei">Brunei</option>
+          <option value="Bulgaria">Bulgaria</option>
+          <option value="Canada">Canada</option>
+          <option value="China">China</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Comoros">Comoros</option>
+
+          <option value="Congo">Congo</option>
+          <option value="Cook Islands">Cook Islands</option>
+          <option value="Costa Rica">Costa Rica</option>
+          <option value="Cuba">Cuba</option>
+          <option value="Cyprus">Cyprus</option>
+          <option value="Czech Republic">Czech Republic</option>
+
+          <option value="Denmark">Denmark</option>
+          <option value="Ecuador">Ecuador</option>
+          <option value="Egypt">Egypt</option>
+          <option value="Ethiopia">Ethiopia</option>
+          <option value="Finland">Finland</option>
+          <option value="France">France</option>
+
+          <option value="Gabon">Gabon</option>
+          <option value="Gambia">Gambia</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Germany">Germany</option>
+          <option value="Ghana">Ghana</option>
+          <option value="Gibraltar">Gibraltar</option>
+
+          <option value="Greece">Greece</option>
+          <option value="Greenland">Greenland</option>
+          <option value="Grenada">Grenada</option>
+          <option value="Guinea">Guinea</option>
+          <option value="Hungary">Hungary</option>
+          <option value="Iceland">Iceland</option>
+
+          <option value="India" selected>India</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Iran">Iran</option>
+          <option value="Iraq">Iraq</option>
+          <option value="Italy">Italy</option>
+          <option value="Jamaica">Jamaica</option>
+
+          <option value="Japan">Japan</option>
+          <option value="Jordan">Jordan</option>
+          <option value="Kazakhstan">Kazakhstan</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Korea">Korea</option>
+          <option value="Kuwait">Kuwait</option>
+
+          <option value="Kyrgyzstan">Kyrgyzstan</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Mauritius">Mauritius</option>
+          <option value="Nepal">Nepal</option>
+          <option value="New Zealand">New Zealand</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="Poland">Poland</option>
+
+          <option value="Portugal">Portugal</option>
+          <option value="Qatar">Qatar</option>
+          <option value="Reunion">Reunion</option>
+          <option value="Romania">Romania</option>
+          <option value="Russia">Russia</option>
+          <option value="Rwanda">Rwanda</option>
+
+          <option value="Saudi Arabia">Saudi Arabia</option>
+          <option value="Seychelles">Seychelles</option>
+          <option value="Sierra Leone">Sierra Leone</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Spain">Spain</option>
+          <option value="Sri Lanka">Sri Lanka</option>
+
+          <option value="Sudan">Sudan</option>
+          <option value="Suriname">Suriname</option>
+          <option value="Swaziland">Swaziland</option>
+          <option value="Sweden">Sweden</option>
+          <option value="Switzerland">Switzerland</option>
+          <option value="Syria">Syria</option>
+
+          <option value="Taiwan">Taiwan</option>
+          <option value="Tajikistan">Tajikistan</option>
+          <option value="Tanzania">Tanzania</option>
+          <option value="Thailand">Thailand</option>
+          <option value="Tunisia">Tunisia</option>
+          <option value="Turkey">Turkey</option>
+
+          <option value="Turkmenistan">Turkmenistan</option>
+          <option value="Tuvalu">Tuvalu</option>
+          <option value="Uganda">Uganda</option>
+          <option value="Ukraine">Ukraine</option>
+          <option value="Uruguay">Uruguay</option>
+          <option value="USA">USA</option>
+          <option value="Uzbekistan">Uzbekistan</option>
+
+          <option value="Venezuela">Venezuela</option>
+          <option value="Vietnam">Vietnam</option>
+          <option value="Yemen">Yemen</option>
+          <option value="Yugoslavia">Yugoslavia</option>
+          <option value="Zambia">Zambia</option>
+          <option value="Zimbabwe">Zimbabwe</option>
+           </select>
+
+
+
+<!--        <select name="state" id="clientState" size="1"class="selectcityselectstate" onChange="clientCityChange(this.value);">
+                    <select name="state" id="clientState" size="1"class="selectcity selectstate" onChange="stateChange(this.value);">
+                        <option value="" selected style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/">--Select State--</option>
+                    </select> -->
+             
+             <select name="state" id="selectStateValueInner" size="1" class="selectcity selectState" onchange="stateChange();">
+            <option selected value='0'>Select State*</option>
+            <option value="Andaman Nicobar" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/"> &nbsp;--&nbsp;Andaman Nicobar -- </option>
+            <option value="Arunachal Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Arunachal Pradesh -- </option>
+            <option value="Andhra Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Andhra Pradesh -- </option>
+            <option value="Assam" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Assam --</option>
+            <option value="Bihar" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Bihar --</option>
+            <option value="Chandigarh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Chandigarh -- </option>
+            <option value="Chhattisgarh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Chhattisgarh -- </option>
+            <option value="Dadra and Nagar" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Dadra and Nagar </option>
+            <option value="Daman and Diu" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Daman and Diu -- </option>
+            <option value="Delhi" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Delhi --</option>
+            <option value="Goa" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Goa --</option>
+            <option value="Gujarat" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Gujarat --</option>
+            <option value="Haryana" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Haryana --</option>
+            <option value="Himachal Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Himachal Pradesh -- </option>
+            <option value="Jammu and Kashmir" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Jammu and Kashmir -- </option>
+            <option value="Jharkhand" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Jharkhand -- </option>
+            <option value="Karnataka" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Karnataka -- </option>
+            <option value="Kerala" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Kerala --</option>
+            <option value="Lakshadweep" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Lakshadweep -- </option>
+            <option value="Madhya Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Madhya Pradesh -- </option>
+            <option value="Maharashtra" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Maharashtra -- </option>
+            <option value="Manipur" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Manipur --</option>
+            <option value="Meghalaya" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Meghalaya -- </option>
+            <option value="Mizoram" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Mizoram --</option>
+            <option value="Nagaland" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Nagaland --</option>
+            <option value="Orissa" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Orissa --</option>
+            <option value="Pondicherry" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Pondicherry -- </option>
+            <option value="Punjab" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Punjab --</option>
+            <option value="Rajasthan" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Rajasthan -- </option>
+            <option value="Sikkim" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Sikkim --</option>
+            <option value="Tamil Nadu" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Tamil Nadu -- </option>
+            <option value="Tripura" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Tripura --</option>
+            <option value="Uttar Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Uttar Pradesh -- </option>
+            <option value="Uttaranchal" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Uttaranchal -- </option>
+            <option value="West Bengal" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;West Bengal -- </option>
+            <option value="Other" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Other --</option>
+           </select> 
+              
+              
+               <select class="selectcity city" size="1" id="selectCityInner"   name="city">
+                 <option selected="selected" value="select" > City*</option>
+             </select>
+          </aside>
+         
+         
+<!--          <aside class="form_fld1">
+           <select id="selectProdtinner">
+               <option value="0" selected>Select Product</option>
+            <option value="OMR Home">OMR Home</option>
+            <option value="Think Exam">Think Exam</option>
+            <option value="Think CBT">Think CBT</option>
+           </select>    
+          </aside>-->
+          <aside class="form_fld1 last ctc_msg">
+            <select id="selectSolnInner" >
+            <option selected>Select Solution*</option>
+            <option value="Centre Based Test">Computer Based Test</option>
+            <option value="Application Processing">Application Processing</option>
+            <option value="OMR Sheets Processing">OMR Sheets Processing</option>
+            <option value="Customized testing portal">Customized testing portal</option>
+            <option value="Advance OMR Application">Advance OMR Application</option>
+            <option value="Recruitment">Recruitment Test</option>
+            <option value="Employee Assessment">Employee Assessment</option>
+            <option value="Test Labs">Test Labs</option>
+           </select>
+          </aside>
+          <aside class="ctc_msg">
+           <textarea placeholder="Message" id="headMsg"></textarea>
+          </aside>
+          <aside class="form_fld1 ctc_msg" >
+<!--           <input class="security">-->
+<!--           <span class="captcha"><img src="images/captcha.jpg"></span>-->
+            <div id="captcha-wrap">
+                                    <input class="security" id="headInputCode" placeholder="Type Letters" autocomplete="off" >
+                                
+                                <input type="text" id="headMainCaptcha" class="mainCaptacha" disabled value=''/>
+                                <img src="images/refresh.png" id="refresh" value="Refresh" onclick="CaptchaHeader()" class="refImg" alt="refresh" title="Click Here To Change Image">
+<!--                                 <input id="Button1" type="button" value="Check" onclick="alert(ValidCaptcha());"/>-->
+                                 </div>
+          <span class="button submit_resume btn sent-btn ">
+<!--            <span>Send Enquiry</span>-->
+               <input class="contactSubmit" type="submit" onclick="Submit_contactHeaderForm()" id="submit" value="Send Enquiry" name="submit">
+            <i></i>
+           </span>
+          </aside>
+         </div>
+       
+    </div>
+   </div>
+    
+   <!--Pop up FB like start-->
+     <div id="gettouchfb_contact" class="getin_touchpop" style="display:none;">
+  <div id="gtformhid2" class="fb_page" >
+   <span class="popclose" onClick="gettouch_hide_fb_Contact()"></span>
+    <div class="getpophdr_contact">
+         <h3>Thank you !</h3>
+<!--         <h1>Thank you !</h1>-->
+     <p style=" font-size: 14px;">We have received your submitted form, we will contact you as<br>  soon as possible.
+</p>
+
+        
+            
+    </div>
+   
+     <div class="rgt_pg_cnct">
+       <div class="fb_titl" ><span class="bordr"></span><div style="background: rgb(255, 255, 255)  0% 0%; display: inline-block; padding: 5px 10px;">Please like &amp; share our facebook page</div> </div>
+         <div id="fb-root1" >
+             <div style="width: 100%; margin: 40px 6px 6px;">
+         <div class="fb-page" data-href="https://www.facebook.com/SEGwebsindia" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/SEGwebsindia"><a href="https://www.facebook.com/SEGwebsindia">SEG SKILLS</a></blockquote></div></div>
+             </div>
+         </div>
+
+         </div>
+       
+    </div>
+   </div>
+    <!--Pop Up FB LIke end-->
+     <!--Pop up FB like start when resume uploaded-->
+     <div id="gettouchfb" class="getin_touchpop" style="display:none;">
+  <div id="gtformhid3" class="fb_page" >
+   <span class="popclose" onClick="gettouch_hide_fb()"></span>
+    <div class="getpophdr">
+         <h3>Thank you !</h3>
+<!--         <h1>Thank you !</h1>-->
+     <p>You have successfully registered with us.
+Your resume<br> is now in our database. Please explore and apply for <br>exciting career opportunities with us. 
+</p>
+            
+    </div>
+   
+     <div class="rgt_pg_cnct">
+         <div class="fb_titl" ><span class="bordr"></span><div style="background: rgb(255, 255, 255)  0% 0%; display: inline-block; padding: 5px 10px;">Please like &amp; share our facebook page</div> </div>
+         <div id="fb-root2" >
+             <div style="width: 100%; margin: 40px 0px 6px;">
+         <div class="fb-page" data-href="https://www.facebook.com/SEGwebsindia" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/SEGwebsindia"><a href="https://www.facebook.com/SEGwebsindia">SEG SKILLS</a></blockquote></div></div>
+             </div>
+         </div>
+
+         </div>
+       
+    </div>
+   </div>
+    <!--Pop Up FB LIke end-->
+  <!--Get in touch popup end-->
+ </div>
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/menu_script.js@v=6"></script>  <link rel="stylesheet" type="text/css" href="css/image.css" />
+   <script src="js/modernizr.custom.26633.js"></script>
+  <div class="container" style="clear:both">
+      <!-- Responsive slider - START -->
+      <div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
+        <div class="slides" data-group="slides">
+      	  <ul>
+            <li class="slide_1">
+              <div class="slide-body" data-group="slide">
+                <img class="no_view" src="images/slide-1.jpg" alt="Slide Image">
+                <div class="wrapper-fix slide-content" style="position: relative;">
+                    <!-- <div class="caption header" data-animate="slideAppearUpToDown" data-delay="900" data-length="500">
+                      <div class="bnr_ctnt_cntr">A leading<br> Testing & Assessment<br> Solution Provider,  <br>
+                       <span>evaluate more than 1 million<br> assessment in a month</span>
+                      </div>
+                    </div> -->
+                </div>
+             </div>
+  	    	</li>
+            <!-- <li class="slide_2">
+              <div class="slide-body" data-group="slide">
+                <img class="no_view" src="images/slide-4.jpg" alt="Slide Image">
+               
+                
+                <div class="caption img-desktop" data-animate="slideAppearDownToUp" data-delay="500" data-length="300">
+                    <img src="images/thinkexam_cloud_1.png" alt="Slide Content Image">
+                </div>
+                <div class="caption img-think_cloud" data-animate="slideAppearFade" data-delay="700" data-length="300">
+                  <img src="images/think_cloude.png" alt="Slide Content Image">
+                </div>
+                  <div class="wrapper-fix slide-content" style="position: relative;">
+                <div class="caption header" data-animate="slideAppearUpToDown" data-delay="900" data-length="500">
+                  <div class="bnr_ctnt_cntr">ThInk Exam !<br> A cloud based online <br>testing platform <br>
+                   <span>compatible with mobile/tab, high concurrency and analytical <br>powerful & Innovative with rich features</span>
+                  </div>
+                </div>
+                  </div>
+              
+             </div>
+  	    	</li> -->
+            <!-- <li class="slide_3">
+              <div class="slide-body" data-group="slide">
+                <img class="no_view" src="images/slide-5.jpg" alt="Slide Image">
+                
+                <div class="inr_img_cntr">
+                    <div class="caption omr_sheet" data-animate="slideAppearUpToDown" data-delay="500" data-length="200">
+                      <img src="images/omr_sheet.png" alt="Slide Content Image">
+                    </div>
+                    <div class="caption sheet_scanning" data-animate="slideAppearLeftToRight" data-delay="600" data-length="200">
+                      <img src="images/sheet_scanning.png" alt="Slide Content Image">
+                    </div>
+                    <div class="caption sheet_checking" data-animate="slideAppearDownToUp" data-delay="700" data-length="200">
+                      <img src="images/sheet_check.png" alt="Slide Content Image">
+                    </div>
+                    <div class="caption sheet_result" data-animate="slideAppearRightToLeft" data-delay="800" data-length="200">
+                      <img src="images/result_data.png" alt="Slide Content Image">
+                    </div>
+                </div>
+                  <div class="wrapper-fix slide-content" style="position: relative;">
+                <div class="caption header" data-animate="slideAppearUpToDown" data-delay="1000" data-length="300">
+                  <div class="bnr_ctnt_cntr">Verificare (OMR Software)<br>A Product for <br>paper-Pencil based <br>
+                   <span>offline exams & assessments <br>trustable, scalable & remarkable with 100% accuracy </span>
+                  </div>
+                </div>
+                  </div>
+              </div>
+  	    	</li> -->
+            <li class="slide_4">
+              <div class="slide-body" data-group="slide">
+                <img class="no_view" src="images/slide-6.jpg" alt="Slide Image">
+                <!--<div class="caption" data-animate="slideAppearFade" data-delay="100">
+                  <img class="no_view" src="images/slide-5.jpg">
+                </div>-->
+                <!-- <div class="inr_img_cntr">
+                    <div class="caption asses_1" data-animate="slideAppearFade" data-delay="500" data-length="300">
+                        <img src="images/asses-1.jpg" alt="Solutions">
+                    </div>
+                    <div class="caption asses_2" data-animate="slideAppearFade" data-delay="600" data-length="300">
+                        <img src="images/asses-2.jpg" alt="Assessment Solutions">
+                    </div>
+                    <div class="caption asses_3" data-animate="slideAppearFade" data-delay="700" data-length="300">
+                        <img src="images/asses-3.jpg" alt="OMR Based Exam">
+                    </div>
+                    <div class="caption asses_4" data-animate="slideAppearFade" data-delay="800" data-length="300">
+                        <img src="images/asses-4.jpg" alt="Testing Solutions">
+                    </div>
+                    <div class="caption asses_5" data-animate="slideAppearFade" data-delay="900" data-length="300">
+                        <img src="images/asses-5.jpg" alt="assessment solution" >
+                    </div>
+                    <div class="caption asses_6" data-animate="slideAppearFade" data-delay="1000" data-length="300">
+                        <img src="images/asses-6.jpg" alt="OMR for Recruitment Process">
+                    </div>
+                    <div class="caption asses_7" data-animate="slideAppearFade" data-delay="1100" data-length="300">
+                        <img src="images/asses-7.jpg" alt="OMR Application Forms">
+                    </div>
+                    <div class="caption asses_8" data-animate="slideAppearFade" data-delay="1200" data-length="300">
+                        <img src="images/asses-8.jpg" alt="Assessment Solutions for Govt">
+                    </div>
+                    <div class="caption asses_9" data-animate="slideAppearFade" data-delay="1300" data-length="300">
+                        <img src="images/asses-9.jpg" alt="Assessment Solutions Provider">
+                    </div>
+                </div> -->
+                  <div class="wrapper-fix slide-content" style="position: relative;">
+                <div class="caption header" data-animate="slideAppearUpToDown" data-delay="1400" data-length="500">
+                  <!-- <div class="bnr_ctnt_cntr">Assessment  & Testing<br>Solutions for <br>Education, Corporate & <br>Government sectors <br>
+                   <span>online and offline examination under <br>  one roof </span>
+                  </div> -->
+                  <!--<div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"></div>-->
+                </div>
+                  </div>
+              </div>
+  	    	</li>
+
+  	     </ul>
+        </div>
+        <a class="slider-control left" href="index.html#" data-jump="prev"></a>
+        <a class="slider-control right" href="index.html#" data-jump="next"></a>
+         <div class="pages" style="display:none">
+          <a class="page" href="index.html#" data-jump-to="1">1</a>
+          <a class="page" href="index.html#" data-jump-to="2">2</a>
+          <a class="page" href="index.html#" data-jump-to="3">3</a>
+         </div>
+    	</div>
+      <!-- Responsive slider - END -->
+  <div class="wrapper-fix">
+    <article class="lrn_more_wpr">
+     <div class="lrn_more_dtls">
+      <h2 class="bold_font">Conducting Assessment would be an easy task when it <br>comes to <b>SEG SKILLS</b></h2>
+      <p>Online or Offline whatever it would be, SEG SKILLS will help you with it's exquisite products to simplify process with 100% successful delivery  </p>
+     </div>
+     <div class="lrn_more_btns">
+      <a href="about-seg/who-we-are.php.html" class="button l-more">
+       <span>Learn More</span>
+       <div class="btn_icn">
+        <strong></strong>
+       </div>
+      </a>
+     </div>
+    </article>
+   </div>
+  <section class="main_prdct_wpr">
+    <div class="wrapper-fix">
+     <article class="main_prdct">
+      <div class="main_prdct_ttl bold_font">Solution for Education</div>
+      <div class="main_prdct_subttl">Practise and Mock Examination</div>
+      <div class="mn_prdct_icon prdct_icon1"></div>
+      <div class="prdct_description">Simple and testified solution for evaluating the examination and generating analytic reports for in-depth analysis</div>
+      <div class="read_more"><a href="#">Read More</a></div>
+     </article>
+     
+     <article class="main_prdct">
+      <div class="main_prdct_ttl bold_font">Solution for Corporates</div>
+      <div class="main_prdct_subttl">Training and Recruitment evaluation</div>
+      <div class="mn_prdct_icon prdct_icon2"></div>
+      <div class="prdct_description">Online and offline solution for bulk hiring and Employee assessment</div>
+      <div class="read_more"><a href="#">Read More</a></div>
+     </article>
+     
+     <article class="main_prdct last">
+      <div class="main_prdct_ttl bold_font">Solution for Government/PSU’S</div>
+      <div class="main_prdct_subttl">Departmental Recruitment</div>
+      <div class="mn_prdct_icon prdct_icon3"></div>
+      <div class="prdct_description">Highly secured recruitment and intra departmental examination</div>
+      <div class="read_more"><a href="#">Read More</a></div>
+     </article>
+     
+    </div>
+  </section>
+  <section class="features_dtls_wpr">
+   <div class="wrapper-fix">
+    <article class="features_dtls_lft">
+     <div class="SEG_awards">
+      <img src="images/award.JPG" title="SEG SKILLS Award" alt="SEG SKILLS Award">
+      <div class="clnt_award"><i class="award"></i>Awards/Achievement</div>
+      <div class="award_dtls">
+      <!-- <i class="sprite"></i>-->
+        <strong class="bold_font" style="margin: 5px 0px;color: #EC7D25;font-family: 'open_sansRegular';">Skill is the unified force of experience</strong>
+       <strong class="bold_font"> The Indira Gandhi Computer Saksharta Mission (IGCSM), founded in 2008</strong>Aims to Educate, Enable, and Empower. Operating across 21 states, IGCSM has impacted more than 3 Lakh lives by focusing on educating children, enhancing youth skills, and empowering girls and young women. Individual
+      </div>
+     </div>
+     <div id="SEG_awards_1" style="display: none; padding-right: 4px; margin-right: 0;" class="SEG_awards main-div" >
+         <div class="clnts_img"><img src="images/indian_army.jpg" title="SEG SKILLS Award" alt="SEG SKILLS Award"></div>
+      <a href="clients/clients-speak.php.html" class="goToClient">
+          <div class="clnt_award"><i class="speak"></i>Client’s Speak&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class="award_dtls">
+       This Organisation has bought an OMR from M/S SEG SKILLS and we are very satisfied with the quality of the product, their services and the scope of the software. The company has a professional way of conducting its business, and it was a pleasure dealing with them. We wish them success and recommend them for their future endevours.
+      </div>
+          </a>
+     </div>
+     <div id="SEG_awards_2" style="display: none ;padding-right: 4px; margin-right: 0;" class="SEG_awards main-div">
+         <div class="clnts_img"><img src="images/m_clnt_02.jpg" title="SEG SKILLS Award" alt="SEG SKILLS Award"></div>
+      <a href="clients/clients-speak.php.html" class="goToClient">
+          <div class="clnt_award"><i class="speak"></i>Client’s Speak&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class="award_dtls">
+       M/s SEG SKILLS was awarded contract for smart reader professional edition (OMR Software), OMR smart reader and Cannon Scanner 2010C. M/s SEG SKILLS has successfully completed all requirements and specifications of this OMR software and reader and provides successful training to DMRC officials. We express our heartiest thanks to M/s SEG SKILLS and there team& wish excellent future ahead in delivering successful projects.
+      </div>
+          </a>
+     </div>
+     <div id="SEG_awards_3" style="display: none; padding-right: 4px; margin-right: 0;" class="SEG_awards main-div" >
+      <div class="clnts_img"><img src="images/m_clnt_03.jpg" title="SEG SKILLS Award" alt="SEG SKILLS Award"></div>
+      <a href="clients/clients-speak.php.html" class="goToClient">
+          <div class="clnt_award"><i class="speak"></i>Client’s Speak&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class="award_dtls">
+       We are pleased to quote that OMR SMART READER software, purchased from SEG SKILLS, proved to be a product of excellent value for fulfilling our recruitment purpose. We are fully satisfied and higly appreciate the service as well as support received from SEG SKILLS
+      </div>
+          </a>
+     </div>
+     <div id="SEG_awards_4" style="display: none; padding-right: 4px; margin-right: 0;" class="SEG_awards main-div" >
+      <div class="clnts_img"><img src="images/m_clnt_04.jpg" title="SEG SKILLS Award" alt="SEG SKILLS Award"></div>
+      <a href="clients/clients-speak.php.html" class="goToClient">
+          <div class="clnt_award"><i class="speak"></i>Client’s Speak&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class="award_dtls">
+       On Behalf of our institute, it gives me great pleasure in conveying our heart-felt appreciation to SEG SKILLS (and your team) in the way have successfully handled our recent requirement of OMR Software, for Competitive Examinations. The Software is very easy to use and user friendly, we also appreciate your support in operations of software. Your whole - hearted effort, sincerity and dedication is highly appreciated. many thanks and we look forward to working together with you in the future.
+      </div>
+          </a>
+     </div>
+     <div id="SEG_awards_5"  style="display: none; padding-right: 4px; margin-right: 0;" class="SEG_awards main-div">
+         <div class="clnts_img"><img src="images/m_clnt_05.jpg" alt="Institute of Charted Accountants of India"  title="SEG SKILLS Award"></div>
+      <a href="clients/clients-speak.php.html" class="goToClient">
+          <div class="clnt_award"><i class="speak"></i>Client’s Speak&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class="award_dtls">
+       This is to certify that M/s SEG SKILLS, is providing the services using Smart Reader Software satisfactorily at our organization, The Institute of Chartered Accountants of india, Committee on Information Technology, Delhi since 2006. We are fully satisfied with their services and their products, and wish them good luck for their future business.
+      </div>
+          </a>
+     </div>
+     
+     <div id="SEG_awards_6" style="display: none; padding-right: 4px; margin-right: 0;" class="SEG_awards main-div" >
+      <div class="clnts_img"><img src="images/m_clnt_06.jpg"  alt="SEG SKILLS Award" title="SEG SKILLS Award"></div>
+      <a href="clients/clients-speak.php.html" class="goToClient">
+          <div class="clnt_award"><i class="speak"></i>Client’s Speak&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class="award_dtls">
+       We are sending this letter to express our sincere appreciation to M/s. SEG SKILLS, New Delhi for their unfalling service to us. junagadh Agriculture University, Junagadh are using the OMR Smart Reader Software, purchased from M/s. SEG SKILLS and we are fully satisfied with service / support and the products. We earnestly wish you the very best for a great future.
+      </div>
+          </a>
+     </div>
+     <div  class="hm_clnt_wpr">
+      <div class="clnt_award" style="width:182px;"><i class="cliente"></i>Clients</div>
+      <div id="hm_clnt_cntr_1" class="hm_clnt_cntr">
+        <span><img src="keshav/partner-01.png" alt="World Health Organization"></span>
+        <span><img src="keshav/partner-02.png" alt="Aakash"></span>
+        <span class="right0"><img src="keshav/partner-03.png" alt="SEGwebs"></span>
+        <span><img src="keshav/partner-4.jpg" alt="SEGwebs client"></span>
+        <span><img src="keshav/partner-5.jpg" alt="Allen"></span>
+        <span class="right0"><img src="keshav/partner-6.jpg" alt="DAMS"></span>
+        <span class="bottom0"><img src="keshav/new-partner-01.jpg" alt="sharda university"></span>
+        <span class="bottom0"><img src="keshav/new-partner-02.jpg" alt="Jet Airways"></span>
+        <span class="bottom0 right0"><img src="keshav/new-partnet-03.jpg" alt="SEGwebs help"></span>
+      </div>
+      <div id="hm_clnt_cntr_2" style="display:none;" class="hm_clnt_cntr">
+        <span><img src="images/clients/corporate/crp-1.png" alt="SEGwebs1"></span>
+        <span><img src="images/clients/corporate/crp-15.png" alt="SEGwebs2"></span>
+        <span class="right0"><img src="images/clients/corporate/crp-3.png" alt="clients"></span>
+        <span><img src="images/clients/corporate/crp-6.png" alt="SEGwebs3"></span>
+        <span><img src="images/clients/corporate/crp-4.png" alt="SEGwebs4"></span>
+        <span class="right0"><img src="images/clients/corporate/crp-8.png" alt="SEGwebs5"></span>
+        <span class="bottom0"><img src="images/clients/corporate/crp-10.png" alt="JCI India"></span>
+        <span class="bottom0"><img src="images/clients/corporate/crp-11.png" alt="SEGwebs6"></span>
+        <span class="right0 bottom0"><a href="#"><img src="images/clients/hc_add_hvr.jpg"
+              alt="SEGwebs assessment" style="margin:0px;"></a></span>
+      </div>
+      <div id="hm_clnt_cntr_3" style="display:none;" class="hm_clnt_cntr">
+        <span><img src="images/clients/others/clnt_21.png" alt="SEGwebs7"></span>
+        <span><img src="images/clients/others/clnt_05.png" alt="SEGwebs8"></span>
+        <span class="right0"><img src="images/clients/others/clnt_07.png" alt="SEGwebs9"></span>
+        <span><img src="images/clients/others/clnt_09.png" alt="SEGwebs10"></span>
+        <span><img src="images/clients/others/clnt_11.png" alt="SEGwebs11"></span>
+        <span class="right0"><img src="images/clients/others/clnt_18.png" alt="SEGwebs12"></span>
+        <span class="bottom0"><img src="images/clients/others/clnt_19.png" alt="SEGwebs13"></span>
+        <span class="bottom0"><img src="images/clients/others/clnt_20.png" alt="SEGwebs14"></span>
+        <span class="right0 bottom0"><a href="#"><img src="images/clients/hc_add_hvr.jpg"
+              alt="SEGwebs testing solution" style="margin:0px;"></a></span>
+      </div>
+      <div id="hm_clnt_cntr_4" style="display:none;" class="hm_clnt_cntr">
+        <span><img src="images/clients/others/clnt_32.png" alt="SEGwebs15"></span>
+        <span><img src="images/clients/others/clnt_52.png" alt="SEGwebs16"></span>
+        <span class="right0"><img src="images/clients/others/clnt_34.png" alt="SEGwebs17"></span>
+        <span><img src="images/clients/others/clnt_35.png" alt="SEGwebs18"></span>
+        <span><img src="images/clients/others/clnt_36.png" alt="SEGwebs19"></span>
+        <span class="right0"><img src="images/clients/others/clnt_42.png" alt="SEGwebs20"></span>
+        <span class="bottom0"><img src="images/clients/others/clnt_43.png" alt="SEGwebs21"></span>
+        <span class="bottom0"><img src="images/clients/others/clnt_44.png" alt="SEGwebs22"></span>
+        <span class="right0 bottom0"><a href="#"><img src="images/clients/hc_add_hvr.jpg" alt="SEGwebs service"
+              style="margin:0px;"></a></span>
+      </div>
+      <div id="hm_clnt_cntr_5" style="display:none;" class="hm_clnt_cntr">
+        <span><img src="images/clients/others/clnt_81.png" alt="SEGwebs23"></span>
+        <span><img src="images/clients/others/clnt_82.png" alt="SEGwebs24"></span>
+        <span class="right0"><img src="images/clients/others/clnt_70.png" alt="NE"></span>
+        <span><img src="images/clients/others/clnt_71.png" alt="SEGwebs25"></span>
+        <span><img src="images/clients/others/clnt_72.png" alt="SEGwebs26"></span>
+        <span class="right0"><img src="images/clients/others/clnt_78.png" alt="SEGwebs27"></span>
+        <span class="bottom0"><img src="images/clients/others/clnt_79.png" alt="SEGwebs28"></span>
+        <span class="bottom0"><img src="images/clients/others/clnt_80.png" alt="SEGwebs29"></span>
+        <span class="right0 bottom0"><a href="#"><img src="images/clients/hc_add_hvr.jpg"
+              alt="SEGwebs solutions" style="margin:0px;"></a></span>
+      </div>
+       <div id="ri-grid" style="display:block;display:none;" class="ri-grid">
+       
+        <ul>
+            <li><a href="index.php.html#"><img src="images/medium/1.png" alt="Vedenta"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/2.png" alt="JET Airways"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/3.png" alt="schneider electric"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/4.png" alt="Dominos Pizza"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/5.png" alt="Samsung"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/6.png" alt="idiscovery"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/7.png" alt="nicco ventures"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/8.png" alt="Honeywell"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/9.png" alt="JCI India"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/10.png" alt="Jagran"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/11.png" alt="Chimes Aviation Academy" /></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/12.png" alt="NIIT"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/13.png" alt="Daimler"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/14.png" alt="CANON"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/15.png" alt="Career sta"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/16.png" alt="Indian Army"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/17.png" alt="central industrial security force"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/18.png" alt="central reserve police force"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/19.png" alt="Indian Navy"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/20.png" alt="Punjab Police"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/21.png" alt="Uttar Pradesh Police"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/22.png" alt="industrial training institute lucknow"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/23.png" alt="jammu public service commission" /></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/24.png" alt="CDCC"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/25.png" alt="the institute of company secretaries of india"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/26.png" alt="delhi metro rail corporation"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/27.png" alt="institute of chartered accountant of india"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/28.png" alt="lovely professional university"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/29.png" alt="sharda university"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/30.png" alt="anand agricultural university"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/31.png" alt="junagadh agricultural university"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/32.png" alt="gautam buddha university"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/33.png" alt="punjab technical university"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/34.png" alt="Kannur University"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/35.png" alt="saurashtra university"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/36.png" alt="marian college kuttikkanam"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/37.png" alt="JAIN University"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/38.png" alt="AIMIT"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/39.png" alt="srms college bareilly"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/40.png" alt="shibli national college azamgarh"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/41.png" alt="K.B.P.G college mirzapur"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/42.png" alt="kamla nehru college delhi"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/43.png" alt="krishna public school raipur"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/44.png" alt="srms college bareilly"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/45.png" alt="MITS Group"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/46.png" alt="aakash" /></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/47.png" alt="Allen"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/48.png" alt="NE"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/49.png" alt="DAMS"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/50.png" alt="Helix Institute"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/51.png" alt="Mahendra's"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/52.png" alt="RAY'S"/></a></li>
+                <li><a href="index.php.html#"><img src="images/medium/53.png" alt="Prof. P.C. Thomas Classes"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/54.png" alt="Bank Power" /></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/55.png" alt="PARAMOUNT"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/56.png" alt="FOUNTAIN"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/57.png" alt="GOAL"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/58.png" alt="a.k vidyamandir"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/59.png" alt="NIAS"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/60.png" alt="RAO'S"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/61.png" alt="World Health Organization"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/62.png" alt="universidad autonoma gabriel rene moreno"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/63.png" alt="spring"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/64.png" alt="peace dividend"/></a></li>
+                <li class="right0"><a href="index.php.html#"><img src="images/medium/65.png" alt="symplicity inc"/></a></li>
+        </ul>
+        </div>
+     </div>
+    </article>
+    <article class="features_dtls_rgt">
+     <div>
+         <img class="img" src="images/home_4_17.jpg" alt="OMR Exam by SEGwebs">
+      <div class="whats_new">
+       <div class="pg_title"><i class="whatsnew"></i>What’s New!</div>
+       <a href="about-seg/news.php.html" class='goToNews'>
+       <div class="whats_new_dtls">
+           <strong class="bold_font">​DAMS CBT</strong>
+              
+               
+               
+            DAMS a premier institute for medical PG courses preparation. SEG SKILLS assisted them by providing  CBT solution for third consecutive year and conducted the mock test for the students on PAN India l...<br>
+           
+      </div>
+      </a>
+      </div>
+      <div class="twt_opng">
+       <div class="SEG_awards">
+           <img src="images/ltst_twts.jpg" alt="SEGwebs pvt ltd">
+      <div class="pg_title"><i class="ltst_twt"></i>Latest Tweet’s</div>
+      <div class="award_dtls twtr" style="padding:0 0 20px 0px;">
+      <a class="twitter-timeline" href="#" data-widget-id="624177430773665792">Tweets by @SEG Skills</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		
+        <!--<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/ajit_san/lists/my-dear" data-widget-id="565115922847760384">Tweets from https://twitter.com/ajit_san/lists/my-dear</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>-->
+
+      </div>
+     </div>
+     <div class="SEG_awards main-div twt" style="border-right:none;">
+         <img src="images/we_hiring.jpg" alt="SEGwebs Hiring">
+      <div class="pg_title"><i class="opening"></i>Current Openings</div>
+      <ul class="currnet_opn">
+          
+                      <li id="headed1"  class='' >
+                <a href="#" class="" id="69">Tech Lead - Mobile </a>
+            </li>
+                <li id="headed2"  class='' >
+                <a href="#" class="" id="70">Technical Content Writer </a>
+            </li>
+                <li id="headed3"  class='' >
+                <a href="#" class="" id="71">Tele sales - Customer service </a>
+            </li>
+                <li id="headed4"  class='' >
+                <a href="#" class="" id="72">Customer Renewals </a>
+            </li>
+                <li id="headed5"  class='last' >
+                <a href="#" class="last" id="73">Engineering Manager </a>
+            </li>
+              
+<!--       <li><a href="#">Visualizer/UI Designer</a></li>
+       <li><a href="#">Frontend developer</a></li>
+       <li><a href="#">Database administrator</a></li>
+       <li><a href="#">Business development excutive</a></li>
+       <li class="last"><a href="#">Frontend developer</a></li>-->
+      </ul>
+      <a href="#" class="button submit_resume home_opningbtn index-btn" style="margin:0;">
+       <span>View All</span>
+       <i></i>
+      </a>
+     </div>
+      </div>
+     </div>
+    </article>
+   </div>
+  </section>   
+  </div>
+
+<!--<script>
+   $("#hm_clnt_cntr_1").show();
+   setInterval(function(){myTimer()},5000);
+   function myTimer(){
+    var index=Math.floor(Math.random()*5+1);
+//    alert(index);
+    //alert(index);
+    for(var i=1;i<=5;i++){
+        if(i!=index){
+            $("#hm_clnt_cntr_"+i).hide();
+        }
+    }
+    $("#hm_clnt_cntr_"+index).fadeIn(500);
+    $("#hm_clnt_cntr_"  +index).show();
+    
+    
+//        
+//        
+      } 
+</script>-->
+                      
+<script>
+   var id=Math.floor(Math.random()*6+1); 
+   $("#SEG_awards_"+id).show();
+   setInterval(function(){myTimer2()},10000);
+   function myTimer2(){
+    var index=Math.floor(Math.random()*6+1);
+//    alert(index);
+    //alert(index);
+    for(var i=1;i<=6;i++){
+        if(i!=index){
+            $("#SEG_awards_"+i).hide();
+        }
+    }
+    $("#SEG_awards_"+index).fadeIn(500);
+    $("#SEG_awards_"+index).show();
+    
+    
+//        
+//        
+      } 
+</script>
+
+
+<script src="js/slider/jquery.js"></script>
+<script src="js/slider/jquery.event.move.js"></script>
+<script src="js/slider/responsive-slider.js"></script>
+<script src="js/jquery.gridrotator.js"></script>
+<script>
+			$(function() {
+			
+				$( '#ri-grid' ).gridrotator( {
+					rows		: 3,
+					columns		: 4,
+					animType	: 'fadeInOut',
+					animSpeed	: 1000,
+					interval	: 300,
+					step		: 1,
+					w1024			: {
+	rows	: 3,
+	columns	: 4
+},
+
+w768			: {
+	rows	: 3,
+	columns	: 4
+},
+
+w480			: {
+	rows	: 3,
+	columns	: 4
+},
+
+w320			: {
+	rows	: 3,
+	columns	: 4
+},
+
+w240			: {
+	rows	: 3,
+	columns	: 4
+}
+                                        
+				} );
+			
+			});
+		</script>
+
+
+<!-- Footer Part Start Here -->
+ <div class="wrapper-fix">
+  <div class="footer-main">
+   <!-- <div class="othr_sit_wpr">
+    <a href="http://thinkexam.com/" target="_blank" class="sprite thinkexam"></a>
+    <a href="http://omrhome.com/" target="_blank" class="sprite omrhome"></a>
+    <a href="http://www.previousyearpapers.com/" target="_blank" class="sprite pyp"></a>
+   </div>
+   <div class="folw_us new-flw">
+       <div class="folw-new">
+     <span class="light_font">Follow us on</span>
+     <a href="https://www.facebook.com/SEGwebsindia/" target="_blank" class="sprite fb face"></a>
+     <a href="#" target="_blank" class="sprite twt"></a>
+     <a href="https://plus.google.com/+SEGwebs/posts" target="_blank" class="sprite g"></a>
+     <a href="http://in.linkedin.com/company/SEG-webs" target="_blank" class="sprite in"></a>
+       </div>
+   </div>
+   <div class="color_line">
+    <span class="green"></span>
+    <span class="red"></span>
+    <span class="orange"></span>
+   </div> -->
+   <center>
+    <ul>
+     <li><a href="index.php.html">Home</a></li>
+     <li><a href="about-seg/who-we-are.php.html">About Us</a></li>
+     <li><a href="products/verificare.php.html">Products</a></li>
+     <li><a href="clients/clients-speak.php.html">Testimonial</a></li>
+     
+     <li><a href="about-seg/news.php.html">News</a></li>
+     <li><a href="clients/client-list.php.html">Clients</a></li>
+     <li><a href="../contact-seg.php.html" id="contactUs1">Contact Us</a></li>
+     
+    </ul>
+    <span>Copyright © SEG SKILSS 2024. All rights reserved.</span>
+   </center>
+  </div> 
+</div>
+<div class="scroll-to-top" title="Go to top">
+ <b class="light_font"></b>
+</div>
+
+<!-- Footer Part End Here -->
+
+
+<script src="js/slider/jquery.js"></script>
+<script src="js/slider/jquery.event.move.js"></script>
+<script src="js/slider/responsive-slider.js"></script>
+
+<!--<script src="js/menu-scriptnew.js"></script>-->
+
+<!--jQuery Scroll-->
+
+<!--<script src="https://www.SEGwebs.com/js/retina.js"></script>-->
+<script src="js/jquery.accordion.source.js"></script>
+    <script>            
+      jQuery(document).ready(function() {
+        var offset = 0;
+        var duration = 200;
+        jQuery(window).scroll(function() {
+          if (jQuery(this).scrollTop() > offset) {
+            jQuery('.scroll-to-top').show();
+          } else {
+            jQuery('.scroll-to-top').hide();
+          }
+        });
+        
+        jQuery('.scroll-to-top').click(function(event) {
+          event.preventDefault();
+          jQuery('html, body').animate({scrollTop: 0}, duration);
+          return false;
+        })
+      });
+     //Js for accordian start
+      $(document).ready(function() {
+            $("#accordion section h1").click(function(e) {
+            $(this).parents().siblings("section").addClass("ac_hidden");
+            $(this).parents("section").removeClass("ac_hidden");
+
+              e.preventDefault();
+            });
+       //Js for accordian end
+        });
+  </script>
+
+<script>
+function show(){
+  $("#dialog").css("display" , "block");
+  $('#dialog').fadeIn('slow');
+  }
+function showhide(){
+  $("#dialog").css("display" , "none");
+  }
+</script>
+<!--Testimonila script start-->
+<script>
+$(document).ready(function(fadeLoop) {
+  
+  var fad = $('.fader');
+  var counter = 0;
+  var divs = $('.fader').hide(); // Selecting fader divs instead of each by name.
+  var dur = 500;
+  
+  fad.children().filter('.fader').each(function(fad) {
+    
+    function animator(currentItem) {
+      
+      animator(fad.children(":first"));
+      
+      fad.mouseenter(function(){
+        $(".fader").stop(); 
+      });
+      fad.mouseleave(function(){
+        animator(fad.children(":first"));
+      });
+    };
+    
+  });
+  
+  function showDiv() {
+    divs.fadeOut(dur) // hide all divs
+    .filter(function(index) {
+      return index == counter % divs.length;
+    }) // figure out correct div to show
+    .delay(dur) // delay until fadeout is finished
+    .fadeIn(dur); // and show it
+    counter++;
+  }; // function to loop through divs and show correct div
+  
+  showDiv(); // show first div    
+  
+  return setInterval(function() {  // return interval so we can stop the loop
+    showDiv(); // show next div
+  }, 2 * 3000); // do this every 5 seconds    
+});
+
+// JavaScript Document
+//@ sourceURL=pen.js
+</script>
+<!--Testimonila script end-->
+
+
+<!--<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7240574-16']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90313633-1', 'auto');
+  ga('send', 'pageview');
+
+
+         
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var window_top = $(window).scrollTop() + 0; // the "12" should equal the margin-top value for nav.stick
+            var div_top = $('#nav-anchor').offset().top;
+                if (window_top > div_top) {
+                    $('.nav_fixed, body').addClass('stick');
+                } else {
+                    $('.nav_fixed, body').removeClass('stick');
+                }
+        });
+    
+    });
+
+
+
+function popitup(url) {
+  newwindow=window.open(url,'name','height=400,width=400');
+  if (window.focus) {newwindow.focus()}
+  return false;
+}
+
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+</body>
+</html>
+

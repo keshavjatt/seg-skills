@@ -1,0 +1,1371 @@
+var Server = window.location.host;
+//var path = "http://" + Server + "/web/SEGwebsNew/";  //250
+// var path = "http://" + Server + "/SEGwebsnew/";  //local
+ var path = "https://" + Server + "/";    //for livey
+// var path = "http://" + Server + "/";    //for testing
+var ww = document.body.clientWidth;
+function IsName(name) 
+{  return /^[A-z ]+$/.test(name);
+}
+
+$(document).ready(function() {
+	$(".nav li a").each(function() {
+		if ($(this).next().length > 0) {
+			$(this).addClass("parent");
+		};
+	})
+	
+	$(".toggleMenu").click(function(e) {
+		e.preventDefault();
+		$(this).toggleClass("active");
+		$(".nav").toggle();
+	});
+	adjustMenu();
+
+  $('#test').change(function (){
+             var size=this.files[0].size/1024;
+             $("#imgSize").val(size);
+        });
+    $("input[type=checkbox]").click(function () {
+        $("#productErr").text(" ");
+    });
+// $("#test").change(function(){
+//       var file = this.value;
+//       file = file.replace(/^.*\\/, "");
+//       $("#testfile").val(file);
+//    });
+
+//$('#fName').keydown(function (e) {
+//            if (e.altKey) {
+//                e.preventDefault();
+//            } else {
+//                var key = e.keyCode;
+//                if (!((key == 9)||(key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+//                    e.preventDefault();
+//                }
+//            }
+//        });
+//        $('#lName').keydown(function (e) {
+//            if (e.altKey) {
+//                e.preventDefault();
+//            } else {
+//                var key = e.keyCode;
+//                if (!((key == 9)||(key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+//                    e.preventDefault();
+//                }
+//            }
+//        });
+    
+    $(".content a").click(function(){   
+            $(this).addClass("actives");
+			$(this).siblings().removeClass("actives");
+   });
+})
+
+
+$(window).bind('resize orientationchange', function() {
+	ww = document.body.clientWidth;
+	adjustMenu();
+});
+
+var adjustMenu = function() {
+	if (ww < 810) {
+		$(".toggleMenu").css("display", "inline-block");
+		if (!$(".toggleMenu").hasClass("active")) {
+			$(".nav").hide();
+		} else {
+			$(".nav").show();
+		}
+		$(".nav li").unbind('mouseenter mouseleave');
+		$(".nav li a.parent").unbind('click').bind('click', function(e) {
+			// must be attached to anchor element to prevent bubbling
+			e.preventDefault();
+			$(this).parent("li").toggleClass("hover");
+		});
+	} 
+	else if (ww >= 810) {
+		$(".toggleMenu").css("display", "none");
+		$(".nav").show();
+		$(".nav li").removeClass("hover");
+		$(".nav li a").unbind('click');
+		$(".nav li").unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function() {
+		 	// must be attached to li so that mouseleave is not triggered when hover over submenu
+		 	$(this).toggleClass('hover');
+		});
+	}
+}
+
+
+// Added By Shubham jain for Form Validation
+
+function trim(val){
+    return val.replace(/^\s+|\s+$/g,'');
+}
+function validation(type,value){
+    var ck_name = /^[A-Za-z./ ]{3,50}$/;
+    var ck_Gname = /^[A-Za-z./ ]{3,50}$/;
+    var ck_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i ;
+    var ck_username = /^[A-Za-z0-9_]{1,20}$/;
+    var ck_password =  /^[A-Za-z0-9.!@#$%^&*()_]{6,20}$/;//change by shubham
+    var ck_contact = /^\d{10}$/;
+    var ck_pincode = /^\d{6}$/;
+    var ck_number = /^\d{1,6}$/;
+    var ck_decimal=/^[0-9]+\.[0-9]+$/;
+    var ck_boardName= /^[A-Za-z/ ]{3,50}$/;
+    var check  = true;
+    switch(type){
+        case 'name':
+                    check=ck_name.test(value);
+                    break;
+        case 'guarName':
+                    check=ck_Gname.test(value);
+                    break;
+        case 'email':
+                    check=ck_email.test(value);
+                    break;
+        case 'password':
+                    check=ck_password.test(value);
+                    break;
+        case 'username':
+                    check=ck_username.test(value);
+                    break;
+        case 'contact':
+                    check=ck_contact.test(value);
+                    break;
+        case 'pincode':
+                    check=ck_pincode.test(value);
+                    break;
+        case 'number':
+                    check=ck_number.test(value);
+                    break;
+        case 'decimal':
+                    check=ck_decimal.test(value);
+                    break;            
+        case 'boardName':
+                    check=ck_boardName.test(value);
+                    break;            
+        case 'null':
+                    if(value==''){
+                        check=false;
+                    }
+                    break;
+        default:
+                    check=false;
+    }
+    return check;
+
+}
+function Submit_careerForm()
+{
+    var ValidCap=ValidCaptchaContact();             //Added by Ayush Bansal on 13-01-2022 for Add Captcha on Form
+    var city=$("#city").val();
+    var state=$("#stateName").val();
+    var phone=$("#mobileNo").val();
+    var jobApplied=$("#jobApplied").val();
+    var valid_extensions = /(.jpg|.jpeg|.png|.txt|.docx|.doc|.pdf|.odt)$/i;
+    if($("#fName").val()=="" || $("#fName").val()==null)
+    {
+       $("#fName").val('');
+       $("#fName").focus();
+       $("#fName").addClass('error_msg');
+       $('#fName').attr({'placeholder': 'Please Enter Your First Name'});
+       $("#fName").keypress(function (){$("#fName").removeClass('error_msg')});
+        return false;
+    }
+    else if($("#lName").val()=="" || $("#lName").val()==null)
+    {
+        //alert("Please enter your Last name");
+         $("#fName").removeClass('error_msg');
+         $("#lName").val('');
+         $("#lName").focus();
+         $("#lName").addClass('error_msg');
+         $('#lName').attr({'placeholder': 'Please Enter Your last Name'});
+         $("#lName").keypress(function (){$("#lName").removeClass('error_msg')});
+        return false;
+    }
+    else if($("#mobileNo").val()=="" || $("#mobileNo").val()==null)
+    {
+        //alert("Please enter your Mobile No");
+        $("#lName").removeClass('error_msg');
+        $("#mobileNo").addClass('error_msg');
+        $("#mobileNo").focus();
+        $('#mobileNo').attr({'placeholder': 'Please Enter Your Mobile No'});
+        $("#mobileNo").keypress(function (){$("#mobileNo").removeClass('error_msg')});
+        return false;
+    }
+    else  if(!IsValid($("#mobileNo").val()))
+    {
+        //alert("Please enter valid phone number");
+        $("#mobileNo").addClass('error_msg');
+        $("#mobileNo").focus();
+        $("#mobileNo").val('');
+        $('#mobileNo').attr({'placeholder': 'Please Enter Valid Mobile No'});
+        $("#mobileNo").keypress(function (){$("#mobileNo").removeClass('error_msg')});
+        return false;
+    }
+    else  if(phone.length<=9)
+    {
+        //alert("Please enter valid phone number");
+        $("#mobileNo").addClass('error_msg');
+        $("#mobileNo").focus();
+        $("#mobileNo").val('');
+        $('#mobileNo').attr({'placeholder': 'Please Enter Valid Mobile No'});
+        $("#mobileNo").keypress(function (){$("#mobileNo").removeClass('error_msg')});
+        return false;
+    }
+    else if($("#emailId").val()==""||$("#emailId").val()==null)
+    {
+        //alert("Please enter your email address");
+        $("#mobileNo").removeClass('error_msg');
+        $("#emailId").addClass('error_msg');
+        $("#emailId").focus();
+        $('#emailId').attr({'placeholder': 'Please Enter Your EmailId'});
+        $("#emailId").keypress(function (){$("#emailId").removeClass('error_msg')});
+        return false;
+    }
+    else if(isEMail($("#emailId").val()))
+    {
+        
+       //alert("Please enter valid email address");
+        $("#mobileNo").removeClass('error_msg');
+        $("#emailId").addClass('error_msg');
+        $("#emailId").focus();
+        $("#emailId").val('');
+        $('#emailId').attr({'placeholder': 'Please Enter Valid EmailId'});
+        $("#emailId").keypress(function (){$("#emailId").removeClass('error_msg')});
+        return false;
+    }
+    else if($("#stateName").val()=="0")
+    {
+        //alert("Please select your state");
+        $("#emailId").removeClass('error_msg');
+        $("#stateName").addClass('error_msg');
+        $('#stateName').attr({'placeholder': 'Please Select State'});
+        $("#stateName").keypress(function (){$("#stateName").removeClass('error_msg')});
+        $("#stateName").focus();
+        return false;
+    }
+    else  if(city=="select")
+    {
+        //alert("Please select your city");
+        $("#stateName").removeClass('error_msg');
+        $("#city").addClass('error_msg');
+        $('#city').attr({'placeholder': 'Please Select City'});
+        $("#city").keypress(function (){$("#city").removeClass('error_msg')});
+        $("#city").focus();
+        return false;
+    }
+    else if(jobApplied=="0"){
+        //alert("Please select a job profile");
+        $("#city").removeClass('error_msg');
+        $("#jobApplied").addClass('error_msg');
+        $('#jobApplied').attr({'placeholder': 'Please select a job profile'});
+        $("#jobApplied").keypress(function (){$("#jobApplied").removeClass('error_msg')});
+        $("#jobApplied").focus();
+        return false;
+    }
+    else if($("#testfile").val()==''||$("#testfile").val()==null)
+    {
+        //alert("Please upload your Resume");
+        $("#jobApplied").removeClass('error_msg');
+        $("#testfile").addClass('error_msg');
+        $('#testfile').attr({'placeholder': 'Please upload your Resume'});
+        $("#testfile").keypress(function (){$("#testfile").removeClass('error_msg')});
+        $("#testfile").focus();
+        return false;
+    }
+    else if(trim($("#testfile").val())!='' && valid_extensions.test($("#testfile").val())==false){
+       
+        
+        //alert("Invalid file format.");
+        
+        $("#jobApplied").removeClass('error_msg');
+        $("#testfile").addClass('error_msg');
+        $('#testfile').attr({'placeholder': 'Invalid file format.'});
+        $("#testfile").focus();
+        $("#testfile").val('');
+        return false;    
+    }
+
+    //Added by Ayush Bansal on 13-01-2022 for Add Captcha on Form
+    else if($(".txtCaptacha").val()=='')
+    {
+         $("#ctcMobileNo").removeClass('error_msg1');
+    $(".txtCaptacha").addClass('error_msg1');
+    $('.txtCaptacha').attr({'placeholder': 'Type Letter'});
+    $(".txtCaptacha").keypress(function (){$(".txtCaptacha").removeClass('error_msg1')});
+    $(".txtCaptacha").focus();
+    $(".txtCaptacha").val('');
+        return false
+    }
+    else if(ValidCap==false)
+    {
+             $("#ctcMobileNo").removeClass('error_msg1');
+    $(".txtCaptacha").addClass('error_msg1');
+    $('.txtCaptacha').attr({'placeholder': 'Letter Not Mached'});
+    $(".txtCaptacha").keypress(function (){$(".txtCaptacha").removeClass('error_msg1')});
+    $(".txtCaptacha").focus();
+    $(".txtCaptacha").val('');
+        return false;
+    }
+        var size=$("#imgSize").val();
+       // alert(size);
+        if(size<5||size>1024)
+        {
+              //alert ("File size is not between 5KB to 1 MB ");
+        $("#jobApplied").removeClass('error_msg');
+        $("#testfile").addClass('error_msg');
+        $('#testfile').attr({'placeholder': 'File size is not between 5KB to 1 MB '});
+        $("#testfile").focus();
+        $("#testfile").val('');
+        return false;
+        }
+    else{
+document.getElementById('formID').submit();
+}
+}
+//ADDED BY PRIYANKA SHARMA 9 JAN 2018//
+//ckecking whether email is valid
+function isEMail(s)
+{
+      var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    var booleanValue=emailPattern.test(s);
+    // alert("validation"+booleanValue);
+    if(!booleanValue)
+    {
+        return true ;
+    }else{
+        return false;
+    }   
+}
+// CODE ENDED BY PRIYANKA
+function IsValid(Text)//ckecking whether phone no is valid
+{
+    var ValidChars = "-0123456789";
+    var IsNumber=true;
+    var Char;
+    for (var i = 0; i < Text.length && IsNumber == true; i++)
+    {
+        Char = Text.charAt(i);
+        if (ValidChars.indexOf(Char) == -1)
+        {
+            IsNumber = false;
+        }
+    }
+    return IsNumber;
+
+    }
+function getExt(filename) {
+   var dot_pos = filename.lastIndexOf(".");
+   if(dot_pos == -1)
+      return "";
+   return filename.substr(dot_pos+1).toLowerCase();
+}
+
+function Submit_contactForm()
+{
+    var ValidCap=ValidCaptchaContact();
+    var name=trim($("#ctcName").val());
+    var orgName=$("#ctcOrgName").val();
+    var email=$("#ctcEmailId").val();
+    var phone=$("#ctcMobileNo").val();
+    var address=$("#ctcAddress").val();
+    var city=$("#clientCity").val();
+    var state=$("#clientState").val();
+    var country=$("#clientCountry").val();
+//    var city=$(".city").val();
+//    var state=$("#selectState").val();
+//    var country=$("#clientCountry").val();
+    var product=$("#selectProdtOuter").val();//$("#product").val();
+    var solution=$("#selectSoln").val();//$("#selectSoln").val();
+    var message=$("#ctcMsg").val();//alert($("#selectSoln").val());die;
+    var dataString;
+    if(name=="")
+    {
+        $("#ctcName").addClass('error_msg1');
+        $('#ctcName').attr({'placeholder': 'Please enter your Name'});
+        $("#ctcName").keypress(function (){$("#ctcName").removeClass('error_msg1')});
+        $("#ctcName").focus();
+        return false;
+    }
+      else if(!IsName($.trim($("#ctcName").val()))){
+           
+        $('#ctcName').val("");
+        document.getElementById("ctcName").placeholder = "Please Enter Correct Details*";
+        document.getElementById("ctcName").classList.add('error_msg1');
+        $("#ctcName").focus();
+        return false;
+    } 
+     else if(orgName=="")
+    {
+        $("#ctcOrgName").addClass('error_msg1');
+        $('#ctcOrgName').attr({'placeholder': 'Please enter your Organization Name'});
+        $("#ctcOrgName").keypress(function (){$("#ctcOrgName").removeClass('error_msg1')});
+        $("#ctcOrgName").focus();
+        return false;
+    }
+    else if(email==""|| email==null)
+    {
+        $("#ctcName").removeClass('error_msg1');
+        $("#ctcEmailId").addClass('error_msg1');
+        $('#ctcEmailId').attr({'placeholder': 'Please enter your Email Id'});
+        $("#ctcEmailId").keypress(function (){$("#ctcEmailId").removeClass('error_msg1')});
+        $("#ctcEmailId").focus();
+        return false;
+    }
+    else if(isEMail(email))
+    {
+        $("#ctcName").removeClass('error_msg1');
+        $("#ctcEmailId").addClass('error_msg1');
+        $('#ctcEmailId').attr({'placeholder': 'Please enter valid Email Id'});
+        $("#ctcEmailId").keypress(function (){$("#ctcEmailId").removeClass('error_msg1')});
+        $("#ctcEmailId").focus();
+        $("#ctcEmailId").val('');
+        return false;
+    }
+    
+    else if(phone=="" || phone==null)
+        {
+        $("#ctcEmailId").removeClass('error_msg1');
+        $("#ctcMobileNo").addClass('error_msg1');
+        $('#ctcMobileNo').attr({'placeholder': 'Please enter your Phone No.'});
+        $("#ctcMobileNo").keypress(function (){$("#ctcMobileNo").removeClass('error_msg1')});
+        $("#ctcMobileNo").focus();
+        return false;
+        }
+        else  if(!IsValid(phone))
+        {
+        $("#ctcEmailId").removeClass('error_msg1');
+        $("#ctcMobileNo").addClass('error_msg1');
+        $('#ctcMobileNo').attr({'placeholder': 'Please enter your Phone No.'});
+        $("#ctcMobileNo").keypress(function (){$("#ctcMobileNo").removeClass('error_msg1')});
+        $("#ctcMobileNo").focus();
+        $("#ctcMobileNo").val('');
+        return false;
+        }
+        else  if(phone.length<=9)
+        {
+        $("#ctcEmailId").removeClass('error_msg1');
+        $("#ctcMobileNo").addClass('error_msg1');
+        $('#ctcMobileNo').attr({'placeholder': 'Please enter your Phone No.'});
+        $("#ctcMobileNo").keypress(function (){$("#ctcMobileNo").removeClass('error_msg1')});
+        $("#ctcMobileNo").focus();
+        $("#ctcMobileNo").val('');
+        return false;
+        }
+        //  Added by priyanka 15 feb 2018(country,state, city and solution validation)
+         else if( $("#clientCountry").val()=="0" || $("#clientCountry").val()=="" || $("#clientCountry").val()==null){ //alert('fg');die;
+     // else if (clientCountry == "" || clientCountry == null)
+        $("#clientCountry").focus();
+        $("#clientCountry").addClass("error_msg1");
+        $("#clientCountry").attr('placeholder', 'select Country');
+        setTimeout(function () {
+            $("#clientCountry").removeClass("error_msg1");
+        }, 3000);
+          str_return = "false";
+        return false;
+    }
+     else if (state == "" || state == null){ 
+        $("#clientState").focus();
+           $("#clientState").addClass("error_msg1");
+        $("#clientState").attr('placeholder', 'select State');
+        setTimeout(function () {
+            $("#clientState").removeClass("error_msg1");
+        }, 3000);
+        str_return = "false";
+        return false;
+     }else if (city == "" || city == null)    {
+        $("#clientState").removeClass('error_msg1');
+        $("#clientCity").addClass("error_msg1");
+        $("#clientCity").attr({'placeholder': 'Please Select City'});
+        $("#clientCity").change(function () {
+            $("#clientCity").removeClass('error_msg1')
+        });
+        $("#clientCountry").focus();
+        return false; 
+    }  
+        //else if ($("#selectSoln").val()=="0" ||$("#selectSoln").val()==" "||$("#selectSoln").val()=="null"||$("#selectSoln").val()=="Select Solution *" ){
+        else if (solution == "" || solution == null || solution=='Select Solution *'){     
+        $("#selectSoln").focus();
+        $("#selectSoln").addClass("error_msg1");
+        $("#selectSoln").attr('placeholder', 'select Solution');
+        setTimeout(function () {
+            $("#selectSoln").removeClass("error_msg1");
+        }, 3000);
+        str_return = "false";
+        return false;
+     } 
+        
+        
+        else if($(".txtCaptacha").val()=='')
+        {
+             $("#ctcMobileNo").removeClass('error_msg1');
+        $(".txtCaptacha").addClass('error_msg1');
+        $('.txtCaptacha').attr({'placeholder': 'Type Letter'});
+        $(".txtCaptacha").keypress(function (){$(".txtCaptacha").removeClass('error_msg1')});
+        $(".txtCaptacha").focus();
+        $(".txtCaptacha").val('');
+            return false
+        }
+        else if(ValidCap==false)
+        {
+                 $("#ctcMobileNo").removeClass('error_msg1');
+        $(".txtCaptacha").addClass('error_msg1');
+        $('.txtCaptacha').attr({'placeholder': 'Letter Not Mached'});
+        $(".txtCaptacha").keypress(function (){$(".txtCaptacha").removeClass('error_msg1')});
+        $(".txtCaptacha").focus();
+        $(".txtCaptacha").val('');
+            return false;
+        }
+          else{
+
+ // dataString = 'name='+ name + '&orgName=' + orgName +'&email=' + email + '&address=' + address+ '&phone=' + phone+ '&city=' + city+ '&state=' + state+ '&country=' + country + '&product=' + product+ '&solution=' + solution+ '&message=' + message;
+        dataString = 'name='+ name + '&orgName=' + orgName +'&email=' + email + '&address=' + address+ '&phone=' + phone+ '&city=' + city+ '&state=' + state+ '&country=' + country + '&solution=' + solution+ '&message=' + message;
+        $.ajax({
+            type: "POST",
+            url: path+"contactSubmit.php",
+            data: dataString,
+            async: false,
+            success: function(result) {
+               location.href=path+"thankyou.php";  
+//                alert('Message has been Send');
+//                $("#ctcName").val('');
+//                $("#ctcOrgName").val('');
+//                $("#ctcEmailId").val('');
+//                $("#ctcMobileNo").val('');
+//                $("#ctcAddress").val('');
+//                $(".city").val('');
+//                $("#selectProdt").val('');
+//                $("#selectSoln").val('');
+//                $("#ctcMsg").val('');
+//                $(".txtCaptacha").val('');
+            },error: function (result,err,status) {
+                alert(err+'-----'+status);
+                alert('Please Submit Form again');
+            }
+        });}
+    }
+function Submit_contactFormOuter(pagename=null)
+{ 
+    
+    var ValidCap=ValidCaptchaContact();
+    var name=trim($("#ctcName").val());
+    var orgName=$("#ctcOrgName").val();
+    var email=$("#ctcEmailId").val();
+    var phone=$("#ctcMobileNo").val();
+    var address=$("#ctcAddress").val();
+    var city=$("#clientCity").val();
+    var state=$("#clientState").val();
+    var country=$("#clientCountry").val();
+    var product=$("#selectProdtOuter").val();//$("#product").val();
+    var solution=$("#selectSolnOuter").val();//$("#product").val();
+    var message=$("#ctcMsg").val();
+    var zc_gad=$("#zc_gad").val();
+    if(zc_gad=="undefined"){
+        zc_gad="";
+    }
+
+    var dataString;
+    
+    if(name=="")
+    {   
+        $("#ctcName").addClass('error_msg1');
+        $('#ctcName').attr({'placeholder': 'Please enter your Name'});
+        $("#ctcName").keypress(function (){$("#ctcName").removeClass('error_msg1')});
+        $("#ctcName").focus();
+        return false;
+    }
+    else if(!IsName($.trim($("#ctcName").val()))){
+           
+        $('#ctcName').val("");
+        document.getElementById("ctcName").placeholder = "Please Enter Correct Details*";
+        document.getElementById("ctcName").classList.add('error_msg1');
+        $("#ctcName").focus();
+        return false;
+    } 
+    
+   else if(orgName=="")
+    {
+        $("#ctcOrgName").addClass('error_msg1');
+        $('#ctcOrgName').attr({'placeholder': 'Please enter your Organization Name'});
+        $("#ctcOrgName").keypress(function (){$("#ctcOrgName").removeClass('error_msg1')});
+        $("#ctcOrgName").focus();
+        return false;
+    }
+  
+    else if(email==""|| email==null)
+    {
+        $("#ctcName").removeClass('error_msg1');
+        $("#ctcEmailId").addClass('error_msg1');
+        $('#ctcEmailId').attr({'placeholder': 'Please enter your Email Id'});
+        $("#ctcEmailId").keypress(function (){$("#ctcEmailId").removeClass('error_msg1')});
+        $("#ctcEmailId").focus();
+        return false;
+    }
+    else if(isEMail(email))
+    {
+        $("#ctcName").removeClass('error_msg1');
+        $("#ctcEmailId").addClass('error_msg1');
+        $('#ctcEmailId').attr({'placeholder': 'Please enter valid Email Id'});
+        $("#ctcEmailId").keypress(function (){$("#ctcEmailId").removeClass('error_msg1')});
+        $("#ctcEmailId").focus();
+        $("#ctcEmailId").val('');
+        return false;
+    }else if(phone=="" || phone==null)
+        {
+        $("#ctcEmailId").removeClass('error_msg1');
+        $("#ctcMobileNo").addClass('error_msg1');
+        $('#ctcMobileNo').attr({'placeholder': 'Please enter your Phone No.'});
+        $("#ctcMobileNo").keypress(function (){$("#ctcMobileNo").removeClass('error_msg1')});
+        $("#ctcMobileNo").focus();
+        return false;
+        }
+        else  if(!IsValid(phone))
+        {
+        $("#ctcEmailId").removeClass('error_msg1');
+        $("#ctcMobileNo").addClass('error_msg1');
+        $('#ctcMobileNo').attr({'placeholder': 'Please enter your Phone No.'});
+        $("#ctcMobileNo").keypress(function (){$("#ctcMobileNo").removeClass('error_msg1')});
+        $("#ctcMobileNo").focus();
+        $("#ctcMobileNo").val('');
+        return false;
+        }
+        else  if(phone.length<=9)
+        {
+        $("#ctcEmailId").removeClass('error_msg1');
+        $("#ctcMobileNo").addClass('error_msg1');
+        $('#ctcMobileNo').attr({'placeholder': 'Please enter your Phone No.'});
+        $("#ctcMobileNo").keypress(function (){$("#ctcMobileNo").removeClass('error_msg1')});
+        $("#ctcMobileNo").focus();
+        $("#ctcMobileNo").val('');
+        return false;
+        }
+//         else if(address=="")
+//    {
+//        $("#ctcAddress").addClass('error_msg1');
+//        $('#ctcAddress').attr({'placeholder': 'Please enter your Address'});
+//        $("#ctcAddress").keypress(function (){$("#ctcAddress").removeClass('error_msg1')});
+//        $("#ctcAddress").focus();
+//        return false;
+//    }
+  else if( $("#clientCountry").val()=="0" || $("#clientCountry").val()=="" || $("#clientCountry").val()==null){
+     // else if (clientCountry == "" || clientCountry == null)
+        $("#clientCountry").focus();
+        $("#clientCountry").addClass("error_msg1");
+        $("#clientCountry").attr('placeholder', 'select Country');
+        setTimeout(function () {
+            $("#clientCountry").removeClass("error_msg1");
+        }, 3000);
+          str_return = "false";
+        return false;
+    }
+//  Added by priyanka 9 jan 2018(state, city and message validation)
+     else if (state == "" || state == null){ 
+        $("#clientState").focus();
+           $("#clientState").addClass("error_msg1");
+        $("#clientState").attr('placeholder', 'select State');
+        setTimeout(function () {
+            $("#clientState").removeClass("error_msg1");
+        }, 3000);
+        str_return = "false";
+        return false;
+     }else if (city == "" || city == null)    {
+        $("#clientState").removeClass('error_msg1');
+        $("#clientCity").addClass("error_msg1");
+        $("#clientCity").attr({'placeholder': 'Please Select City'});
+        $("#clientCity").change(function () {
+            $("#clientCity").removeClass('error_msg1')
+        });
+        $("#clientCountry").focus();
+        return false; 
+    }  
+//    else if ($("#selectProdtOuter").val()=="0"){
+////        alert("Select Product ");
+//        $("#selectProdtOuter").focus();
+//               $("#selectProdtOuter").addClass("error_msg1");
+//        $("#selectProdtOuter").attr('placeholder', 'select Product');
+//        setTimeout(function () {
+//            $("#selectProdtOuter").removeClass("error_msg1");
+//        }, 3000);
+//        str_return = "false";
+//        return false;
+//     }
+     else if ($("#selectSolnOuter").val()=="0" ||$("#selectSolnOuter").val()==" "||$("#selectSolnOuter").val()=="null" ){
+//        alert("Select Solution");
+        $("#selectSolnOuter").focus();
+                $("#selectSolnOuter").addClass("error_msg1");
+        $("#selectSolnOuter").attr('placeholder', 'select Solution');
+        setTimeout(function () {
+            $("#selectSolnOuter").removeClass("error_msg1");
+        }, 3000);
+        str_return = "false";
+        return false;
+     }
+//     Added by priyanka 9 jan 2018
+//     else  if(message=="")
+//    {
+//        $("#ctcMsg").addClass('error_msg1');
+//        $('#ctcMsg').attr({'placeholder': 'Please enter your Message'});
+//        $("#ctcMsg").keypress(function (){$("#ctcMsg").removeClass('error_msg1')});
+//        $("#ctcMsg").focus();
+//        return false;
+//    }
+        else if($(".txtCaptacha").val()=='')
+        {
+             $("#ctcMobileNo").removeClass('error_msg1');
+        $(".txtCaptacha").addClass('error_msg1');
+        $('.txtCaptacha').attr({'placeholder': 'Type Letter'});
+        $(".txtCaptacha").keypress(function (){$(".txtCaptacha").removeClass('error_msg1')});
+        $(".txtCaptacha").focus();
+        $(".txtCaptacha").val('');
+            return false
+        }
+        else if(ValidCap==false)
+        {
+                 $("#ctcMobileNo").removeClass('error_msg1');
+        $(".txtCaptacha").addClass('error_msg1');
+        $('.txtCaptacha').attr({'placeholder': 'Letter Not Mached'});
+        $(".txtCaptacha").keypress(function (){$(".txtCaptacha").removeClass('error_msg1')});
+        $(".txtCaptacha").focus();
+        $(".txtCaptacha").val('');
+            return false;
+        }
+        // Added by Ayush Bansal on 11-01-2022 for "Consent From Checkbox"
+        else if($('#terms_and_conditions').is(':not(:checked)'))
+        {
+            $("#terms_and_conditions").addClass("error_msg1");
+            $("#terms_and_conditions").focus();
+            
+            return false;
+        }
+          else{
+   
+//        dataString = 'name='+ name + '&orgName=' + orgName +'&email=' + email + '&address=' + address+ '&phone=' + phone+ '&city=' + city+ '&state=' + state+ '&country=' + country + '&product=' + product+ '&solution=' + solution+ '&message=' + message;
+        dataString = 'name='+ name + '&orgName=' + orgName +'&email=' + email + '&address=' + address+ '&phone=' + phone+ '&city=' + city+ '&state=' + state+ '&country=' + country + '&solution=' + solution+ '&message=' + message+ '&zc_gad=' + zc_gad+ '&pagename=' + pagename;
+        
+        $.ajax({
+            type: "POST",
+              url: path+"contactSubmit.php",
+            data: dataString,
+            async: false,
+            success: function(result) {
+                //alert(result);
+              //   gettouch_fb_Contact();
+               // alert('Message has been Send');
+                 location.href=path+"thankyou.php";                         
+//                $("#ctcName").val('');
+//                $("#ctcOrgName").val('');
+//                $("#ctcEmailId").val('');
+//                $("#ctcMobileNo").val('');
+//                $("#ctcAddress").val('');
+//                $(".city").val('');
+//                $("#selectProdt").val('');
+//                $("#selectSoln").val('');
+//                $("#ctcMsg").val('');
+//                $(".txtCaptacha").val('');
+            },error: function (result) {// alert('error');
+                alert('Please Submit Form again');
+            }
+        });}
+    }
+    
+    
+    
+    function Submit_contactHeaderForm()
+{
+    var ValidCap=ValidCaptchaHeader();
+    var name=trim($("#headName").val());
+    var orgName=$("#headOrgName").val();
+    var email=$("#headEmailId").val();
+    var phone=$("#headMobileNo").val();
+    var address=$("#headAddress").val();
+    var city=$("#selectCityInner").val();
+    var state=$("#selectStateValueInner").val(); 
+    var country=$("#selectCountryValueInner").val();
+    var product=$("#selectProdtinner").val();//$("#product").val();
+    var solution=$("#selectSolnInner").val(); //alert(solution);die;
+    var message=$("#headMsg").val();
+    var dataString;
+    
+    if(name=="")
+    {
+        $("#headName").addClass('error_msg1');
+        $('#headName').attr({'placeholder': 'Please enter your Name'});
+        $("#headName").keypress(function (){$("#headName").removeClass('error_msg1')});
+        $("#headName").focus();
+        return false;
+    }
+     else if(orgName=="")
+    { 
+        $("#headOrgName").addClass('error_msg1');
+        $('#headOrgName').attr({'placeholder': 'Please enter your Organization Name'});
+        $("#headOrgName").keypress(function (){$("#headOrgName").removeClass('error_msg1')});
+        $("#headOrgName").focus();
+        return false;
+    }
+    else if(email==""|| email==null)
+    {
+        $("#headName").removeClass('error_msg1');
+        $("#headEmailId").addClass('error_msg1');
+        $('#headEmailId').attr({'placeholder': 'Please enter your Email Id'});
+        $("#headEmailId").keypress(function (){$("#headEmailId").removeClass('error_msg1')});
+        $("#headEmailId").focus();
+        return false;
+    }
+    else if(isEMail(email))
+    {
+        $("#headName").removeClass('error_msg1');
+        $("#headEmailId").addClass('error_msg1');
+        $('#headEmailId').attr({'placeholder': 'Please enter valid Email Id'});
+        $("#headEmailId").keypress(function (){$("#headEmailId").removeClass('error_msg1')});
+        $("#headEmailId").focus();
+        $("#headEmailId").val('');
+        return false;
+    }
+    
+    else if(phone=="" || phone==null)
+        {
+        $("#headEmailId").removeClass('error_msg1');
+        $("#headMobileNo").addClass('error_msg1');
+        $('#headMobileNo').attr({'placeholder': 'Please enter your Phone No.'});
+        $("#headMobileNo").keypress(function (){$("#headMobileNo").removeClass('error_msg1')});
+        $("#headMobileNo").focus();
+        return false;
+        }
+        else  if(!IsValid(phone))
+        {
+        $("#headEmailId").removeClass('error_msg1');
+        $("#headMobileNo").addClass('error_msg1');
+        $('#headMobileNo').attr({'placeholder': 'Please enter your Phone No.'});
+        $("#headMobileNo").keypress(function (){$("#headMobileNo").removeClass('error_msg1')});
+        $("#headMobileNo").focus();
+        $("#headMobileNo").val('');
+        return false;
+        }
+        else  if(phone.length<=9)
+        {
+        $("#headEmailId").removeClass('error_msg1');
+        $("#headMobileNo").addClass('error_msg1');
+        $('#headMobileNo').attr({'placeholder': 'Please enter your Phone No.'});
+        $("#headMobileNo").keypress(function (){$("#headMobileNo").removeClass('error_msg1')});
+        $("#headMobileNo").focus();
+        $("#headMobileNo").val('');
+        return false;
+        }
+//        else if( $("#clientCountry").val()=="0" || $("#clientCountry").val()=="" || $("#clientCountry").val()==null){
+//     // else if (clientCountry == "" || clientCountry == null)
+//        $("#clientCountry").focus();
+//        $("#clientCountry").addClass("error_msg1");
+//        $("#clientCountry").attr('placeholder', 'select Country');
+//        setTimeout(function () {
+//            $("#clientCountry").removeClass("error_msg1");
+//        }, 3000);
+//          str_return = "false";
+//        return false;
+//    }
+
+//  Added by priyanka 7feb 2018(state, city and solution validation)
+     else if (state == '0'){  //alert('state');die;
+        $("#selectStateValueInner").focus();
+        $("#selectStateValueInner").addClass("error_msg1");
+        $("#selectStateValueInner").attr('placeholder', 'select State');
+        $("#selectStateValueInner").change(function () {
+            $("#selectStateValueInner").removeClass('error_msg1')
+        });
+        $("#selectStateValueInner").focus();
+        return false;
+     }
+     else if (city == "" || city == null || city=="select")    {//alert('fgf');
+        $("#selectCityInner").removeClass('error_msg1');
+        $("#selectCityInner").addClass("error_msg1");
+        $("#selectCityInner").attr({'placeholder': 'Please select city'});
+        $("#selectCityInner").change(function () {
+            $("#selectCityInner").removeClass('error_msg1')
+        });
+        $("#selectCityInner").focus();
+        return false; 
+    }  
+        else if ($("#selectSolnInner").val()=="Select Solution*" ||$("#selectSolnInner").val()==" "||$("#selectSolnInner").val()=="null" ){
+        $("#selectSolnInner").focus();
+        $("#selectSolnInner").addClass("error_msg1");
+        $("#selectSolnInner").attr('placeholder', 'select Solution');
+        setTimeout(function () {
+         $("#selectSolnInner").removeClass("error_msg1");
+        }, 3000);
+        str_return = "false";
+        return false;
+     }   
+        
+        else if($("#headInputCode").val()=='')
+        {
+        $("#headMobileNo").removeClass('error_msg1');
+        $("#headInputCode").addClass('error_msg1');
+        $('#headInputCode').attr({'placeholder': 'Type Letter'});
+        $("#headInputCode").keypress(function (){$("#headInputCode").removeClass('error_msg1')});
+        $("#headInputCode").focus();
+        $("#headInputCode").val('');
+            return false
+        }
+        else if(ValidCap==false)
+        {
+                 $("#headMobileNo").removeClass('error_msg1');
+        $("#headInputCode").addClass('error_msg1');
+        $('#headInputCode').attr({'placeholder': 'Letter Not Mached'});
+        $("#headInputCode").keypress(function (){$("#headInputCode").removeClass('error_msg1')});
+        $("#headInputCode").focus();
+        $("#headInputCode").val('');
+            return false;
+        }
+          else{ 
+        dataString = 'name='+ name + '&orgName=' + orgName +'&email=' + email + '&address=' + address+ '&phone=' + phone+ '&city=' + city+ '&state=' +state+ '&country=' + country + '&solution=' + solution+ '&message=' + message;
+        //dataString = 'name='+ name + '&orgName=' + orgName +'&email=' + email + '&address=' + address+ '&phone=' + phone+ '&city=' + city+ '&state=' + state+ '&country=' + country + '&product=' + product+ '&solution=' + solution+ '&message=' + message;
+    
+        $.ajax({
+            type: "POST",
+              url: path+"contactSubmit.php",
+            data: dataString,
+            async: false,
+            success: function(result) { 
+                   location.href=path+"thankyou.php"; 
+//                alert('Message has been Send');
+//                $("#headName").val('');
+//                $("#headOrgName").val('');
+//                $("#headEmailId").val('');
+//                $("#headMobileNo").val('');
+//                $("#headAddress").val('');
+//                $(".city").val('');
+//                $("#selectProdt").val('');
+//                $("#selectSoln").val('');
+//                $("#headMsg").val('');
+//                $("#headInputCode").val('');
+                gettouch_hide();
+            },error: function (result,err,status) {
+                 alert(err+'-----'+status);
+                alert('Please Submit Form again');
+            }
+        });}
+    }
+
+  function ValidCaptchaContact(){
+                     var string1 = removeSpaces($('#mainCaptchaCode').val());
+                     var string2 = $("#txtInputcode").val();
+      if (string1 == string2){
+                        return true;
+                      }
+                      else{        
+                        return false;
+                      }
+                  }
+  function ValidCaptchaHeader(){
+   //  alert($('#headMainCaptcha').val());
+     //alert($("#headInputCode").val());
+     //return false;
+                     var string1 = removeSpacesHeader($('#headMainCaptcha').val());
+                     var string2 = removeSpacesHeader($("#headInputCode").val());
+                      
+
+      if (string1 == string2){
+                        return true;
+                      }
+                      else{        
+                        return false;
+                      }
+                  }
+  function CaptchaContact() {
+    $("#txtInputcode").val('');
+//    var alpha = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', '1', '2', '3', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', '5', '8', '3', 'U', 'V', 'W', 'X', 'Y', 'Z', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', '4', '5', '6', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', '1', '8', 'u', 'v', 'w', 'x', 'y', 'z');
+    var alpha = new Array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+    var i;
+    for (i = 0; i < 6; i++) {
+        var a = alpha[Math.floor(Math.random() * alpha.length)];
+        var b = alpha[Math.floor(Math.random() * alpha.length)];
+        var c = alpha[Math.floor(Math.random() * alpha.length)];
+        var d = alpha[Math.floor(Math.random() * alpha.length)];
+        var e = alpha[Math.floor(Math.random() * alpha.length)];
+        var f = alpha[Math.floor(Math.random() * alpha.length)];
+        var g = alpha[Math.floor(Math.random() * alpha.length)];
+    }
+    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' ' + f + ' ' + g;
+   // alert(code);
+    $("#mainCaptchaCode").val(code);
+}
+
+function CaptchaHeader() {
+    $("#headInputCode").val('');
+    var alpha = new Array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+    //var alpha = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', '1', '2', '3', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', '5', '8', '3', 'U', 'V', 'W', 'X', 'Y', 'Z', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', '4', '5', '6', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', '1', '8', 'u', 'v', 'w', 'x', 'y', 'z');
+    var i;
+    for (i = 0; i < 6; i++) {
+        var a = alpha[Math.floor(Math.random() * alpha.length)];
+        var b = alpha[Math.floor(Math.random() * alpha.length)];
+        var c = alpha[Math.floor(Math.random() * alpha.length)];
+        var d = alpha[Math.floor(Math.random() * alpha.length)];
+        var e = alpha[Math.floor(Math.random() * alpha.length)];
+        var f = alpha[Math.floor(Math.random() * alpha.length)];
+        var g = alpha[Math.floor(Math.random() * alpha.length)];
+    }
+    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' ' + f + ' ' + g;
+    
+    $("#headMainCaptcha").val(code);
+}
+
+function removeSpaces(string) {
+    return string.split(' ').join('');
+}
+function removeSpacesHeader(string1) {
+    
+    return string1.split(' ').join('');
+}
+// client Pay 
+function clientPaySubmit()
+{
+    var ValidCap       = ValidCaptchaContact();
+    var clientName     = trim($("#clientName").val());
+    var clientOrgName  = trim($("#clientOrgName").val());
+    var clientEmailId  = $("#clientEmailId").val();
+    var clientMobileNo = $("#clientMobileNo").val();
+    var clientAddress  = $("#clientAddress").val();
+    var clientCountry  = $("#clientCountry").val();
+    var clientState    = $("#clientState").val();
+    var clientCity     = $("#clientCity").val();
+    var amount         = $("#amount").val() ;
+    var phoneNo        = $("#phoneNo").val() ;
+    var zipCode        = $("#zipCode").val() ;
+    var products       =  '';
+    var salePerName    =  trim($("#salePerName").val());
+    var radioValue = $("input[name='payementMode']:checked").val();
+    radioValue = 'payU';
+    $("#payMode").val(radioValue) ;
+if(radioValue == undefined){
+      alert("Select the Payment Mode.")
+        return false;
+}else  if (clientName == "")
+    {
+       $("#clientName").addClass('error_msg1');
+       $('#clientName').attr({'placeholder': 'Please enter your Name'}); 
+       $("#clientName").keypress(function () {
+            $("#clientName").removeClass('error_msg1')
+        });
+        $("#clientName").focus();
+        return false;
+    }else if (clientOrgName == "" || clientOrgName == null)
+    {
+        $("#clientOrgName").removeClass('error_msg1');
+        $("#clientOrgName").addClass('error_msg1');
+        $('#clientOrgName').attr({'placeholder': 'Please enter your Organization Name'});
+        $("#clientOrgName").keypress(function () {
+            $("#clientOrgName").removeClass('error_msg1')
+        });
+        $("#clientOrgName").focus();
+        return false;
+    }else if (clientEmailId == "" || clientEmailId == null)
+    {
+        $("#clientEmailId").removeClass('error_msg1');
+        $("#clientEmailId").addClass('error_msg1');
+        $('#clientEmailId').attr({'placeholder': 'Please enter your Email Id'});
+        $("#clientEmailId").keypress(function () {
+            $("#clientEmailId").removeClass('error_msg1')
+        });
+        $("#clientEmailId").focus();
+        return false;
+    }
+    else if (isEMail(clientEmailId))
+    {
+        $("#clientEmailId").removeClass('error_msg1');
+        $("#clientEmailId").addClass('error_msg1');
+        $('#clientEmailId').attr({'placeholder': 'Please enter valid Email Id'});
+        $("#clientEmailId").keypress(function () {
+            $("#clientEmailId").removeClass('error_msg1')
+        });
+        $("#clientEmailId").focus();
+        $("#clientEmailId").val('');
+        return false;
+    }
+
+    else if ( clientMobileNo == "" || clientMobileNo == null )
+    {
+        $("#clientMobileNo").removeClass('error_msg1');
+        $("#clientMobileNo").addClass('error_msg1');
+        $('#clientMobileNo').attr({'placeholder': 'Please enter your Mobile No.'});
+        $("#clientMobileNo").keypress(function () {
+            $("#clientMobileNo").removeClass('error_msg1')
+        });
+        $("#clientMobileNo").focus();
+        return false;
+    }else if (trim(clientMobileNo).length< 10 )
+    {
+        $("#clientMobileNo").removeClass('error_msg1');
+        $("#clientMobileNo").addClass('error_msg1');
+        $('#clientMobileNo').attr({'placeholder': 'Please enter valid Mobile No.'});
+        $("#clientMobileNo").keypress(function () {
+            $("#clientMobileNo").removeClass('error_msg1')
+        });
+        $("#clientMobileNo").focus();
+        $("#clientMobileNo").val('');
+        return false;
+    }
+    else if (!IsValid(clientMobileNo))
+    {
+        $("#clientMobileNo").removeClass('error_msg1');
+        $("#clientMobileNo").addClass('error_msg1');
+        $('#clientMobileNo').attr({'placeholder': 'Please enter valid Mobile No.'});
+        $("#clientMobileNo").keypress(function () {
+            $("#clientMobileNo").removeClass('error_msg1')
+        });
+        $("#clientMobileNo").focus();
+        $("#clientMobileNo").val('');
+        return false;
+    }else if (clientAddress == "" || clientAddress == null)
+    {
+        $("#clientAddress").removeClass('error_msg1');
+        $("#clientAddress").addClass("error_msg1");
+        $("#clientAddress").attr({'placeholder': 'Please enter your Address'});
+        $("#clientAddress").keypress(function () {
+            $("#clientAddress").removeClass('error_msg1')
+        });
+        $("#clientAddress").focus();
+        return false;
+    }else if (clientCountry == "" || clientCountry == null)
+    {
+        $("#clientAddress").removeClass('error_msg1');
+        $("#clientCountry").addClass("error_msg1");
+        $("#clientCountry").change(function () {
+            $("#clientCountry").removeClass('error_msg1')
+        });
+        $("#clientCountry").val("");
+        $("#clientCountry").focus();
+        return false;
+    }else if (clientState == "" || clientState == null)
+    {
+        $("#clientCountry").removeClass('error_msg1');
+        $("#clientState").addClass("error_msg1");
+        $("#clientState").change(function () {
+            $("#clientState").removeClass('error_msg1')
+        });
+        $("#clientState").val("");
+        $("#clientState").focus();
+        return false;
+    }else if (clientCity == "" || clientCity == null)
+    {
+        $("#clientState").removeClass('error_msg1');
+        $("#clientCity").addClass("error_msg1");
+        $("#clientCity").attr({'placeholder': 'Please enter your Address'});
+        $("#clientCity").change(function () {
+            $("#clientCity").removeClass('error_msg1')
+        });
+        $("#clientCountry").focus();
+        return false; 
+    }else if ( zipCode == "" || zipCode == null)
+    {
+        $("#zipCode").removeClass('error_msg1');
+        $("#zipCode").addClass('error_msg1');
+        $('#zipCode').attr({'placeholder': 'Please enter your Pin code'});
+        $("#zipCode").keypress(function () {
+            $("#zipCode").removeClass('error_msg1')
+        });
+        $("#zipCode").focus();
+        return false;
+    }else if( $('input[type=checkbox]:checked').length == 0)
+    {
+        $("#productErr").text("Please choose at least One Product!!!");   
+        return false;
+    }else if( $('#checkbox-1-15').is(":checked") &&  trim($("#order").val())=='')
+    {
+        $("#order").addClass('error_msg1');
+        $('#order').attr({'placeholder': 'Please enter Product Name'});
+        $("#order").keypress(function () {
+            $("#order").removeClass('error_msg1')
+        });
+        $("#order").focus();
+        $("#order").val('');
+        return false;
+    }else if ( amount == '')
+    {
+        $("#amount").removeClass('error_msg1');
+        $("#amount").addClass('error_msg1');
+        $('#amount').attr({'placeholder': 'Enter Amount'});
+        $("#amount").keypress(function () {
+            $("#amount").removeClass('error_msg1')
+        });
+        $("#amount").focus();
+        $("#amount").val('');
+        return false
+    }else if ( salePerName == "" || salePerName == null) 
+    {
+        $("#salePerName").removeClass('error_msg1');
+        $("#salePerName").addClass('error_msg1');
+        $('#salePerName').attr({'placeholder': "Please enter Sale's Person Name"});
+        $("#salePerName").keypress(function () {
+            $("#salePerName").removeClass('error_msg1')
+        });
+        $("#salePerName").focus();
+        return false;
+    }else if($("#txtInputcode").val()=='')
+        {
+        $("#salePerName").removeClass('error_msg1');
+        $("#txtInputcode").addClass('error_msg1');
+        $('#txtInputcode').attr({'placeholder': 'Type Captcha'});
+        $("#txtInputcode").keypress(function (){$("#txtInputcode").removeClass('error_msg1')});
+        $("#txtInputcode").focus();
+        $("#txtInputcode").val('');
+            return false
+        }
+    else if ( ValidCap == false )
+    {
+        $("#clientMobileNo").removeClass('error_msg1');
+        $("#txtInputcode").addClass('error_msg1');
+        $('#txtInputcode').attr({'placeholder': 'Captcha Not Matched'});
+        $("#txtInputcode").keypress(function () {
+            $("#txtInputcode").removeClass('error_msg1')
+        });
+        $("#txtInputcode").focus();
+        $("#txtInputcode").val('');
+        return false;
+    }
+    else {
+            
+            $("#dialogInner").show();
+            $("#dialogOuter").show();
+            // to show info on pop up
+        var checkedBox = [];
+          $('input[type=checkbox]:checked').each(function(i){
+              if($(this).val()=="Other"){
+                  checkedBox[i] = $("#order").val();
+              }else{
+                  checkedBox[i] = $(this).val();
+              }
+          
+        });
+        var checkedBoxVal = checkedBox.join(); 
+            $("#allProNames").val(checkedBoxVal); // all the product selected by client
+            
+            $("#clientNamePop").text(clientName);
+            $("#clientOrgaPop").text(clientOrgName);
+            $("#clientEmailPop").text(clientEmailId);
+            $("#clientMobPop").text(clientMobileNo);
+            $("#clientAddPop").text(clientAddress);
+            clientCountry  = clientCountry.split('_');
+            $("#clientCountryPop").text(clientCountry[0]);
+            $("#clientStatePop").text(clientState);
+            $("#clientCityPop").text(clientCity);
+            $("#clientPhonePop").text(phoneNo);
+            $("#clientPinCodePop").text(zipCode);
+            $("#clientProductPop").text(products);
+            $("#clientAmountPop").text(amount);
+            $("#clientProductPop").text(checkedBoxVal);
+            $("#salePersonPop").text(salePerName);
+        }
+}
+
+$("#clientPopCancel").click(function(){
+            $("#dialogInner").fadeOut(1050);
+            $("#dialogOuter").fadeOut(1000);
+});
+
+$("#clientPopOk").click(function(){
+            $("#dialogInner").fadeOut(1050);
+            $("#dialogOuter").fadeOut(1000);
+            $("#submitCheck").val('1');
+            $("#clientInfoForm").submit();
+           
+});
+ function checkSubmit(){
+     var check = $("#submitCheck").val();
+     if(check=='1'){
+         return true ;
+     }else{
+         return false ;
+     }
+ }
+ 
+function trim(val){
+    return val.replace(/^\s+|\s+$/g,'');
+}
+
+function isNumberDecimalKey(evt) {
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode == 46)
+    {
+        if (($("#amount").val()).length != 2) {
+            return false ;
+        }
+        
+    } else {
+        if (charCode > 31 && (charCode != 46 && ( charCode != 37 && charCode != 39 && charCode < 48 || charCode > 57)))
+        {
+            return false;
+        } else if (($("#amount").val()).length == 10 && (charCode != 37 && charCode != 39 && charCode != 46 && charCode != 8 && charCode != 9)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+}
+
+function clientCountryChange(countrytText){
+   
+    $("#loaderOuter").css("display", "block");
+    $("#loader").css("display", "block");
+    var url = "mode=getClientState&countrytText="+countrytText ;
+    $.ajax({
+        type: 'post',
+           url: path+"contactSubmit.php",
+        data: url,
+        error: function (jqXHR, textStatus, errorThrown) {
+
+        },
+        success: function (data) {
+            $('#clientState').children().remove();
+            $("#clientState").append(data);
+            $("#loaderOuter").css("display", "none");
+            $("#loader").css("display", "none");
+        }
+
+    });
+}
+function clientCityChange(stateId){
+    $("#loaderOuter").css("display", "block");
+    $("#loader").css("display", "block");
+    var stateText  = $("#clientState option:selected").text();
+    var url = "mode=getClientCity&stateId="+stateId+"&stateText="+stateText ;
+    $.ajax({
+        type: 'post',
+        url: path+"contactSubmit.php",
+        data: url,
+        error: function (jqXHR, textStatus, errorThrown) {
+
+        },
+        success: function (data) {
+            $('#clientCity').children().remove();
+            $("#clientCity").append(data);
+            $("#loaderOuter").css("display", "none");
+            $("#loader").css("display", "none");
+        }
+
+    });
+}
+/*add by satyam*/
+ function ScrollTo(name) {
+  ScrollToResolver(document.getElementById(name));
+}
+
+function ScrollToResolver(elem) {
+  var jump = parseInt(elem.getBoundingClientRect().top * .2);
+    //alert(jump);
+     if(jump >15){
+      document.body.scrollTop += jump;
+      document.documentElement.scrollTop += jump;
+      }
+
+ 
+
+  if (!elem.lastjump || elem.lastjump > Math.abs(jump)) {
+    elem.lastjump = Math.abs(jump);
+    setTimeout(function() { ScrollToResolver(elem);}, "100");
+  } else {
+    elem.lastjump = null;
+  }
+}
+
+/*End  by satyam*/

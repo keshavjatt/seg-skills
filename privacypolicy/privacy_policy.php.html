@@ -1,0 +1,1607 @@
+
+<!DOCTYPE HTML>
+<html   lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="msvalidate.01" content="E3B00D3ABE2353FE945BC05A8B3D6AB6" />
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<!--<script src="http://www.SEGwebs.com/js/jquery.min.js" charset="utf-8"></script>-->   
+<script src="../js/jquery.min.js"></script>
+<!--<script>
+    $(document).ready(function() {
+        CaptchaHeader();
+        var headerTop = $('#header').offset().top;
+        var headerBottom = headerTop + 120; // Sub-menu should appear after this distance from top.
+        $(window).scroll(function () {
+            var scrollTop = $(window).scrollTop(); // Current vertical scroll position from the top
+            if (scrollTop > headerBottom) { // Check to see if we have scrolled more than headerBottom
+                if (($("#subMenu").is(":visible") === false)) {
+                    $('#subMenu').slideDown('medium');
+                    //$("#subMenu").css("display" , "block");
+                }
+            } else {
+                if ($("#subMenu").is(":visible")) {
+                    $('#subMenu').slideUp('medium');
+                }
+            }
+        });
+    });
+        
+</script>-->
+<script>
+    function countryChange(value)
+    {
+    //alert(value);return false
+    //var uniqueCountry=value;
+        if(value=='India')
+        {
+//            $(".selectState").each(function () {
+//    this.style.setProperty('display','block', 'important' );
+//                    });
+//            $(".city").each(function () {
+//    this.style.setProperty('display','block', 'important' );
+//    });
+    
+           $(".selectState").removeAttr('disabled') ;
+            $(".city").removeAttr('disabled') ;
+        }
+    
+        else
+        {
+            //alert('in');
+//            $(".selectState").each(function () {
+//    this.style.setProperty(' disabled',' disabled', 'important' );
+//            });
+//            $(".city").each(function () {
+//    this.style.setProperty(' disabled',' disabled', 'important' );
+//            });
+            $(".selectState").attr('disabled','disabled') ;
+            $(".city").attr('disabled','disabled') ;
+        
+        }
+
+    }
+                                    
+    function stateChange()
+       {
+           
+          var state= $("#selectStateValueInner").val();
+          var dataString = 'state='+ state;
+         // alert(dataString);
+          $.ajax({
+            type: "POST",
+            url: "stateAjax.php",
+            data: dataString,
+            success: function(result) {
+                 //alert(result);
+                     $(".city").html(result);
+            },error: function (result) {
+                       // alert(result);
+                    }
+        });
+        
+    }
+
+
+
+</script>
+<script>
+    
+function gettouch_show(htm){
+        $("#gettouchform").css("display" , "block");
+    $(".contact_form").removeClass("pop_hide");
+    $(".contact_form").addClass("pop_show");
+        $("#selectSolnInner").val(htm);
+        $("#selectStateValue").val('0');
+    }
+function gettouch_hide(){
+    $(".contact_form").addClass("pop_hide");
+    setTimeout(function(){  
+        $("#gettouchform").css("display" , "none");
+    }, 500);
+        
+        
+//        $('#getInTouchForm').each(function(){ 
+//        this.reset();
+//});
+//        $("#getInTouch").each(function () {
+//    this.style.setProperty( 'color', '#e55739', 'important' );
+//});
+    
+    }
+    
+</script>
+    <script>
+    
+    function gettouch_fb(htm){
+        $("#gettouchfb").css("display" , "block");
+    $(".fb_page").removeClass("pop_hide");
+    $(".fb_page").addClass("pop_show");
+        $("#selectSolnInner").val(htm);
+        $("#selectStateValue").val('0');
+    }
+function gettouch_hide_fb(){
+    $(".fb_page").addClass("pop_hide");
+    $("#fb-root1").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb").css("display" , "none");
+        
+    }, 200);
+    }
+        
+function gettouch_hide_fb(){
+    $(".fb_page").addClass("pop_hide");
+    $("#fb-root2").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb").css("display" , "none");
+        
+    }, 200);
+   
+        
+        
+//        $('#getInTouchForm').each(function(){ 
+//        this.reset();
+//});
+//        $("#getInTouch").each(function () {
+//    this.style.setProperty( 'color', '#e55739', 'important' );
+//});
+    
+    }
+
+</script>
+    
+        <script>
+    
+      function gettouch_fb_Contact(htm){
+        $("#gettouchfb_contact").css("display" , "block");
+    $(".fb_page").removeClass("pop_hide");
+    $(".fb_page").addClass("pop_show");
+        $("#selectSolnInner").val(htm);
+        $("#selectStateValue").val('0');
+    }
+function gettouch_hide_fb_Contact(){
+    $(".fb_page").addClass("pop_hide");
+     $("#fb-root1").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb_contact").css("display" , "none");
+       
+    }, 200);
+    }
+function gettouch_hide_fb_Contact(){
+    $(".fb_page").addClass("pop_hide");
+     $("#fb-root2").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb_contact").css("display" , "none");
+       
+    }, 200);
+        
+        
+//        $('#getInTouchForm').each(function(){ 
+//        this.reset();
+//});
+//        $("#getInTouch").each(function () {
+//    this.style.setProperty( 'color', '#e55739', 'important' );
+//});
+    
+    }
+
+</script>
+<script src="../js/jquery-1.9.1.min.js"></script> 
+<script src="https://www.SEGwebs.com/js/jquery-ui.js"></script> 
+<script src="../js/jquery.js"></script> 
+<link href="../css/style.css@v=5.css" rel="stylesheet" type="text/css" />
+<link href="../css/screen.css@v=5.css" rel="stylesheet" type="text/css" />
+
+    <!--[if gte IE 9]>
+
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<!--[if IE]>
+    <script src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script><![endif]-->
+
+</head>
+
+<body>
+
+<div class="main-header" id="nav-anchor">
+  <header class="top-header nav_fixed">
+      <div class="header-topSection">
+          <div class="wrapper-fix header">
+            <ul class="desktop-view">
+                <li>Enquiry: <strong>+91-9818841348</strong></li>
+               <!--<li>Support: <strong>+91 8750519933</strong></li>-->
+                <li>Support: <strong>+91-9891100043</strong></li>
+                <li>Email Us: <strong><a href="mailto:info@sgtu.ac.in" style="text-decoration: underline;">info@sgtu.ac.in</a></strong></li>
+            </ul>
+            <ul class="mobile-view">
+                <li>Enquiry: <strong>+91-9818841348</strong></li>
+                <li>Support: <strong><a href="callto:+91-9891100043" style="text-decoration: underline;">+91-9891100043</a></strong></li>
+                <li>Email Us: <strong><a href="mailto:info@sgtu.ac.in" style="text-decoration: underline;">info@sgtu.ac.in</a></strong></li>
+            </ul>
+          </div>
+      </div>
+    <div class="wrapper-fix header">
+<a class="logo" href="../index.php.html">
+ <img src="../images/logo.png" title="SEG SKILLS" alt="SEG SKILLS" />
+     <!--  <a class="logo" href="index.php" >
+     <img src="images/logo.png" title="SEG SKILLS" alt="SEG SKILLS" />-->
+      </a>
+    <nav class="top_nav">
+     <a class="toggleMenu" href="privacy_policy.php.html#">
+      <span class="tgl_mnu_txt">Menu</span>
+      <span class="menu_icon">
+       <i></i>
+       <i class="two"></i>
+       <i></i>
+          <i></i>
+      </span>
+     </a>
+     <ul class="nav bold_font">
+      <li class="home_res_mob"><a href="../index.php.html" style="border:none;">Home</a></li>
+      <li><a href="../about-seg/who-we-are.php.html" id="aboutUs">About</a>
+          <!--
+            <li><a href="http://www.SEGwebs.com/about-seg/who-we-are.php" id="aboutUs" >About</a>
+          -->
+       <ul class="about sub-menu">
+        <li><a href="../about-seg/who-we-are.php.html" class="border-none">Who we are</a></li>
+        <li><a href="../about-seg/what-we-do.php.html">What we do</a></li>
+        <li><a href="../about-seg/why-us.php.html">Why us</a></li>
+        <!--<li><a href="SEG_team.php">SEG Team</a></li>-->
+        <li><a href="../about-seg/news.php.html">News</a></li>
+        
+        <li><a href="../contact-seg.php.html">Contact</a></li>
+        
+       </ul>
+      </li>
+      
+    <li ><a href="../solutions/computer-based-test.php.html" id="CBTSolution">Solutions</a>
+     <ul class="solution sub-menu">
+        <li><a href="../solutions/computer-based-test.php.html" class="border-none">Computer Based Test</a>
+          <ul>
+          <li><a href="../solutions/computer-based-test.php.html">Overview</a></li>
+              <li><a href="../solutions/computer-based-test-solution.php.html">Solution</a></li>
+              <li><a href="../solutions/computer-based-test-casestudy.php.html">Case Studies</a></li>
+              <li><a href="privacy_policy.php.html#a" id="getInTouch17" onClick="gettouch_show($('#lefSolnCBT a label').html())">Get in touch</a></li>
+       </ul>
+         </li>
+     <li><a href="../solutions/skill-assesment.php.html" class="border-none">Skill Assessment Platform</a>
+<!--
+          <ul>
+          <li><a href="http://www.SEGwebs.com/solutions/computer-based-test.php" >Overview</a></li>
+              <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-solution.php" >Solution</a></li>
+              <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>
+              <li><a href="#a" id="getInTouch17" onClick="gettouch_show($('#lefSolnCBT a label').html())">Get in touch</a></li>
+       </ul>
+-->
+     </li>
+        <li><a href="../solutions/application_processing.php.html">Application Processing</a>
+          <ul>
+           <li><a href="../solutions/application_processing.php.html">Overview</a></li>
+            <li><a href="../solutions/application-processing-solution.php.html">Solution</a></li>
+              <li><a href="../solutions/application-processing-strength.php.html">Our Strength</a></li>
+                <li><a href="privacy_policy.php.html#a" id="getInTouch16" onClick="gettouch_show($('#lftSolnAP a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/omr-sheet-processing.php.html">OMR Sheets Processing</a>
+         <ul>
+           <li><a href="../solutions/omr-sheet-processing.php.html">Overview</a></li>
+            <li><a href="../solutions/omr-sheet-processing-solution.php.html">Solution</a></li>
+              <li><a href="../solutions/omr-sheet-processing-strength.php.html">Our Strength</a></li>
+<!--                <li><a href="http://www.SEGwebs.com/solutions/omr-sheet-processing-centralized.php" >Centralized</a></li>
+                  <li><a href="http://www.SEGwebs.com/solutions/omr-sheet-processing-dcentralized.php" >Decentralized</a></li>-->
+                    <li><a href="../solutions/omr-sheet-processing-casestudy.php.html">Case Studies</a></li>
+                      <li><a href="privacy_policy.php.html#a" id="getInTouch15" onClick="gettouch_show($('#lftSolnOMR a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/customize_testing_portal_overview.php.html">Customized testing portal</a>
+          <ul>
+           <li><a href="../solutions/customize_testing_portal_overview.php.html">Overview</a></li>
+            <li><a href="../solutions/customize-testing-portal-solution.php.html">Solution</a></li>
+              <li><a href="../solutions/customize-testing-portal-benifits.php.html">Benefits</a></li>
+               <li><a href="../solutions/customize-testing-portal-casestudy.php.html">Case Studies</a></li>
+                <li><a href="privacy_policy.php.html#a" id="getInTouch14" onClick="gettouch_show($('#lefSolnCTP a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/advance-omr-application.php.html">Advance OMR Application</a>
+          <ul>
+           <li><a href="../solutions/advance-omr-application.php.html">Overview</a></li>
+            <!--<li><a href="http://www.SEGwebs.com/solutions/computer-based-test-solution.php" >Solution</a></li>
+              <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="privacy_policy.php.html#a" id="getInTouch13" onClick="gettouch_show($('#lftSOlnAOA a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/recruitment-test-software.php.html">Recruitment Test</a>
+          <ul>
+           <li><a href="../solutions/recruitment-test-software.php.html">Overview</a></li>
+            <li><a href="../solutions/recruitment-solution.php.html">Solution</a></li>
+             <!-- <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="privacy_policy.php.html#a" id="getInTouch12" onClick="gettouch_show($('#lftSolnRT a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/employee-assessment.php.html">Employee Assessment</a>
+         <ul>
+           <li><a href="../solutions/employee-assessment.php.html">Overview</a></li>
+            <li><a href="../solutions/employee_assessment_solution.php.html">Solution</a></li>
+            <!--<li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="privacy_policy.php.html#a" id="getInTouch11" onClick="gettouch_show($('#lftSolnEA a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/test-labs.php.html">Test Labs</a>
+         <ul>
+           <li><a href="../solutions/test-labs.php.html">Overview</a></li>
+            <!--<li><a href="http://www.SEGwebs.com/solutions/employee_assessment_solution.php" >Solution</a></li>-->
+            <!--<li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="privacy_policy.php.html#a" id="getInTouch10" onClick="gettouch_show($('#lftSolnEA a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+       <!--<li><a href="http://www.SEGwebs.com/solutions/recruitment_consultant.php">Recruitment Consultant</a>
+         <ul>
+           <li><a href="http://www.SEGwebs.com/solutions/recruitment_consultant.php" >Overview</a></li>            
+                <li><a href="#a" id="getInTouch9" onClick="gettouch_show($('#lftSolnEA a label').html())">Get in touch</a></li>
+     </ul>
+         </li>-->
+       </ul>
+    </li>    
+    <li ><a href="../products/verificare.php.html" id="product">Products </a>
+      <ul class="sub-menu" >
+        <li><a href="../products/verificare.php.html" class="border-none">Verificare</a>
+          <ul>
+               <li><a href="../products/verificare.php.html#1">Overview</a></li>
+                <li><a href="../products/verificare-casestudy.php.html">Download Brochure</a></li>
+                <li><a href="http://www.omrhome.com/free-download-omr-sheet-scanner.php" target="_blank" id="getInTouch8">Download Demo</a></li>
+          </ul>
+          </li>
+        <li><a href="../products/test_analytics.php.html">Test Analytics</a>
+           <ul>
+               <li><a href="../products/test_analytics.php.html">Overview</a></li>
+                <li><a href="../products/test-analytics-casestudy.php.html">Download Brochure</a></li>
+                <li><a href="http://www.omrhome.com/free-download-omr-sheet-scanner.php" target="_blank" id="getInTouch7" >Download Demo</a></li>
+          </ul>
+          
+          </li>
+<!--        <li><a href="http://www.SEGwebs.com/products/question-bank.php">Question Bank</a>
+           <ul>
+               <li><a href="http://www.SEGwebs.com/products/question-bank.php" >Overview</a></li>
+                <li><a href="http://www.SEGwebs.com/products/question-bank-casestudy.php" >Download Brochure</a></li>
+                <li><a href="#a" id="getInTouch" onClick="gettouch_show($('#lefProdV a label').html())">Download Demo</a></li>
+          </ul>
+          
+          </li>-->
+        <li><a href="../products/think-exam-web.php.html">Think Exam</a>
+           <ul>
+               <li><a href="../products/think-exam-web.php.html">Overview</a></li>
+                <li><a href="../products/think-exam-casestudy.php.html">Download Brochure</a></li>
+                <li><a href="privacy_policy.php.html#a" id="getInTouch6" onClick="gettouch_show($('#lefProdV a label').html())">Download Demo</a></li>
+          </ul>
+          
+          </li>
+        <li><a href="../products/mobile_tablet.php.html">Mobile & Tablet</a></li>
+       </ul>
+    </li>
+    <li><a href="../clients/client-list.php.html" id="clientList">Clients</a>
+     <ul class="client sub-menu">
+      <li><a href="../clients/client-list.php.html" class="border-none">Client List</a></li>
+      <li><a href="../clients/clients-speak.php.html">Client's Speak</a></li>
+     </ul>
+    </li>
+    
+    <li ><a href="../contact-seg.php.html" id="contactUs">Contact</a></li>
+
+    <li><a href="../seg_erp.html" class="bcmeprtnerlnk">Request A Demo</a></li>
+    
+   </ul>
+  </nav>
+  </div>  
+  <!--<div id="subMenu" style="display:none;">
+     <div class="hdr_sw_itm light_font">
+      <span class="hdr_lnk_name">If you have any question? <a class="blue" href="#" onclick="show()">Send an <b>enquiry</b><span class="sprite submnu_icon1"></span></a>
+       <span style="margin:0 16px;">or</span>Call us at <strong>9871871211</strong>
+      </span>
+      <span class="hdr_lnk_name"><a class="green" href="#" onclick="return popitup('http://www.omrhome.com/phplive/phplive.php?d=0&token=0aeb69e1e3536c1a62ba22b575772678&onpage=hphp%3A%2F%2Fwww.omrhome.com%2F&title=OMR%20Software%20for%20Scanning%20%26%20Sheet%20Reading&&popout=0&theme=&js_name=&js_email=&&custom=')">Live Chat <b>Online</b><span class="sprite submnu_icon2"></span></a></span>
+      <span class="hdr_lnk_name">
+       <a class="orange last" href="get_a_quote.php">Get a <b>quote</b><span class="sprite submnu_icon3"></span></a>
+      </span>
+     </div>
+    </div>-->
+    
+  </header>
+  <!--Get in touch popup start-->
+  <div id="gettouchform" class="getin_touchpop" style="display:none;">
+  <div id="gtformhid1" class="contact_form">
+   <span class="popclose" onClick="gettouch_hide()"></span>
+    <div class="getpophdr">
+<!--     <h1>Get in touch with us</h1>-->
+     <h3>Get in touch with us</h3>
+     <p>Send us your question or requirement and the appropriate SEG SKILLS <br>team member will contact you the soon.
+</p>
+    </div>
+   
+     <div class="rgt_pg_cnct">
+          <aside class="form_fld1">
+           <input type="text" placeholder="Name*" id="headName" maxlength="50">
+          </aside>
+          <aside class="form_fld1 last">
+           <input type="text" placeholder="Organization Name*" id="headOrgName" maxlength="150">
+          </aside>
+          
+          <aside class="form_fld1">
+           <input type="text" placeholder="Email*" id="headEmailId">
+          </aside>
+          <aside class="form_fld1 last">
+              <input type="text" placeholder="Phone*" id="headMobileNo" maxlength="10">
+          </aside>
+          <aside class="form_fld1 ctc_msg" >
+           <input type="text" placeholder="Address" id="headAddress">
+          </aside>
+          <aside class="form_fld1" style="width: 101.5%;" >
+        
+<!--           <input type="text" placeholder="Zip Code" class="zipcode" id='zipCode'>-->
+              <select name="country"   size="1" class="selectcity ctcCountry" id="selectCountryValueInner" onchange="countryChange(this.value)">
+           <!--<select name="country"   size="1" class="selectcity ctcCountry" id="selectCountryValueInner" onchange="clientCountryChange(this.value)">-->
+          <option value="country">Select Country*</option>
+          <option value="Afghanistan">Afghanistan</option>
+          <option value="Albania">Albania</option>
+          <option value="Algeria">Algeria</option>
+          <option value="Andorra">Andorra</option>
+          <option value="Australia">Australia</option>
+          <option value="Austria">Austria</option>
+          <option value="Bahamas">Bahamas</option>
+
+          <option value="Bahrain">Bahrain</option>
+          <option value="Bangladesh">Bangladesh</option>
+          <option value="Barbados">Barbados</option>
+          <option value="Belarus">Belarus</option>
+          <option value="Belgium">Belgium</option>
+          <option value="Belize">Belize</option>
+
+          <option value="Benin">Benin</option>
+          <option value="Bermuda">Bermuda</option>
+          <option value="Bhutan">Bhutan</option>
+          <option value="Bolivia">Bolivia</option>
+          <option value="Botswana">Botswana</option>
+          <option value="Brazil">Brazil</option>
+
+          <option value="Brunei">Brunei</option>
+          <option value="Bulgaria">Bulgaria</option>
+          <option value="Canada">Canada</option>
+          <option value="China">China</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Comoros">Comoros</option>
+
+          <option value="Congo">Congo</option>
+          <option value="Cook Islands">Cook Islands</option>
+          <option value="Costa Rica">Costa Rica</option>
+          <option value="Cuba">Cuba</option>
+          <option value="Cyprus">Cyprus</option>
+          <option value="Czech Republic">Czech Republic</option>
+
+          <option value="Denmark">Denmark</option>
+          <option value="Ecuador">Ecuador</option>
+          <option value="Egypt">Egypt</option>
+          <option value="Ethiopia">Ethiopia</option>
+          <option value="Finland">Finland</option>
+          <option value="France">France</option>
+
+          <option value="Gabon">Gabon</option>
+          <option value="Gambia">Gambia</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Germany">Germany</option>
+          <option value="Ghana">Ghana</option>
+          <option value="Gibraltar">Gibraltar</option>
+
+          <option value="Greece">Greece</option>
+          <option value="Greenland">Greenland</option>
+          <option value="Grenada">Grenada</option>
+          <option value="Guinea">Guinea</option>
+          <option value="Hungary">Hungary</option>
+          <option value="Iceland">Iceland</option>
+
+          <option value="India" selected>India</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Iran">Iran</option>
+          <option value="Iraq">Iraq</option>
+          <option value="Italy">Italy</option>
+          <option value="Jamaica">Jamaica</option>
+
+          <option value="Japan">Japan</option>
+          <option value="Jordan">Jordan</option>
+          <option value="Kazakhstan">Kazakhstan</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Korea">Korea</option>
+          <option value="Kuwait">Kuwait</option>
+
+          <option value="Kyrgyzstan">Kyrgyzstan</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Mauritius">Mauritius</option>
+          <option value="Nepal">Nepal</option>
+          <option value="New Zealand">New Zealand</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="Poland">Poland</option>
+
+          <option value="Portugal">Portugal</option>
+          <option value="Qatar">Qatar</option>
+          <option value="Reunion">Reunion</option>
+          <option value="Romania">Romania</option>
+          <option value="Russia">Russia</option>
+          <option value="Rwanda">Rwanda</option>
+
+          <option value="Saudi Arabia">Saudi Arabia</option>
+          <option value="Seychelles">Seychelles</option>
+          <option value="Sierra Leone">Sierra Leone</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Spain">Spain</option>
+          <option value="Sri Lanka">Sri Lanka</option>
+
+          <option value="Sudan">Sudan</option>
+          <option value="Suriname">Suriname</option>
+          <option value="Swaziland">Swaziland</option>
+          <option value="Sweden">Sweden</option>
+          <option value="Switzerland">Switzerland</option>
+          <option value="Syria">Syria</option>
+
+          <option value="Taiwan">Taiwan</option>
+          <option value="Tajikistan">Tajikistan</option>
+          <option value="Tanzania">Tanzania</option>
+          <option value="Thailand">Thailand</option>
+          <option value="Tunisia">Tunisia</option>
+          <option value="Turkey">Turkey</option>
+
+          <option value="Turkmenistan">Turkmenistan</option>
+          <option value="Tuvalu">Tuvalu</option>
+          <option value="Uganda">Uganda</option>
+          <option value="Ukraine">Ukraine</option>
+          <option value="Uruguay">Uruguay</option>
+          <option value="USA">USA</option>
+          <option value="Uzbekistan">Uzbekistan</option>
+
+          <option value="Venezuela">Venezuela</option>
+          <option value="Vietnam">Vietnam</option>
+          <option value="Yemen">Yemen</option>
+          <option value="Yugoslavia">Yugoslavia</option>
+          <option value="Zambia">Zambia</option>
+          <option value="Zimbabwe">Zimbabwe</option>
+           </select>
+
+
+
+<!--        <select name="state" id="clientState" size="1"class="selectcityselectstate" onChange="clientCityChange(this.value);">
+                    <select name="state" id="clientState" size="1"class="selectcity selectstate" onChange="stateChange(this.value);">
+                        <option value="" selected style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/">--Select State--</option>
+                    </select> -->
+             
+             <select name="state" id="selectStateValueInner" size="1" class="selectcity selectState" onchange="stateChange();">
+            <option selected value='0'>Select State*</option>
+            <option value="Andaman Nicobar" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/"> &nbsp;--&nbsp;Andaman Nicobar -- </option>
+            <option value="Arunachal Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Arunachal Pradesh -- </option>
+            <option value="Andhra Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Andhra Pradesh -- </option>
+            <option value="Assam" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Assam --</option>
+            <option value="Bihar" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Bihar --</option>
+            <option value="Chandigarh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Chandigarh -- </option>
+            <option value="Chhattisgarh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Chhattisgarh -- </option>
+            <option value="Dadra and Nagar" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Dadra and Nagar </option>
+            <option value="Daman and Diu" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Daman and Diu -- </option>
+            <option value="Delhi" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Delhi --</option>
+            <option value="Goa" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Goa --</option>
+            <option value="Gujarat" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Gujarat --</option>
+            <option value="Haryana" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Haryana --</option>
+            <option value="Himachal Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Himachal Pradesh -- </option>
+            <option value="Jammu and Kashmir" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Jammu and Kashmir -- </option>
+            <option value="Jharkhand" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Jharkhand -- </option>
+            <option value="Karnataka" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Karnataka -- </option>
+            <option value="Kerala" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Kerala --</option>
+            <option value="Lakshadweep" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Lakshadweep -- </option>
+            <option value="Madhya Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Madhya Pradesh -- </option>
+            <option value="Maharashtra" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Maharashtra -- </option>
+            <option value="Manipur" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Manipur --</option>
+            <option value="Meghalaya" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Meghalaya -- </option>
+            <option value="Mizoram" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Mizoram --</option>
+            <option value="Nagaland" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Nagaland --</option>
+            <option value="Orissa" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Orissa --</option>
+            <option value="Pondicherry" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Pondicherry -- </option>
+            <option value="Punjab" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Punjab --</option>
+            <option value="Rajasthan" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Rajasthan -- </option>
+            <option value="Sikkim" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Sikkim --</option>
+            <option value="Tamil Nadu" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Tamil Nadu -- </option>
+            <option value="Tripura" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Tripura --</option>
+            <option value="Uttar Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Uttar Pradesh -- </option>
+            <option value="Uttaranchal" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Uttaranchal -- </option>
+            <option value="West Bengal" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;West Bengal -- </option>
+            <option value="Other" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Other --</option>
+           </select> 
+              
+              
+               <select class="selectcity city" size="1" id="selectCityInner"   name="city">
+                 <option selected="selected" value="select" > City*</option>
+             </select>
+          </aside>
+         
+         
+<!--          <aside class="form_fld1">
+           <select id="selectProdtinner">
+               <option value="0" selected>Select Product</option>
+            <option value="OMR Home">OMR Home</option>
+            <option value="Think Exam">Think Exam</option>
+            <option value="Think CBT">Think CBT</option>
+           </select>    
+          </aside>-->
+          <aside class="form_fld1 last ctc_msg">
+            <select id="selectSolnInner" >
+            <option selected>Select Solution*</option>
+            <option value="Centre Based Test">Computer Based Test</option>
+            <option value="Application Processing">Application Processing</option>
+            <option value="OMR Sheets Processing">OMR Sheets Processing</option>
+            <option value="Customized testing portal">Customized testing portal</option>
+            <option value="Advance OMR Application">Advance OMR Application</option>
+            <option value="Recruitment">Recruitment Test</option>
+            <option value="Employee Assessment">Employee Assessment</option>
+            <option value="Test Labs">Test Labs</option>
+           </select>
+          </aside>
+          <aside class="ctc_msg">
+           <textarea placeholder="Message" id="headMsg"></textarea>
+          </aside>
+          <aside class="form_fld1 ctc_msg" >
+<!--           <input class="security">-->
+<!--           <span class="captcha"><img src="images/captcha.jpg"></span>-->
+            <div id="captcha-wrap">
+                                    <input class="security" id="headInputCode" placeholder="Type Letters" autocomplete="off" >
+                                
+                                <input type="text" id="headMainCaptcha" class="mainCaptacha" disabled value=''/>
+                                <img src="../images/refresh.png" id="refresh" value="Refresh" onclick="CaptchaHeader()" class="refImg" alt="refresh" title="Click Here To Change Image">
+<!--                                 <input id="Button1" type="button" value="Check" onclick="alert(ValidCaptcha());"/>-->
+                                 </div>
+          <span class="button submit_resume btn sent-btn ">
+<!--            <span>Send Enquiry</span>-->
+               <input class="contactSubmit" type="submit" onclick="Submit_contactHeaderForm()" id="submit" value="Send Enquiry" name="submit">
+            <i></i>
+           </span>
+          </aside>
+         </div>
+       
+    </div>
+   </div>
+    
+   <!--Pop up FB like start-->
+     <div id="gettouchfb_contact" class="getin_touchpop" style="display:none;">
+  <div id="gtformhid2" class="fb_page" >
+   <span class="popclose" onClick="gettouch_hide_fb_Contact()"></span>
+    <div class="getpophdr_contact">
+         <h3>Thank you !</h3>
+<!--         <h1>Thank you !</h1>-->
+     <p style=" font-size: 14px;">We have received your submitted form, we will contact you as<br>  soon as possible.
+</p>
+
+        
+            
+    </div>
+   
+     <div class="rgt_pg_cnct">
+       <div class="fb_titl" ><span class="bordr"></span><div style="background: rgb(255, 255, 255)  0% 0%; display: inline-block; padding: 5px 10px;">Please like &amp; share our facebook page</div> </div>
+         <div id="fb-root1" >
+             <div style="width: 100%; margin: 40px 6px 6px;">
+         <div class="fb-page" data-href="https://www.facebook.com/SEGwebsindia" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/SEGwebsindia"><a href="https://www.facebook.com/SEGwebsindia">SEG SKILLS</a></blockquote></div></div>
+             </div>
+         </div>
+
+         </div>
+       
+    </div>
+   </div>
+    <!--Pop Up FB LIke end-->
+     <!--Pop up FB like start when resume uploaded-->
+     <div id="gettouchfb" class="getin_touchpop" style="display:none;">
+  <div id="gtformhid3" class="fb_page" >
+   <span class="popclose" onClick="gettouch_hide_fb()"></span>
+    <div class="getpophdr">
+         <h3>Thank you !</h3>
+<!--         <h1>Thank you !</h1>-->
+     <p>You have successfully registered with us.
+Your resume<br> is now in our database. Please explore and apply for <br>exciting career opportunities with us. 
+</p>
+            
+    </div>
+   
+     <div class="rgt_pg_cnct">
+         <div class="fb_titl" ><span class="bordr"></span><div style="background: rgb(255, 255, 255)  0% 0%; display: inline-block; padding: 5px 10px;">Please like &amp; share our facebook page</div> </div>
+         <div id="fb-root2" >
+             <div style="width: 100%; margin: 40px 0px 6px;">
+         <div class="fb-page" data-href="https://www.facebook.com/SEGwebsindia" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/SEGwebsindia"><a href="https://www.facebook.com/SEGwebsindia">SEG SKILLS</a></blockquote></div></div>
+             </div>
+         </div>
+
+         </div>
+       
+    </div>
+   </div>
+    <!--Pop Up FB LIke end-->
+  <!--Get in touch popup end-->
+ </div>
+    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/menu_script.js@v=6"></script><script type="text/javascript">
+$(document).ready(function () {
+		$('ul.accordion').accordion();
+		$('ul.faq_accordion').accordion();
+		
+		$('#openWashington').click(function(){
+			$('a[href=#antarctica]').trigger('activate-node');
+		});
+		$("#career").addClass('selected');
+		$("#lftCareerA").addClass('selected');
+	});
+	
+
+</script>
+
+  <div class="container" style="clear:both">
+   <div class="inr_pg_bnr">
+       <img src="../images/Banners/career.jpg" width="100%" alt="career in SEGwebs">
+    <!--<div class="wrapper-fix">
+     <span class="page_name bold_font">Career</span>
+     <i class="pg_lft_arw2"></i>
+    </div>-->
+   </div>
+   <div class="inr_line"></div>
+   <div class="wrapper-fix inr_pg_wpr">
+    <table class="table_separator" width="100%" cellpadding="0" cellspacing="0" border="0">
+ <tr>
+  <td valign="top" id="pkg_popup" class="pkg_dtls_pop pkg_pop_shw">
+    <section class="inr_pg_left">
+     <p class="title bold_font">Privacy Policy</p>
+      <div id="gear-left" onclick="pkgpop_hide()" class="cross_menu"><i></i></div>
+<ul class="lft_tabs_gry light_font solaccordion">
+    <li id="lftCareerA" ><a href="#"><i></i>Terms used in this policy</a></li>
+    <li id="lftCareerC"><a href="#"><i></i>Our commitment towards protecting personal information</a></li>
+    <li id="lftCareerMOP"><a href="#"><i></i>What data do we collect about you, and for what purpose?</a></li>
+    <li id="lftCareerB"><a href="#"><i></i>Whom do we share your data with?</a></li>
+    <li id="lftCareerCO"><a href="#"><i></i>How long do we retain your data?</a></li>
+    <li><a href="#"><i></i>Transfer of your data</a></li>
+    <li><a href="#"><i></i>What are your rights regarding your data with us?</a></li>
+    <li><a href="#"><i></i>How do we use cookies?</a></li>
+    <li><a href="#"><i></i>Security Of Your Data</a></li>
+    <li><a href="#"><i></i>Changes to this Privacy Policy</a></li>
+    <li><a href="#"><i></i>Cancellation & Refund Policy</a></li>
+    <li><a href="#"><i></i>Contact us</a></li>
+</ul>    </section>
+    </td>
+    <td>
+    <div class="rgt_pg_cntr creer_cntr">
+        <div class="inr_tp_link"><div id="gear-right" onclick="leftboxshowhide()" class="list_menu"><i></i></div>
+            <div class="pageloction pageloction_full_page">
+                <a href="../index.php.html" class="first">Home</a>
+                
+                <a href="privacy_policy.php.html#" class="last">Overview</a>
+            </div>
+        </div>        
+    </div>  
+        <div class="versionnmbr">Version: 2.0.0.0</div>
+    <div class="perk_benifits rgt_pg_cntr">
+        <h3 class="light_font">TERMS USED IN THIS POLICY</h3>
+        <p class="edu">In this Data Privacy and Protection Policy:</p>     
+        <ul>
+            <li>“Cookies” mean small files that are placed on your computer, mobile device or any other device by a website, containing, among other information, the details of your browsing history on that website.</li>
+            <li>“GDPR” means the EU General Data Protection Regulation.</li>
+            <li>“Personal Data” means any information relating to an identified or identifiable natural person.</li>
+            <li>“Policy” means this Data Privacy and Protection Policy.</li>
+            <li>“Service” refers to a service that SEGWebs provides, for a fee or gratis. You are using our Service when you actively sign up or sign in to get access to any Service provided by us.</li>
+            <li>“we”, “us”, “our”, and “SEGWebs” refer to SEGWebs (India) Private Limited.</li>
+            <li>Games & activities (Festival celebrations, birthday celebrations, yoga day).</li>
+            <li>“you” refers to you, as a user or subscriber of the services provided by us.</li>
+        </ul>
+    </div>
+    <section class="our_vson_ctnt career_vson" id="section2">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">2. OUR COMMITMENT TOWARDS PROTECTING PERSONAL INFORMATION</h2>            
+                <p class="edu" style="margin-bottom: 10px;">Your privacy is important to us. We will use your personal information only in the manner set out in this Policy. We act in accordance with the applicable data protection laws, including GDPR. We are committed to safeguarding the privacy of our website visitors, clients, prospects, and research participants. This Policy sets out how we deal with your personal information.</p>
+                <p class="edu" style="margin: 0 0 20px 0">Our commitment towards protecting your personal information includes the following obligations:</p>
+                <ul>
+                    <li>“Cookies” mean small files that are placed on your computer, mobile device or any other device by a website, containing, among other information, the details of your browsing history on that website.</li>
+                    <li>“GDPR” means the EU General Data Protection Regulation.</li>
+                    <li>“Personal Data” means any information relating to an identified or identifiable natural person.</li>
+                    <li>“Policy” means this Data Privacy and Protection Policy.</li>
+                    <li>“Service” refers to a service that SEGWebs provides, for a fee or gratis. You are using our Service when you actively sign up or sign in to get access to any Service provided by us.</li>
+                    <li>“we”, “us”, “our”, and “SEGWebs” refer to SEGWebs (India) Private Limited.</li>
+                    <li>Games & activities (Festival celebrations, birthday celebrations, yoga day).</li>
+                    <li>“you” refers to you, as a user or subscriber of the services provided by us.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="our_vson_ctnt career_vson" id="section3">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">3. WHAT DATA DO WE COLLECT OR PROCESS ABOUT YOU, AND FOR WHAT PURPOSE?</h2>                            
+                <p class="edu"><strong>We may process data about your use of our website and services (“usage data”).</strong> 
+                 The usage data may include your IP address, geographical location, browser type and version, operating
+                system, referral source, length of your visit, page views and website navigation paths, as well
+                as information about the timing, frequency and pattern of your Service use. The source of the
+                usage data is our analytics tracking system. In addition, we may use third-party analytics
+                tracking services such as Google Analytics and Facebook Pixel. This usage data may be
+                processed for the purposes of analysing the use of the Website and Services in order to
+                improve our performance metrics, and for communicating with you. The legal basis for this
+                processing is your consent. In some cases, the legal basis for this processing is our legitimate
+                interests, namely monitoring and improving our Website and Services.
+            </p>
+            <p class="edu"><strong>We may process your data that is provided to us during the course of our surveys (“response data”).</strong>
+                The response data may include your name, city, email address, your responses to the
+                questions that we may ask you. The source of the response data is you. The response data
+                may be processed for the purposes of providing our services, ensuring the integrity of our
+                operations and processes, maintaining back-ups of our databases, and for communicating with
+                you. The legal basis for this processing is your consent.</p>
+            <p class="edu"><strong>We may process your information included in your personal profile on our website (“profile data”).</strong> 
+                The profile data may include your name, address, telephone number, email address,
+                profile pictures, gender. The profile data may be processed for the purposes of enabling and
+                monitoring your use of our website and services and for communicating with you. The legal
+                basis for this processing is your consent. In some cases, the legal basis for this processing is
+                our legitimate interests, namely the proper administration of our Website and Services.</p>
+            <p class="edu"><strong>We may process your personal data that are provided in the course of the use of our Services (“service data”).</strong>
+                The service data may include your name, address, telephone number, email
+                address. The source of the service data is you or the client. The service data may be
+                processed for the purposes of providing our Services, ensuring the security of our Website and
+                Services, maintaining back-ups of our databases, and for communicating with you. The legal
+                basis for this processing is your consent. In some cases, the legal basis for this processing is
+                our legitimate interests, namely the proper administration of our Website and business. In
+                some cases, the legal basis for this processing is the performance of a contract between you
+                and us and/or taking steps, at your request, to enter into such a contract.
+            </p>
+            <p class="edu">
+                <strong>We may process information contained in any enquiry you submit to us regarding goods and/or services (“enquiry data”).</strong>
+                The enquiry data may be processed for the purposes of offering, marketing and selling relevant goods and/or services to you and for communicating with you.
+                The legal basis for this processing is your consent.
+            </p>
+<!--            <p class="edu"><strong>We may process information that you post for publication on our Website or through our Services (“publication data”).</strong> 
+                The publication data may be processed for the purposes of enabling such publication and administering our Website and Services.
+                The legal basis for this processing is your consent. In some cases, the legal basis for this processing is our legitimate interests, namely 
+                the proper administration of our Website and business. In some cases, the legal basis for this processing is the performance of a contract 
+                between you and us and/or taking steps, at your request, to enter into such a contract.</p>
+            
+            <p class="edu">-->
+            <p class="edu">
+                <strong>We may process information relating to our customer relationships, including customer contact information (“customer relationship data”).</strong>
+                 The customer relationship data may include your
+                name, your employer, your job title or role, your contact details, and information contained in
+                communications between us and you or your employer. The source of the customer
+                relationship data is you or your employer. The customer relationship data may be processed
+                for the purposes of managing our relationships with customers, communicating with customers,
+                keeping records of those communications, promoting our products and services to customers,
+                and for communicating with you. The legal basis for this processing is your consent. In some
+                cases, the legal basis for this processing is our legitimate interests, namely the proper
+                administration of our Website and business. In some cases, the legal basis for this processing
+                is the performance of a contract between you and us and/or taking steps, at your request, to
+                enter into such a contract.
+            </p>
+            <p class="edu">
+                <strong>We may process information relating to transactions, including purchases of goods and services, that you enter into with us and/or through our website (“transaction data”).</strong>
+                The transaction data may include your contact details, your banking details, your credit card details
+                and the transaction details. The transaction data may be processed for the purpose of
+                supplying the purchased goods and services, keeping proper records of those transactions,
+                and for communicating with you. The legal basis for this processing is your consent. In some
+                cases, the legal basis for this processing is our legitimate interests, namely the proper
+                administration of our business. In some cases, the legal basis for this processing is the
+                performance of a contract between you and us and/or taking steps, at your request, to enter
+                into such a contract.
+            </p>
+<!--            <p class="edu">
+                <strong>We may process information that you provide to us for the purpose of subscribing to our email notifications and/or newsletters (“notification data”).</strong>
+                 The notification data may be processed for the purposes of sending you the relevant notifications and/or newsletters, and for communicating with you. The legal basis for this processing is your consent.
+
+            </p>-->
+            <p class="edu">
+                <strong> We may process information contained in or relating to any communication that you send to us (“correspondence data”).</strong>
+                The correspondence data may include the communication content
+                and metadata associated with the communication. Our website will generate the metadata
+                associated with communications made using the website contact forms. The correspondence
+                data may be processed for the purposes of communicating with you and record-keeping. The
+                legal basis for this processing is your consent. In some cases, the legal basis for this
+                processing is our legitimate interests, namely the proper administration of our Website and
+                business and communications with our business counterparts.                              
+            </p>
+            <p class="edu">
+                In addition to the specific purposes for which we may process your personal data set out in this
+                Section, we may process any of your personal data identified in this Policy where necessary
+                for: the establishment, exercise or defence of legal claims, whether in court proceedings or in
+                an administrative or out-of-court procedure. The legal basis for this processing is our legitimate
+                interests, namely the protection and assertion of our legal rights, your legal rights and the legal
+                rights of others. The purposes of obtaining or maintaining insurance coverage, managing risks,
+                or obtaining professional advice. The legal basis for this processing is our legitimate interests,
+                namely the proper protection of our business against risks. Compliance with a legal obligation
+                to which we are subject, or in order to protect your vital interests or the vital interests of another
+                natural person.
+            </p>
+            </div>
+        </div>
+    </section>
+    <section class="our_vson_ctnt career_vson" id="section4">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">4. WHOM DO WE SHARE YOUR DATA WITH?</h2>            
+                <!--<p class="edu" style="margin-bottom: 10px;">Your privacy is important to us. We will use your personal information only in the manner set out in this Policy. We act in accordance with the applicable data protection laws, including GDPR. We are committed to safeguarding the privacy of our website visitors, clients, prospects, and research participants. This Policy sets out how we deal with your personal information.</p>-->
+                <!--<p class="edu" style="margin: 0 0 20px 0">Our commitment towards protecting your personal information includes the following obligations:</p>-->
+                <ul style="padding-top: 10px">
+                    <li>We may disclose your personal data to <strong>any of our employees, 
+                    officers, and agents</strong> as long as such disclosure is reasonably necessary for the purposes, and on the legal bases, set out in this Policy.</li>
+            <li>We may disclose your personal data to <strong>any member of our group of companies</strong> (this means our ultimate holding company and all its subsidiaries and joint venture partners) as long as such disclosure is reasonably necessary for the purposes, and on the legal bases, set out in this Policy.</li>
+            <li>Financial transactions relating to our Website and Services may be handled by <strong>our payment services providers.</strong>We will share transaction data with our payment services providers only to the
+            extent necessary for the purposes of processing your payments, refunding such payments and
+            dealing with complaints and queries relating to such payments and refunds.
+            </li>
+            <li>We may disclose your personal data to our <strong>suppliers or sub-contractors</strong> as long as such disclosure is reasonably necessary for providing Services to you.</li>
+            <li>In addition to the specific disclosures of personal data set out in this Section, we may disclose your
+            personal data where such disclosure is necessary for compliance with a legal obligation to which
+            we are subject, or in order to protect your vital interests or the vital interests of another natural
+            person. We may also disclose your personal data where such disclosure is necessary for the
+            establishment, exercise or defence of legal claims, whether in court proceedings or in an
+            administrative or out-of-court procedure.</li>
+            <li>We will not sell, share, rent or otherwise intentionally transfer your name, address, telephone
+            number or e-mail address to market research companies, direct marketing companies or anyone
+            else. The only exceptions when we may disclose your personal information to third parties are as
+            follows:</li>
+            <li>You request us to share, or consent to us sharing, your data with the third parties for a specified purpose</li>
+            <li>We provide your responses to a third party who is contractually bound to keep the information confidential and use it only for research or statistical purposes</li>
+            <li>In the rare but possible circumstance that the information is subject to disclosure pursuant to judicial or other government subpoenas, warrants, orders or for similar legal or regulatory requirements.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="our_vson_ctnt career_vson" id="section5">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">5. HOW LONG DO WE RETAIN YOUR DATA?</h2>            
+                <p>Your personal data that we process for any purpose or purposes <strong>shall not be kept for longer than 1
+        month post expiry of subscription or as mutually agreed with client.</strong></p>
+        <br>
+        <p>Not with standing the foregoing provisions of this Section, we may retain your personal data where such
+        retention is necessary for compliance with a legal obligation to which we are subject, or in order to protect
+        your vital interests or the vital interests of another natural person.</p> 
+<!--                <ul>
+                    <li><strong class="bold_font">Usage data </strong> will be retained for a minimum period of one week following the date of your visit, and for a maximum period of ten years following the date of your visit.</li>
+                    <li><strong class="bold_font">Response data </strong>  will be retained for a minimum period of one month following the submission of your response, and for a maximum period of ten years following the submission of your response.</li>
+                    <li><strong class="bold_font">Profile data </strong> will be retained for a minimum period of one day following the date of deletion of your profile on our Website, and for a maximum period of ten years following such deletion.</li>
+                    <li><strong class="bold_font">Service data </strong> will be retained for a minimum period of one month following the fulfilment of the Service, and for a maximum period of ten years following the last date on which any obligation in respect of such Service concludes.</li>
+                    <li><strong class="bold_font">Publication data </strong> will be retained for a minimum period of one week following the publication of such data, and for a maximum period of ten years following the date on which such data is removed from such publication.</li>
+                    <li><strong class="bold_font">Enquiry data </strong> will be retained for a minimum period of one day following the date of the enquiry, and for a maximum period of ten years following the date of the enquiry.</li>
+                    <li><strong class="bold_font">Customer relationship data </strong>will be retained for a minimum period of one month following the conclusion of the said relationship, and for a maximum period of ten years following the conclusion of the said relationship.</li>
+                    <li><strong class="bold_font">Transaction data </strong>will be retained for a minimum period of one week following the date of the transaction, and for a maximum period of ten years following the date of the transaction.</li>
+                    <li><strong class="bold_font">Notification data </strong>will be retained for a minimum period of one day following the date of unsubscribing from our newsletters, and for a maximum period of ten years following the date of request for such unsubscribing.</li>
+                    <li><strong class="bold_font">Correspondence data </strong>will be retained for a minimum period of one day following the date of the communication, and for a maximum period of twenty years following the date of the communication.
+                        In some cases, it is not possible for us to specify in advance the periods for which your personal data will be retained. In such cases, we will determine the period of retention based on the following criteria:
+                    </li>
+                    <table class="tblecntnt">
+                        <tr>
+                            <th width="10%">Sr. No.</th>
+                            <th width="30%">Category of Data</th>
+                            <th width="60%">Factors on which period of retention will be based</th>
+                        </tr>
+                        <tr>
+                            <td>1.</td>
+                            <td>Usage data</td>
+                            <td>Parameters of usage being analysed</td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>Response data</td>
+                            <td>Terms of Service under which the response is solicited</td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>Profile data</td>
+                            <td>Nature of utilization of profile</td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>Service data</td>
+                            <td>Nature of Service; covenants of Service contract</td>
+                        </tr>
+                        <tr>
+                            <td>5.</td>
+                            <td>Publication data</td>
+                            <td>Means of publication; citation of publication in other works</td>
+                        </tr>
+                        <tr>
+                            <td>6.</td>
+                            <td>Enquiry data</td>
+                            <td>Means of enquiry; nature of Service enquired for</td>
+                        </tr>
+                        <tr>
+                            <td>7.</td>
+                            <td>Customer relationship data</td>
+                            <td>Nature of relationship; covenants of Service contract</td>
+                        </tr>
+                        <tr>
+                            <td>8.</td>
+                            <td>Transaction data</td>
+                            <td>Nature of transaction; covenants of Service contract</td>
+                        </tr>
+                        <tr>
+                            <td>9.</td>
+                            <td>Notification data</td>
+                            <td>Terms of opt-in</td>
+                        </tr>
+                        <tr>
+                            <td>10.</td>
+                            <td>Correspondence data</td>
+                            <td>Nature of correspondence; requirements of law</td>
+                        </tr>
+                    </table>
+                    <li>Not with standing the foregoing provisions of this Section, we may retain your personal data where such retention is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person.</li>
+                </ul>-->
+            </div>
+        </div>
+    </section>
+    <section class="our_vson_ctnt career_vson" id="section6">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">6. TRANSFER OF YOUR DATA</h2>            
+                <p class="edu" style="margin-bottom: 10px;">As a part of our service obligations to our clients, we may be engaged by data exporters, data importers or other sub-processors to process your personal data on their behalf. Your information, including your personal data, may be processed at our operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to and maintained on computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those from your jurisdiction. Your consent to this privacy policy followed by your submission of such information represents your agreement to such transfer. We will take all steps reasonably practicable to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your personal data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p>               
+            </div>
+        </div>
+    </section>
+    <section class="our_vson_ctnt career_vson" id="section7">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">7. WHAT ARE YOUR RIGHTS REGARDING YOUR DATA WITH US?</h2>  
+                <ul>
+            <li><strong>Right to access:</strong> You have the right to confirmation as to whether or not we process your personal
+                data and, where we do, access to the personal data, together with certain additional information.
+                That additional information includes details of the purposes of the processing, the categories of
+                personal data concerned and the recipients of the personal data.
+                <br>
+                Subject to the condition that the rights and freedoms of others are not affected, we will supply to
+                you a copy of your personal data. The first copy will be provided free of charge, but additional
+                copies may be subject to a reasonable fee. You can request your personal data with us, by emailing
+                us on <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="0e7d7b7e7e617c7a4e7a666760656b766f63206d6163">[email&#160;protected]</a>
+            </li>
+            <li><strong>Right to rectification:</strong>Right to rectification: You have the right to have any inaccurate personal
+                data about you rectified and, taking into account the purposes of the processing, to have any
+                incomplete personal data about you completed.</li>
+            <li><strong>Right to erasure: </strong>In certain circumstances you have the right to the erasure of your personal data
+                without undue delay. Those circumstances include: the personal data provided to us is no longer
+                necessary in relation to the purposes for which it was collected or otherwise processed; you
+                withdraw consent to consent-based processing; you object to the processing under certain rules of
+                applicable data protection law; the processing is for direct marketing purposes; and the personal
+                data have been unlawfully processed.
+                <br>
+                However, there are exclusions of the right to erasure. The general exclusions include where
+                processing is necessary: for exercising the right of freedom of expression and information; for
+                compliance with a legal obligation; or for the establishment, exercise or defence of legal claims
+            </li>
+            <li><strong>Right to restrict processing:</strong>In some circumstances you have the right to restrict the processing
+                of your personal data. Those circumstances are: you contest the accuracy of the personal data;
+                processing is unlawful but you do not desire erasure; we no longer need the personal data for the
+                purposes of our processing, but you require personal data for the establishment, exercise or
+                defence of legal claims; and you have objected to processing, pending the verification of that
+                objection. Where processing has been restricted on this basis, we may continue to store your
+                personal data. However, we will only otherwise process it: with your consent; for the establishment,
+                exercise or defence of legal claims; for the protection of the rights of another natural or legal
+                person; or for reasons of important public interest.</li>
+            <li><strong>Right to object to processing:</strong>You have the right to object to our processing of your personal data
+                on grounds relating to your particular situation, but only to the extent that the legal basis for the
+                processing is that the processing is necessary for: the performance of a task carried out in the
+                public interest or in the exercise of any official authority vested in us; or the purposes of the
+                legitimate interests pursued by us or by a third party. If you make such an objection, we will cease
+                to process the personal information unless we can demonstrate compelling legitimate grounds for
+                the processing which override your interests, rights and freedoms, or the processing is for the
+                establishment, exercise or defence of legal claims.
+                <br>
+                You have the right to object to our processing of your personal data for direct marketing purposes
+                (including profiling for direct marketing purposes). If you make such an objection, we will cease to
+                process your personal data for this purpose.
+                <br>
+                You have the right to object to our processing of your personal data for scientific or historical
+                research purposes or statistical purposes on grounds relating to your particular situation, unless the
+                processing is necessary for the performance of a task carried out for reasons of public interest.
+            </li>
+            <li><strong>Right to data portability:</strong> To the extent that the legal basis for our processing of your personal
+                data is: (a) consent; or (b) that the processing is necessary for the performance of a contract to
+                which you are party or in order to take steps at your request prior to entering into a contract, and
+                such processing is carried out by automated means, you have the right to receive your personal
+                data from us in a structured, commonly used and machine-readable format. However, this right
+                does not apply where it would adversely affect the rights and freedoms of others.</li>
+            <li><strong>Right to complain to a supervisory authority:</strong> If you consider that our processing of your
+                personal information infringes data protection laws, you have a legal right to lodge a complaint with
+                a supervisory authority responsible for data protection. You may do so in the EU member state of
+                your habitual residence, your place of work or the place of the alleged infringement.</li>
+            <li><strong>Right to withdraw consent:</strong> To the extent that the legal basis for our processing of your personal
+                information is consent, you have the right to withdraw that consent at any time. Withdrawal will not
+                affect the lawfulness of processing before the withdrawal.
+                <br>
+                You may exercise any of your rights in relation to your personal data by a written notice to us on
+                <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="73000603031c010733071b1a1d18160b121e5d101c1e">[email&#160;protected]</a>. In order for us to comply with your request, your notice must clearly state
+                the right that you wish to exercise and identify your information in respect of which you wish to
+                exercise such right. Please note that as a security measure, we may require you to verify your
+                identity before accepting any request concerning your Personal Data.
+                <br>
+                You may exercise any of your above rights by contacting us with your specific requirement. Our
+                contact information is provided at the end of this document. Do note that when we receive a request
+                concerning your data with us, we may require you to provide a clear copy of a valid government
+                issued ID document in order to verify your identity. To know more about our process of verification
+                of your identity, please contact us on the details provided in this document.            
+            </li>            
+        </ul>            
+            </div>
+        </div>
+    </section>
+    <section class="our_vson_ctnt career_vson" id="section8">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">8. HOW DO WE USE COOKIES?</h2>            
+                <p class="edu" style="margin-bottom: 10px;">A cookie is a file containing a unique identifier (a string of letters and numbers) that is sent by a web server to a web browser and is stored by the browser. The identifier is then sent back to the server each time the browser requests a page from the server. Cookies do not typically contain any information that personally identifies you, but personal information that we store about you may be linked to the information stored in and obtained from cookies.</p>               
+                <p class="edu" style="margin-bottom: 10px;">We use cookies for the following purposes:</p>               
+                <ul>
+                    <li><strong class="bold_font">Analysis.</strong>We use cookies to help us to analyse the use and performance of our website and services</li>
+                    <li><strong class="bold_font">Authentication.</strong>We use cookies to identify you when you visit our website and as you navigate our website.</li>
+                    <li><strong class="bold_font">Cookie consent.</strong> We use cookies to store your preferences in relation to the use of cookies more generally.</li>
+                    <li><strong class="bold_font">Personalisation.</strong>We use cookies to store information about your preferences and to personalise the website for you.</li>
+                    <li><strong class="bold_font">Security.</strong>We use cookies as an element of the security measures used to protect user accounts, including preventing fraudulent use of login credentials, and to protect our website and services generally.</li>
+                    <li><strong class="bold_font">Status.</strong>We use cookies to help us to determine if you are logged into our website. Cookies may be either “persistent” cookies or “session” cookies: a persistent cookie will be stored by a web browser and will remain valid until its set expiry date, unless deleted by the user before the expiry date; a session cookie, on the other hand, will expire at the end of the user session, that is, when the web browser is closed. We use both Session and Persistent Cookies for the purposes set out below:</li>
+                    <li><strong class="bold_font">We use Google Analytics to analyse the use of our website. Google Analytics gathers information about website use by means of cookies. The information gathered relating to our website is used to create reports about the use of our website. Google’s privacy policy is available at:</li>
+<!--                    <li><strong class="bold_font">Necessary / Essential Cookies</strong>
+                        <br>
+                        Type: Session Cookies
+                        <BR>
+                        Administered by: Us
+                        <br>
+                        Purpose: These Cookies are essential to provide you with services available through the website and to enable you to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that you have asked for cannot be provided, and We only use these Cookies to provide you with those services.
+                    </li>
+                    <li><strong class="bold_font">Cookies Policy / Notice Acceptance Cookies</strong>
+                        <br>
+                        Type: Persistent Cookies
+                        <br>
+                        Administered by: Us
+                        <br>
+                        Purpose: These Cookies identify if users have accepted the use of cookies on the Website.
+                    </li>
+                    <li><strong class="bold_font">Functionality Cookies</strong>
+                        <br>
+                        Type: Persistent Cookies
+                        <br>
+                        Administered by: Us
+                        <br>
+                        Purpose: These Cookies allow us to remember choices you make when you use the website, such as remembering your login details or language preference. The purpose of these Cookies is to provide you with a more personal experience and to avoid you having to re-enter your preferences every time you use the website.
+                        <br>
+                        In addition to the cookies mentioned above, additional cookies may be used by third-party service providers. Such third-party service providers use cookies and those cookies may be stored on your computer when you visit our website.
+                    </li>
+                    <li>We use Google Analytics to analyse the use of our website. Google Analytics gathers information about website use by means of cookies. The information gathered relating to our website is used to create reports about the use of our website. Google’s privacy policy is available at: <a href="https://www.google.com/policies/privacy/">https://www.google.com/policies/privacy/</a>.</li>
+                    <li>We publish Google AdSense interest-based advertisements on our website. These are tailored by Google to reflect your interests. To determine your interests, Google will track your behavior on our website and on other websites across the web using cookies. You can view, delete or add interest categories associated with your browser by visiting: <a href="https://adssettings.google.com">https://adssettings.google.com.</a> You can also opt out of the AdSense partner network cookie using those settings or using the Network Advertising Initiative’s multi-cookie opt-out mechanism at: <a href="http://optout.networkadvertising.org">http://optout.networkadvertising.org.</a> However, these opt-out mechanisms themselves use cookies. This means that if you clear the cookies from your browser, your opt-out will not be maintained. To ensure that an opt-out is maintained in respect of a particular browser, you may wish to consider using the Google browser plug-ins available at: <a href="https://support.google.com/ads/answer/7395996">https://support.google.com/ads/answer/7395996.</a></li>
+                    <li>Most browsers allow you to refuse to accept cookies and to delete cookies. The methods for doing so vary from browser to browser, and from version to version. You can however obtain up-to-date information about blocking and deleting cookies via these links:</li>
+                    <li>Chrome: <a href="https://support.google.com/chrome/answer/95647?hl=en">https://support.google.com/chrome/answer/95647?hl=en</a></li>
+                    <li>Firefox: <a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"> https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences</a></li>
+                    <li>Opera: <a href=" http://www.opera.com/help/tutorials/security/cookies/">http://www.opera.com/help/tutorials/security/cookies/</a></li>
+                    <li>Internet Explorer: <a href="https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies">https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies</a></li>
+                    <li>Safari: <a href="https://support.apple.com/kb/PH21411">https://support.apple.com/kb/PH21411</a></li>
+                    <li>Edge: <a href=" https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy">https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="our_vson_ctnt career_vson" id="section9">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">9. SECURITY OF YOUR DATA</h2>            
+                <p class="edu" style="margin-bottom: 10px;">The security of your personal data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security.</p>               
+            </div>
+        </div>
+    </section>
+    
+    <section class="our_vson_ctnt career_vson" id="section10">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">10. CHANGES TO THIS PRIVACY POLICY</h2>            
+                <p class="edu" style="margin-bottom: 10px;">We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We will update the “Last updated” date at the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>               
+            </div>
+        </div>
+    </section>
+    <section class="our_vson_ctnt career_vson" id="section11">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">11. CANCELLATION & REFUND POLICY</h2>            
+                <p class="edu" style="margin: 0;">                
+                    <h4 style="margin: 0"><b>Cancellation Requests:</b></h4>
+                    <ul>
+                        <li>                                                        
+                            <p style="margin: 0;">Customers are allowed to request cancellations of their transactions.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">Cancellation requests must be submitted through the specified channels, such as contacting customer support or submitting a cancellation form on the website.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">The customer must provide relevant transaction details for cancellation verification.</p>
+                        </li>
+                    </ul>
+                    <h4 style="margin: 0"><b>Cancellation Timeframe:</b></h4>
+                    <ul>
+                        <li>                                                        
+                            <p style="margin: 0;">Cancellation requests will be processed within 15 business days/hours of receipt.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">Cancellations requested outside of business hours or during holidays may be processed on the next business day.</p>
+                        </li>
+                    </ul>
+                    <h4 style="margin: 0"><b>Refund Policy:</b></h4>
+                    <ul>
+                        <li>                                                        
+                            <p style="margin: 0;">Refunds will be issued according to the terms and conditions of the product or service purchased.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">In case of cancellation, eligible refunds will be processed in the original form of payment used during the transaction.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">In case of cancellation, eligible refunds will be processed in the original form of payment used during the transaction.</p>
+                        </li>
+                    </ul>
+                    <h4 style="margin: 0"><b>Cancellation Fees:</b></h4>
+                    <ul>
+                        <li>                                                        
+                            <p style="margin: 0;">Cancellation fees may be applicable based on the type of product or service purchased.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">The amount of the cancellation fee, if any, will be clearly stated in the terms and conditions or during the transaction process.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">The cancellation fee, if applicable, will be deducted from the total refund amount.</p>
+                        </li>
+                    </ul>
+                    <h4 style="margin: 0"><b>Non-Refundable Items:</b></h4>
+                    <ul>
+                        <li>                                                        
+                            <p style="margin: 0;">Certain products or services may be marked as non-refundable.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">Non-refundable items will be clearly stated during the transaction process, and customers will be notified of their non-refundable nature prior to completing the transaction.</p>
+                        </li>                        
+                    </ul>
+                    <h4 style="margin: 0"><b>Exceptions:</b></h4>
+                    <ul>
+                        <li>                                                        
+                            <p style="margin: 0;">Exceptions to the cancellation policy may be granted in special circumstances at the discretion of the company.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">Customers can contact customer support to discuss any exceptional cases.</p>
+                        </li>                        
+                    </ul>
+                    <h4 style="margin: 0"><b>Communication:</b></h4>
+                    <ul>
+                        <li>                                                        
+                            <p style="margin: 0;">Customers will receive confirmation of their cancellation request via email or other specified communication channels.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">Further communication regarding the cancellation process, refund status, or any additional requirements will be conveyed to the customer through the provided contact details.</p>
+                        </li>                        
+                    </ul>
+                    <h4 style="margin: 0"><b>Modifications to the Cancellation Policy::</b></h4>
+                    <ul>
+                        <li>                                                        
+                            <p style="margin: 0;">The company reserves the right to modify or update the cancellation policy at any time without prior notice.</p>
+                        </li>
+                        <li>                            
+                            <p style="margin: 0;">Changes to the cancellation policy will be effective immediately upon posting on the website or other relevant communication channels.</p>
+                        </li>                        
+                    </ul>
+                    <h4 style="margin: 0"><b>Technical Problem:</b></h4>
+                    <ul>
+                        <li>
+                            <b>Transaction between Service partner and End user.</b>                            
+                            <p>In case of any problem, technical or otherwise , because of which the payments gets deducted out of
+                                the End User's account , the payment gateway also shows that the payment has gone through but SEG SKILLS ERP
+                                shows it as a failed transaction , then the End User has to contact the Service Partner for resolution of this
+                                issue. If the Service Partner's bank account shows the receipt of the said money,the Service Partner can
+                                manually rectify the payment discrepancy. However if the Service Partner's bank account does not show receipt
+                                of money then the Service Partner would request the End User to contact the Payment gateway to resolve
+                                the issue.The decision of the Service Partner in this regard would be taken as final.
+                            </p>
+                        </li>
+                        <li>
+                            <b>Transaction between SEG SKILLS and Service Partner.</b>                            
+                            <p>                               
+                               In case of any problem, technical or otherwise , because of which the payments gets deducted out of 
+                               the Service Partner's account, the payment gateway also shows successful payment but does not show in
+                               our official ERP the Service Partner needs to contact SEG SKILLS for resolution of this issue. If SEG
+                               webs' bank account shows receipt of money SEG SKILLS, then the issue can be manually corrected by SEG SKILLS'.
+                               However if SEG SKILLS' bank account does not show receipt of money, it would request the payment gateway to
+                               revert the payment back to the Service Partner as the transaction was not successful as SEG SKILLS' 
+                               account has not received the money transferred and it normally takes upto 30 days for the payment to 
+                               be credited back to the Service Partner.
+                            </p>
+                        </li>
+                    </ul>
+                    <h4 style="margin: 0"><b>Multiple Payments:</b></h4>
+                    <ul>
+                        <li>                            
+                            <p style="margin-top: 0;">If double or multiple payments happens and the payment gateway service clearly 
+                                mentions it, SEG SKILLS would refund the payment after confirmation of receipt of double or multiple
+                                payments in our account. Another option would be to adjust the amount to the future
+                                fee as per Payer's request.
+                            </p>
+                        </li>
+                    </ul>
+                    <h4 style="margin: 0"><b>Other Payments Issue</b></h4>
+                    <ul>
+                        <li>
+                            <b>Transaction between Service partner and End user.</b>                            
+                            <p>In all other cases where there is a discrepancy in the fee paid, the 
+                                payer / end User has to directly contact the Service partner and the service partner's decision would be final.
+                            </p>
+                        </li>
+                        <li>
+                            <b>Transaction between SEG SKILLS and Service Partner.</b>                            
+                            <p>                               
+                               In case of Service Partner's payment discrepancy in the fee paid, the 
+                               Service partner has to directly contact SEG SKILLS and the decision of SEG SKILLS would be final.
+                            </p>
+                        </li>
+                    </ul>
+                </p>               
+            </div>
+        </div>
+    </section>
+    <section class="our_vson_ctnt career_vson" id="section12">
+        <div class="perk_benifits rgt_pg_cntr" style="margin-top: 0px;">
+            <div class="page_ctnt_cover">
+                <h2 class="bold_font page_title_h2" style="text-transform:inherit;">12. CONTACT US</h2>                           
+                <ul>
+                    <li>This Website is owned and operated by SEGWebs (India) Private Limited</li>
+                    <li>We are registered in India under registration number U72300DL2008PTC177093, and our registered office address is: A-48, Sector 58, Noida -201301</li>
+                    <li>You can contact us (a) by post: at our registered office address provided above; (b) by email: on <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="1c6f696c6c736e685c7b75727b796e6b797e6f327f7371">[email&#160;protected]</a>; (c) by telephone: on the contact number published on our Website from time to time; (d) by Website: by using our website contact form on <a href="../contact-seg.php.html">https://www.SEGwebs.com/contact-SEG</a></li>                    
+                </ul>
+            </div>
+            <p>Date Created: <strong>April 05, 2008</strong></p>
+            <p>Last Updated: <strong>September 27, 2021</strong></p>
+        </div>
+        
+    </section>
+        
+   </td>
+   </tr>
+   </table>
+  </div>
+ </div>
+
+<!-- Footer Part Start Here -->
+ <div class="wrapper-fix">
+  <div class="footer-main">
+   <!-- <div class="othr_sit_wpr">
+    <a href="http://thinkexam.com/" target="_blank" class="sprite thinkexam"></a>
+    <a href="http://omrhome.com/" target="_blank" class="sprite omrhome"></a>
+    <a href="http://www.previousyearpapers.com/" target="_blank" class="sprite pyp"></a>
+   </div>
+   <div class="folw_us new-flw">
+       <div class="folw-new">
+     <span class="light_font">Follow us on</span>
+     <a href="https://www.facebook.com/SEGwebsindia/" target="_blank" class="sprite fb face"></a>
+     <a href="#" target="_blank" class="sprite twt"></a>
+     <a href="https://plus.google.com/+SEGwebs/posts" target="_blank" class="sprite g"></a>
+     <a href="http://in.linkedin.com/company/SEG-webs" target="_blank" class="sprite in"></a>
+       </div>
+   </div>
+   <div class="color_line">
+    <span class="green"></span>
+    <span class="red"></span>
+    <span class="orange"></span>
+   </div> -->
+   <center>
+    <ul>
+     <li><a href="../index.php.html">Home</a></li>
+     <li><a href="../about-seg/who-we-are.php.html">About Us</a></li>
+     <li><a href="../products/verificare.php.html">Products</a></li>
+     <li><a href="../clients/clients-speak.php.html">Testimonial</a></li>
+     
+     <li><a href="../about-seg/news.php.html">News</a></li>
+     <li><a href="../clients/client-list.php.html">Clients</a></li>
+     <li><a href="../contact-seg.php.html" id="contactUs1">Contact Us</a></li>
+     
+    </ul>
+    <span>Copyright © SEG SKILSS 2024. All rights reserved.</span>
+   </center>
+  </div> 
+</div>
+<div class="scroll-to-top" title="Go to top">
+ <b class="light_font"></b>
+</div>
+
+<!-- Footer Part End Here -->
+
+
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/slider/jquery.js"></script>
+<script src="../js/slider/jquery.event.move.js"></script>
+<script src="../js/slider/responsive-slider.js"></script>
+
+<!--<script src="js/menu-scriptnew.js"></script>-->
+
+<!--jQuery Scroll-->
+
+<!--<script src="https://www.SEGwebs.com/js/retina.js"></script>-->
+<script src="../js/jquery.accordion.source.js"></script>
+    <script>            
+      jQuery(document).ready(function() {
+        var offset = 0;
+        var duration = 200;
+        jQuery(window).scroll(function() {
+          if (jQuery(this).scrollTop() > offset) {
+            jQuery('.scroll-to-top').show();
+          } else {
+            jQuery('.scroll-to-top').hide();
+          }
+        });
+        
+        jQuery('.scroll-to-top').click(function(event) {
+          event.preventDefault();
+          jQuery('html, body').animate({scrollTop: 0}, duration);
+          return false;
+        })
+      });
+     //Js for accordian start
+      $(document).ready(function() {
+            $("#accordion section h1").click(function(e) {
+            $(this).parents().siblings("section").addClass("ac_hidden");
+            $(this).parents("section").removeClass("ac_hidden");
+
+              e.preventDefault();
+            });
+       //Js for accordian end
+        });
+  </script>
+
+<script>
+function show(){
+  $("#dialog").css("display" , "block");
+  $('#dialog').fadeIn('slow');
+  }
+function showhide(){
+  $("#dialog").css("display" , "none");
+  }
+</script>
+<!--Testimonila script start-->
+<script>
+$(document).ready(function(fadeLoop) {
+  
+  var fad = $('.fader');
+  var counter = 0;
+  var divs = $('.fader').hide(); // Selecting fader divs instead of each by name.
+  var dur = 500;
+  
+  fad.children().filter('.fader').each(function(fad) {
+    
+    function animator(currentItem) {
+      
+      animator(fad.children(":first"));
+      
+      fad.mouseenter(function(){
+        $(".fader").stop(); 
+      });
+      fad.mouseleave(function(){
+        animator(fad.children(":first"));
+      });
+    };
+    
+  });
+  
+  function showDiv() {
+    divs.fadeOut(dur) // hide all divs
+    .filter(function(index) {
+      return index == counter % divs.length;
+    }) // figure out correct div to show
+    .delay(dur) // delay until fadeout is finished
+    .fadeIn(dur); // and show it
+    counter++;
+  }; // function to loop through divs and show correct div
+  
+  showDiv(); // show first div    
+  
+  return setInterval(function() {  // return interval so we can stop the loop
+    showDiv(); // show next div
+  }, 2 * 3000); // do this every 5 seconds    
+});
+
+// JavaScript Document
+//@ sourceURL=pen.js
+</script>
+<!--Testimonila script end-->
+
+
+<!--<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7240574-16']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90313633-1', 'auto');
+  ga('send', 'pageview');
+
+
+         
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var window_top = $(window).scrollTop() + 0; // the "12" should equal the margin-top value for nav.stick
+            var div_top = $('#nav-anchor').offset().top;
+                if (window_top > div_top) {
+                    $('.nav_fixed, body').addClass('stick');
+                } else {
+                    $('.nav_fixed, body').removeClass('stick');
+                }
+        });
+    
+    });
+
+
+
+function popitup(url) {
+  newwindow=window.open(url,'name','height=400,width=400');
+  if (window.focus) {newwindow.focus()}
+  return false;
+}
+
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+</body>
+</html>
+<!--Smooth page scrolling start-->
+<script>
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+</script>
+<!--Smooth page scrolling end-->
+
+<script type="text/javascript">
+ $(window).load(function(){
+  $("#browse").click(function () {
+  $("#test").click();
+ })
+				
+  $('#test').change(function () {
+  $('#testfile').val($(this).val());
+ })
+});
+			
+</script>
+<script src="../js/jquery.accordion.source.js" type="text/javascript" charset="utf-8"></script>
+<!--Slider start-->
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/slider/jquery.excoloSlider.js"></script>
+<script type="text/javascript" src="../js/slider/jquery.excoloSlider.min.js"></script>
+<script type="text/javascript">
+	 $(function () {
+            $("#sliderB").excoloSlider();
+        });
+</script> 
+<!--Slider start-->

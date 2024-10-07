@@ -1,0 +1,1086 @@
+
+<!DOCTYPE HTML>
+<html   lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="msvalidate.01" content="E3B00D3ABE2353FE945BC05A8B3D6AB6" />
+
+<title>SEG SKILLS</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<!--<script src="http://www.SEGwebs.com/js/jquery.min.js" charset="utf-8"></script>-->   
+<script src="../js/jquery.min.js"></script>
+<!--<script>
+    $(document).ready(function() {
+        CaptchaHeader();
+        var headerTop = $('#header').offset().top;
+        var headerBottom = headerTop + 120; // Sub-menu should appear after this distance from top.
+        $(window).scroll(function () {
+            var scrollTop = $(window).scrollTop(); // Current vertical scroll position from the top
+            if (scrollTop > headerBottom) { // Check to see if we have scrolled more than headerBottom
+                if (($("#subMenu").is(":visible") === false)) {
+                    $('#subMenu').slideDown('medium');
+                    //$("#subMenu").css("display" , "block");
+                }
+            } else {
+                if ($("#subMenu").is(":visible")) {
+                    $('#subMenu').slideUp('medium');
+                }
+            }
+        });
+    });
+        
+</script>-->
+<script>
+    function countryChange(value)
+    {
+    //alert(value);return false
+    //var uniqueCountry=value;
+        if(value=='India')
+        {
+//            $(".selectState").each(function () {
+//    this.style.setProperty('display','block', 'important' );
+//                    });
+//            $(".city").each(function () {
+//    this.style.setProperty('display','block', 'important' );
+//    });
+    
+           $(".selectState").removeAttr('disabled') ;
+            $(".city").removeAttr('disabled') ;
+        }
+    
+        else
+        {
+            //alert('in');
+//            $(".selectState").each(function () {
+//    this.style.setProperty(' disabled',' disabled', 'important' );
+//            });
+//            $(".city").each(function () {
+//    this.style.setProperty(' disabled',' disabled', 'important' );
+//            });
+            $(".selectState").attr('disabled','disabled') ;
+            $(".city").attr('disabled','disabled') ;
+        
+        }
+
+    }
+                                    
+    function stateChange()
+       {
+           
+          var state= $("#selectStateValueInner").val();
+          var dataString = 'state='+ state;
+         // alert(dataString);
+          $.ajax({
+            type: "POST",
+            url: "stateAjax.php",
+            data: dataString,
+            success: function(result) {
+                 //alert(result);
+                     $(".city").html(result);
+            },error: function (result) {
+                       // alert(result);
+                    }
+        });
+        
+    }
+
+
+
+</script>
+<script>
+    
+function gettouch_show(htm){
+        $("#gettouchform").css("display" , "block");
+    $(".contact_form").removeClass("pop_hide");
+    $(".contact_form").addClass("pop_show");
+        $("#selectSolnInner").val(htm);
+        $("#selectStateValue").val('0');
+    }
+function gettouch_hide(){
+    $(".contact_form").addClass("pop_hide");
+    setTimeout(function(){  
+        $("#gettouchform").css("display" , "none");
+    }, 500);
+        
+        
+//        $('#getInTouchForm').each(function(){ 
+//        this.reset();
+//});
+//        $("#getInTouch").each(function () {
+//    this.style.setProperty( 'color', '#e55739', 'important' );
+//});
+    
+    }
+    
+</script>
+    <script>
+    
+    function gettouch_fb(htm){
+        $("#gettouchfb").css("display" , "block");
+    $(".fb_page").removeClass("pop_hide");
+    $(".fb_page").addClass("pop_show");
+        $("#selectSolnInner").val(htm);
+        $("#selectStateValue").val('0');
+    }
+function gettouch_hide_fb(){
+    $(".fb_page").addClass("pop_hide");
+    $("#fb-root1").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb").css("display" , "none");
+        
+    }, 200);
+    }
+        
+function gettouch_hide_fb(){
+    $(".fb_page").addClass("pop_hide");
+    $("#fb-root2").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb").css("display" , "none");
+        
+    }, 200);
+   
+        
+        
+//        $('#getInTouchForm').each(function(){ 
+//        this.reset();
+//});
+//        $("#getInTouch").each(function () {
+//    this.style.setProperty( 'color', '#e55739', 'important' );
+//});
+    
+    }
+
+</script>
+    
+        <script>
+    
+      function gettouch_fb_Contact(htm){
+        $("#gettouchfb_contact").css("display" , "block");
+    $(".fb_page").removeClass("pop_hide");
+    $(".fb_page").addClass("pop_show");
+        $("#selectSolnInner").val(htm);
+        $("#selectStateValue").val('0');
+    }
+function gettouch_hide_fb_Contact(){
+    $(".fb_page").addClass("pop_hide");
+     $("#fb-root1").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb_contact").css("display" , "none");
+       
+    }, 200);
+    }
+function gettouch_hide_fb_Contact(){
+    $(".fb_page").addClass("pop_hide");
+     $("#fb-root2").css("display" , "none");
+    setTimeout(function(){  
+        $("#gettouchfb_contact").css("display" , "none");
+       
+    }, 200);
+        
+        
+//        $('#getInTouchForm').each(function(){ 
+//        this.reset();
+//});
+//        $("#getInTouch").each(function () {
+//    this.style.setProperty( 'color', '#e55739', 'important' );
+//});
+    
+    }
+
+</script>
+<script src="../js/jquery-1.9.1.min.js"></script> 
+<script src="https://www.SEGwebs.com/js/jquery-ui.js"></script> 
+<script src="../js/jquery.js"></script> 
+<link href="../css/style.css@v=5.css" rel="stylesheet" type="text/css" />
+<link href="../css/screen.css@v=5.css" rel="stylesheet" type="text/css" />
+
+    <!--[if gte IE 9]>
+
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<!--[if IE]>
+    <script src="js/html5.js"></script>
+<![endif]-->
+<!--[if IE]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script><![endif]-->
+
+</head>
+
+<body>
+
+<div class="main-header" id="nav-anchor">
+  <header class="top-header nav_fixed">
+      <div class="header-topSection">
+          <div class="wrapper-fix header">
+            <ul class="desktop-view">
+              <li>Enquiry: <strong>+91-9818841348</strong></li>
+             <!--<li>Support: <strong>+91 8750519933</strong></li>-->
+              <li>Support: <strong>+91-9891100043</strong></li>
+              <li>Email Us: <strong><a href="mailto:info@sgtu.ac.in" style="text-decoration: underline;">info@sgtu.ac.in</a></strong></li>
+          </ul>
+          <ul class="mobile-view">
+              <li>Enquiry: <strong>+91-9818841348</strong></li>
+              <li>Support: <strong><a href="callto:+91-9891100043" style="text-decoration: underline;">+91-9891100043</a></strong></li>
+              <li>Email Us: <strong><a href="mailto:info@sgtu.ac.in" style="text-decoration: underline;">info@sgtu.ac.in</a></strong></li>
+          </ul>
+          </div>
+      </div>
+    <div class="wrapper-fix header">
+<a class="logo" href="../index.php.html">
+ <img src="../images/logo.png" title="SEG SKILLS" alt="SEG SKILLS" />
+     <!--  <a class="logo" href="index.php" >
+     <img src="images/logo.png" title="SEG SKILLS" alt="SEG SKILLS" />-->
+      </a>
+    <nav class="top_nav">
+     <a class="toggleMenu" href="job-details.php@id=NTk=.html#">
+      <span class="tgl_mnu_txt">Menu</span>
+      <span class="menu_icon">
+       <i></i>
+       <i class="two"></i>
+       <i></i>
+          <i></i>
+      </span>
+     </a>
+     <ul class="nav bold_font">
+      <li class="home_res_mob"><a href="../index.php.html" style="border:none;">Home</a></li>
+      <li><a href="../about-seg/who-we-are.php.html" id="aboutUs">About</a>
+          <!--
+            <li><a href="http://www.SEGwebs.com/about-seg/who-we-are.php" id="aboutUs" >About</a>
+          -->
+       <ul class="about sub-menu">
+        <li><a href="../about-seg/who-we-are.php.html" class="border-none">Who we are</a></li>
+        <li><a href="../about-seg/what-we-do.php.html">What we do</a></li>
+        <li><a href="../about-seg/why-us.php.html">Why us</a></li>
+        <!--<li><a href="SEG_team.php">SEG Team</a></li>-->
+        <li><a href="../about-seg/news.php.html">News</a></li>
+        <li><a href="career.php.html">Career</a></li>
+        <li><a href="../contact-seg.php.html">Contact</a></li>
+        
+       </ul>
+      </li>
+      
+    <li ><a href="../solutions/computer-based-test.php.html" id="CBTSolution">Solutions</a>
+     <ul class="solution sub-menu">
+        <li><a href="../solutions/computer-based-test.php.html" class="border-none">Computer Based Test</a>
+          <ul>
+          <li><a href="../solutions/computer-based-test.php.html">Overview</a></li>
+              <li><a href="../solutions/computer-based-test-solution.php.html">Solution</a></li>
+              <li><a href="../solutions/computer-based-test-casestudy.php.html">Case Studies</a></li>
+              <li><a href="job-details.php@id=NTk=.html#a" id="getInTouch17" onClick="gettouch_show($('#lefSolnCBT a label').html())">Get in touch</a></li>
+       </ul>
+         </li>
+     <li><a href="../solutions/skill-assesment.php.html" class="border-none">Skill Assessment Platform</a>
+<!--
+          <ul>
+          <li><a href="http://www.SEGwebs.com/solutions/computer-based-test.php" >Overview</a></li>
+              <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-solution.php" >Solution</a></li>
+              <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>
+              <li><a href="#a" id="getInTouch17" onClick="gettouch_show($('#lefSolnCBT a label').html())">Get in touch</a></li>
+       </ul>
+-->
+     </li>
+        <li><a href="../solutions/application_processing.php.html">Application Processing</a>
+          <ul>
+           <li><a href="../solutions/application_processing.php.html">Overview</a></li>
+            <li><a href="../solutions/application-processing-solution.php.html">Solution</a></li>
+              <li><a href="../solutions/application-processing-strength.php.html">Our Strength</a></li>
+                <li><a href="job-details.php@id=NTk=.html#a" id="getInTouch16" onClick="gettouch_show($('#lftSolnAP a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/omr-sheet-processing.php.html">OMR Sheets Processing</a>
+         <ul>
+           <li><a href="../solutions/omr-sheet-processing.php.html">Overview</a></li>
+            <li><a href="../solutions/omr-sheet-processing-solution.php.html">Solution</a></li>
+              <li><a href="../solutions/omr-sheet-processing-strength.php.html">Our Strength</a></li>
+<!--                <li><a href="http://www.SEGwebs.com/solutions/omr-sheet-processing-centralized.php" >Centralized</a></li>
+                  <li><a href="http://www.SEGwebs.com/solutions/omr-sheet-processing-dcentralized.php" >Decentralized</a></li>-->
+                    <li><a href="../solutions/omr-sheet-processing-casestudy.php.html">Case Studies</a></li>
+                      <li><a href="job-details.php@id=NTk=.html#a" id="getInTouch15" onClick="gettouch_show($('#lftSolnOMR a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/customize_testing_portal_overview.php.html">Customized testing portal</a>
+          <ul>
+           <li><a href="../solutions/customize_testing_portal_overview.php.html">Overview</a></li>
+            <li><a href="../solutions/customize-testing-portal-solution.php.html">Solution</a></li>
+              <li><a href="../solutions/customize-testing-portal-benifits.php.html">Benefits</a></li>
+               <li><a href="../solutions/customize-testing-portal-casestudy.php.html">Case Studies</a></li>
+                <li><a href="job-details.php@id=NTk=.html#a" id="getInTouch14" onClick="gettouch_show($('#lefSolnCTP a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/advance-omr-application.php.html">Advance OMR Application</a>
+          <ul>
+           <li><a href="../solutions/advance-omr-application.php.html">Overview</a></li>
+            <!--<li><a href="http://www.SEGwebs.com/solutions/computer-based-test-solution.php" >Solution</a></li>
+              <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="job-details.php@id=NTk=.html#a" id="getInTouch13" onClick="gettouch_show($('#lftSOlnAOA a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/recruitment-test-software.php.html">Recruitment Test</a>
+          <ul>
+           <li><a href="../solutions/recruitment-test-software.php.html">Overview</a></li>
+            <li><a href="../solutions/recruitment-solution.php.html">Solution</a></li>
+             <!-- <li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="job-details.php@id=NTk=.html#a" id="getInTouch12" onClick="gettouch_show($('#lftSolnRT a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/employee-assessment.php.html">Employee Assessment</a>
+         <ul>
+           <li><a href="../solutions/employee-assessment.php.html">Overview</a></li>
+            <li><a href="../solutions/employee_assessment_solution.php.html">Solution</a></li>
+            <!--<li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="job-details.php@id=NTk=.html#a" id="getInTouch11" onClick="gettouch_show($('#lftSolnEA a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+        <li><a href="../solutions/test-labs.php.html">Test Labs</a>
+         <ul>
+           <li><a href="../solutions/test-labs.php.html">Overview</a></li>
+            <!--<li><a href="http://www.SEGwebs.com/solutions/employee_assessment_solution.php" >Solution</a></li>-->
+            <!--<li><a href="http://www.SEGwebs.com/solutions/computer-based-test-casestudy.php" >Case Studies</a></li>-->
+                <li><a href="job-details.php@id=NTk=.html#a" id="getInTouch10" onClick="gettouch_show($('#lftSolnEA a label').html())">Get in touch</a></li>
+          </ul>
+         </li>
+       <!--<li><a href="http://www.SEGwebs.com/solutions/recruitment_consultant.php">Recruitment Consultant</a>
+         <ul>
+           <li><a href="http://www.SEGwebs.com/solutions/recruitment_consultant.php" >Overview</a></li>            
+                <li><a href="#a" id="getInTouch9" onClick="gettouch_show($('#lftSolnEA a label').html())">Get in touch</a></li>
+     </ul>
+         </li>-->
+       </ul>
+    </li>    
+    <li ><a href="../products/verificare.php.html" id="product">Products </a>
+      <ul class="sub-menu" >
+        <li><a href="../products/verificare.php.html" class="border-none">Verificare</a>
+          <ul>
+               <li><a href="../products/verificare.php.html#1">Overview</a></li>
+                <li><a href="../products/verificare-casestudy.php.html">Download Brochure</a></li>
+                <li><a href="http://www.omrhome.com/free-download-omr-sheet-scanner.php" target="_blank" id="getInTouch8">Download Demo</a></li>
+          </ul>
+          </li>
+        <li><a href="../products/test_analytics.php.html">Test Analytics</a>
+           <ul>
+               <li><a href="../products/test_analytics.php.html">Overview</a></li>
+                <li><a href="../products/test-analytics-casestudy.php.html">Download Brochure</a></li>
+                <li><a href="http://www.omrhome.com/free-download-omr-sheet-scanner.php" target="_blank" id="getInTouch7" >Download Demo</a></li>
+          </ul>
+          
+          </li>
+<!--        <li><a href="http://www.SEGwebs.com/products/question-bank.php">Question Bank</a>
+           <ul>
+               <li><a href="http://www.SEGwebs.com/products/question-bank.php" >Overview</a></li>
+                <li><a href="http://www.SEGwebs.com/products/question-bank-casestudy.php" >Download Brochure</a></li>
+                <li><a href="#a" id="getInTouch" onClick="gettouch_show($('#lefProdV a label').html())">Download Demo</a></li>
+          </ul>
+          
+          </li>-->
+        <li><a href="../products/think-exam-web.php.html">Think Exam</a>
+           <ul>
+               <li><a href="../products/think-exam-web.php.html">Overview</a></li>
+                <li><a href="../products/think-exam-casestudy.php.html">Download Brochure</a></li>
+                <li><a href="job-details.php@id=NTk=.html#a" id="getInTouch6" onClick="gettouch_show($('#lefProdV a label').html())">Download Demo</a></li>
+          </ul>
+          
+          </li>
+        <li><a href="../products/mobile_tablet.php.html">Mobile & Tablet</a></li>
+       </ul>
+    </li>
+    <li><a href="../clients/client-list.php.html" id="clientList">Clients</a>
+     <ul class="client sub-menu">
+      <li><a href="../clients/client-list.php.html" class="border-none">Client List</a></li>
+      <li><a href="../clients/clients-speak.php.html">Client's Speak</a></li>
+     </ul>
+    </li>
+    <li ><a href="career.php.html" id="career">Career</a>
+     <ul class="career sub-menu">
+       <li><a href="career.php.html"><i></i>Overview</a></li>
+       
+         <li><a href="career.php.html#culture"><i></i>Culture</a></li>
+       
+         <li><a href="career.php.html#benifit"><i></i>Benefits</a></li>
+         <li><a href="current-opening.php.html"><i></i>Current Openings</a></li>
+      
+       <li><a href="#culture"><i></i>Culture</a></li>
+       <li><a href="#benifit"><i></i>Benifits</a>
+        <div class="content-2 content">
+         <a href="career.php">Career</a>
+         <a href="submit_resume.php">Submit Resume</a>
+        </div>-->
+       <li><a href="submit-resume.php.html"><i></i>Submit Your Resume</a></li>
+      </ul>
+    </li>
+    <li ><a href="../contact-seg.php.html" id="contactUs">Contact</a></li>
+
+    <li><a href="../seg_erp.html" class="bcmeprtnerlnk">Request A Demo</a></li>
+    
+   </ul>
+  </nav>
+  </div>  
+  <!--<div id="subMenu" style="display:none;">
+     <div class="hdr_sw_itm light_font">
+      <span class="hdr_lnk_name">If you have any question? <a class="blue" href="#" onclick="show()">Send an <b>enquiry</b><span class="sprite submnu_icon1"></span></a>
+       <span style="margin:0 16px;">or</span>Call us at <strong>9871871211</strong>
+      </span>
+      <span class="hdr_lnk_name"><a class="green" href="#" onclick="return popitup('http://www.omrhome.com/phplive/phplive.php?d=0&token=0aeb69e1e3536c1a62ba22b575772678&onpage=hphp%3A%2F%2Fwww.omrhome.com%2F&title=OMR%20Software%20for%20Scanning%20%26%20Sheet%20Reading&&popout=0&theme=&js_name=&js_email=&&custom=')">Live Chat <b>Online</b><span class="sprite submnu_icon2"></span></a></span>
+      <span class="hdr_lnk_name">
+       <a class="orange last" href="get_a_quote.php">Get a <b>quote</b><span class="sprite submnu_icon3"></span></a>
+      </span>
+     </div>
+    </div>-->
+    
+  </header>
+  <!--Get in touch popup start-->
+  <div id="gettouchform" class="getin_touchpop" style="display:none;">
+  <div id="gtformhid1" class="contact_form">
+   <span class="popclose" onClick="gettouch_hide()"></span>
+    <div class="getpophdr">
+<!--     <h1>Get in touch with us</h1>-->
+     <h3>Get in touch with us</h3>
+     <p>Send us your question or requirement and the appropriate SEG SKILLS <br>team member will contact you the soon.
+</p>
+    </div>
+   
+     <div class="rgt_pg_cnct">
+          <aside class="form_fld1">
+           <input type="text" placeholder="Name*" id="headName" maxlength="50">
+          </aside>
+          <aside class="form_fld1 last">
+           <input type="text" placeholder="Organization Name*" id="headOrgName" maxlength="150">
+          </aside>
+          
+          <aside class="form_fld1">
+           <input type="text" placeholder="Email*" id="headEmailId">
+          </aside>
+          <aside class="form_fld1 last">
+              <input type="text" placeholder="Phone*" id="headMobileNo" maxlength="10">
+          </aside>
+          <aside class="form_fld1 ctc_msg" >
+           <input type="text" placeholder="Address" id="headAddress">
+          </aside>
+          <aside class="form_fld1" style="width: 101.5%;" >
+        
+<!--           <input type="text" placeholder="Zip Code" class="zipcode" id='zipCode'>-->
+              <select name="country"   size="1" class="selectcity ctcCountry" id="selectCountryValueInner" onchange="countryChange(this.value)">
+           <!--<select name="country"   size="1" class="selectcity ctcCountry" id="selectCountryValueInner" onchange="clientCountryChange(this.value)">-->
+          <option value="country">Select Country*</option>
+          <option value="Afghanistan">Afghanistan</option>
+          <option value="Albania">Albania</option>
+          <option value="Algeria">Algeria</option>
+          <option value="Andorra">Andorra</option>
+          <option value="Australia">Australia</option>
+          <option value="Austria">Austria</option>
+          <option value="Bahamas">Bahamas</option>
+
+          <option value="Bahrain">Bahrain</option>
+          <option value="Bangladesh">Bangladesh</option>
+          <option value="Barbados">Barbados</option>
+          <option value="Belarus">Belarus</option>
+          <option value="Belgium">Belgium</option>
+          <option value="Belize">Belize</option>
+
+          <option value="Benin">Benin</option>
+          <option value="Bermuda">Bermuda</option>
+          <option value="Bhutan">Bhutan</option>
+          <option value="Bolivia">Bolivia</option>
+          <option value="Botswana">Botswana</option>
+          <option value="Brazil">Brazil</option>
+
+          <option value="Brunei">Brunei</option>
+          <option value="Bulgaria">Bulgaria</option>
+          <option value="Canada">Canada</option>
+          <option value="China">China</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Comoros">Comoros</option>
+
+          <option value="Congo">Congo</option>
+          <option value="Cook Islands">Cook Islands</option>
+          <option value="Costa Rica">Costa Rica</option>
+          <option value="Cuba">Cuba</option>
+          <option value="Cyprus">Cyprus</option>
+          <option value="Czech Republic">Czech Republic</option>
+
+          <option value="Denmark">Denmark</option>
+          <option value="Ecuador">Ecuador</option>
+          <option value="Egypt">Egypt</option>
+          <option value="Ethiopia">Ethiopia</option>
+          <option value="Finland">Finland</option>
+          <option value="France">France</option>
+
+          <option value="Gabon">Gabon</option>
+          <option value="Gambia">Gambia</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Germany">Germany</option>
+          <option value="Ghana">Ghana</option>
+          <option value="Gibraltar">Gibraltar</option>
+
+          <option value="Greece">Greece</option>
+          <option value="Greenland">Greenland</option>
+          <option value="Grenada">Grenada</option>
+          <option value="Guinea">Guinea</option>
+          <option value="Hungary">Hungary</option>
+          <option value="Iceland">Iceland</option>
+
+          <option value="India" selected>India</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Iran">Iran</option>
+          <option value="Iraq">Iraq</option>
+          <option value="Italy">Italy</option>
+          <option value="Jamaica">Jamaica</option>
+
+          <option value="Japan">Japan</option>
+          <option value="Jordan">Jordan</option>
+          <option value="Kazakhstan">Kazakhstan</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Korea">Korea</option>
+          <option value="Kuwait">Kuwait</option>
+
+          <option value="Kyrgyzstan">Kyrgyzstan</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Mauritius">Mauritius</option>
+          <option value="Nepal">Nepal</option>
+          <option value="New Zealand">New Zealand</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="Poland">Poland</option>
+
+          <option value="Portugal">Portugal</option>
+          <option value="Qatar">Qatar</option>
+          <option value="Reunion">Reunion</option>
+          <option value="Romania">Romania</option>
+          <option value="Russia">Russia</option>
+          <option value="Rwanda">Rwanda</option>
+
+          <option value="Saudi Arabia">Saudi Arabia</option>
+          <option value="Seychelles">Seychelles</option>
+          <option value="Sierra Leone">Sierra Leone</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Spain">Spain</option>
+          <option value="Sri Lanka">Sri Lanka</option>
+
+          <option value="Sudan">Sudan</option>
+          <option value="Suriname">Suriname</option>
+          <option value="Swaziland">Swaziland</option>
+          <option value="Sweden">Sweden</option>
+          <option value="Switzerland">Switzerland</option>
+          <option value="Syria">Syria</option>
+
+          <option value="Taiwan">Taiwan</option>
+          <option value="Tajikistan">Tajikistan</option>
+          <option value="Tanzania">Tanzania</option>
+          <option value="Thailand">Thailand</option>
+          <option value="Tunisia">Tunisia</option>
+          <option value="Turkey">Turkey</option>
+
+          <option value="Turkmenistan">Turkmenistan</option>
+          <option value="Tuvalu">Tuvalu</option>
+          <option value="Uganda">Uganda</option>
+          <option value="Ukraine">Ukraine</option>
+          <option value="Uruguay">Uruguay</option>
+          <option value="USA">USA</option>
+          <option value="Uzbekistan">Uzbekistan</option>
+
+          <option value="Venezuela">Venezuela</option>
+          <option value="Vietnam">Vietnam</option>
+          <option value="Yemen">Yemen</option>
+          <option value="Yugoslavia">Yugoslavia</option>
+          <option value="Zambia">Zambia</option>
+          <option value="Zimbabwe">Zimbabwe</option>
+           </select>
+
+
+
+<!--        <select name="state" id="clientState" size="1"class="selectcityselectstate" onChange="clientCityChange(this.value);">
+                    <select name="state" id="clientState" size="1"class="selectcity selectstate" onChange="stateChange(this.value);">
+                        <option value="" selected style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/">--Select State--</option>
+                    </select> -->
+             
+             <select name="state" id="selectStateValueInner" size="1" class="selectcity selectState" onchange="stateChange();">
+            <option selected value='0'>Select State*</option>
+            <option value="Andaman Nicobar" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/"> &nbsp;--&nbsp;Andaman Nicobar -- </option>
+            <option value="Arunachal Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Arunachal Pradesh -- </option>
+            <option value="Andhra Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Andhra Pradesh -- </option>
+            <option value="Assam" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Assam --</option>
+            <option value="Bihar" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Bihar --</option>
+            <option value="Chandigarh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Chandigarh -- </option>
+            <option value="Chhattisgarh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Chhattisgarh -- </option>
+            <option value="Dadra and Nagar" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Dadra and Nagar </option>
+            <option value="Daman and Diu" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Daman and Diu -- </option>
+            <option value="Delhi" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Delhi --</option>
+            <option value="Goa" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Goa --</option>
+            <option value="Gujarat" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Gujarat --</option>
+            <option value="Haryana" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Haryana --</option>
+            <option value="Himachal Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Himachal Pradesh -- </option>
+            <option value="Jammu and Kashmir" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Jammu and Kashmir -- </option>
+            <option value="Jharkhand" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Jharkhand -- </option>
+            <option value="Karnataka" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Karnataka -- </option>
+            <option value="Kerala" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Kerala --</option>
+            <option value="Lakshadweep" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Lakshadweep -- </option>
+            <option value="Madhya Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Madhya Pradesh -- </option>
+            <option value="Maharashtra" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Maharashtra -- </option>
+            <option value="Manipur" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Manipur --</option>
+            <option value="Meghalaya" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Meghalaya -- </option>
+            <option value="Mizoram" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Mizoram --</option>
+            <option value="Nagaland" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Nagaland --</option>
+            <option value="Orissa" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Orissa --</option>
+            <option value="Pondicherry" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Pondicherry -- </option>
+            <option value="Punjab" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Punjab --</option>
+            <option value="Rajasthan" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Rajasthan -- </option>
+            <option value="Sikkim" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Sikkim --</option>
+            <option value="Tamil Nadu" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Tamil Nadu -- </option>
+            <option value="Tripura" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Tripura --</option>
+            <option value="Uttar Pradesh" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Uttar Pradesh -- </option>
+            <option value="Uttaranchal" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Uttaranchal -- </option>
+            <option value="West Bengal" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;West Bengal -- </option>
+            <option value="Other" style="font-weight: bold; font-size: 12px; /*background-color: #D7F0FF;*/ "> &nbsp;--&nbsp;Other --</option>
+           </select> 
+              
+              
+               <select class="selectcity city" size="1" id="selectCityInner"   name="city">
+                 <option selected="selected" value="select" > City*</option>
+             </select>
+          </aside>
+         
+         
+<!--          <aside class="form_fld1">
+           <select id="selectProdtinner">
+               <option value="0" selected>Select Product</option>
+            <option value="OMR Home">OMR Home</option>
+            <option value="Think Exam">Think Exam</option>
+            <option value="Think CBT">Think CBT</option>
+           </select>    
+          </aside>-->
+          <aside class="form_fld1 last ctc_msg">
+            <select id="selectSolnInner" >
+            <option selected>Select Solution*</option>
+            <option value="Centre Based Test">Computer Based Test</option>
+            <option value="Application Processing">Application Processing</option>
+            <option value="OMR Sheets Processing">OMR Sheets Processing</option>
+            <option value="Customized testing portal">Customized testing portal</option>
+            <option value="Advance OMR Application">Advance OMR Application</option>
+            <option value="Recruitment">Recruitment Test</option>
+            <option value="Employee Assessment">Employee Assessment</option>
+            <option value="Test Labs">Test Labs</option>
+           </select>
+          </aside>
+          <aside class="ctc_msg">
+           <textarea placeholder="Message" id="headMsg"></textarea>
+          </aside>
+          <aside class="form_fld1 ctc_msg" >
+<!--           <input class="security">-->
+<!--           <span class="captcha"><img src="images/captcha.jpg"></span>-->
+            <div id="captcha-wrap">
+                                    <input class="security" id="headInputCode" placeholder="Type Letters" autocomplete="off" >
+                                
+                                <input type="text" id="headMainCaptcha" class="mainCaptacha" disabled value=''/>
+                                <img src="../images/refresh.png" id="refresh" value="Refresh" onclick="CaptchaHeader()" class="refImg" alt="refresh" title="Click Here To Change Image">
+<!--                                 <input id="Button1" type="button" value="Check" onclick="alert(ValidCaptcha());"/>-->
+                                 </div>
+          <span class="button submit_resume btn sent-btn ">
+<!--            <span>Send Enquiry</span>-->
+               <input class="contactSubmit" type="submit" onclick="Submit_contactHeaderForm()" id="submit" value="Send Enquiry" name="submit">
+            <i></i>
+           </span>
+          </aside>
+         </div>
+       
+    </div>
+   </div>
+    
+   <!--Pop up FB like start-->
+     <div id="gettouchfb_contact" class="getin_touchpop" style="display:none;">
+  <div id="gtformhid2" class="fb_page" >
+   <span class="popclose" onClick="gettouch_hide_fb_Contact()"></span>
+    <div class="getpophdr_contact">
+         <h3>Thank you !</h3>
+<!--         <h1>Thank you !</h1>-->
+     <p style=" font-size: 14px;">We have received your submitted form, we will contact you as<br>  soon as possible.
+</p>
+
+        
+            
+    </div>
+   
+     <div class="rgt_pg_cnct">
+       <div class="fb_titl" ><span class="bordr"></span><div style="background: rgb(255, 255, 255)  0% 0%; display: inline-block; padding: 5px 10px;">Please like &amp; share our facebook page</div> </div>
+         <div id="fb-root1" >
+             <div style="width: 100%; margin: 40px 6px 6px;">
+         <div class="fb-page" data-href="https://www.facebook.com/SEGwebsindia" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/SEGwebsindia"><a href="https://www.facebook.com/SEGwebsindia">SEG SKILLS</a></blockquote></div></div>
+             </div>
+         </div>
+
+         </div>
+       
+    </div>
+   </div>
+    <!--Pop Up FB LIke end-->
+     <!--Pop up FB like start when resume uploaded-->
+     <div id="gettouchfb" class="getin_touchpop" style="display:none;">
+  <div id="gtformhid3" class="fb_page" >
+   <span class="popclose" onClick="gettouch_hide_fb()"></span>
+    <div class="getpophdr">
+         <h3>Thank you !</h3>
+<!--         <h1>Thank you !</h1>-->
+     <p>You have successfully registered with us.
+Your resume<br> is now in our database. Please explore and apply for <br>exciting career opportunities with us. 
+</p>
+            
+    </div>
+   
+     <div class="rgt_pg_cnct">
+         <div class="fb_titl" ><span class="bordr"></span><div style="background: rgb(255, 255, 255)  0% 0%; display: inline-block; padding: 5px 10px;">Please like &amp; share our facebook page</div> </div>
+         <div id="fb-root2" >
+             <div style="width: 100%; margin: 40px 0px 6px;">
+         <div class="fb-page" data-href="https://www.facebook.com/SEGwebsindia" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/SEGwebsindia"><a href="https://www.facebook.com/SEGwebsindia">SEG SKILLS</a></blockquote></div></div>
+             </div>
+         </div>
+
+         </div>
+       
+    </div>
+   </div>
+    <!--Pop Up FB LIke end-->
+  <!--Get in touch popup end-->
+ </div>
+    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/menu_script.js@v=6"></script><script type="text/javascript">
+$(document).ready(function (){
+$("#career").addClass('selected');
+$("#lftCareerCO").addClass('selected');
+})
+</script>
+
+
+
+
+  <div class="container" style="clear:both">
+   <div class="inr_pg_bnr">
+    <img src="../images/Banners/career.jpg" width="100%" alt="career in SEGwebs">
+    <div class="wrapper-fix">
+<!--     <span class="page_name bold_font">Career</span>-->
+<!--     <i class="pg_lft_arw2"></i>-->
+    </div>
+   </div>
+   <div class="inr_line"></div>
+   <div class="wrapper-fix inr_pg_wpr">
+    <table class="table_separator" width="100%" cellpadding="0" cellspacing="0" border="0">
+ <tr>
+  <td valign="top" id="pkg_popup" class="pkg_dtls_pop pkg_pop_shw">
+    <section class="inr_pg_left">
+     <h1 class="title bold_font">Career</h1>
+      <div id="gear-left" onclick="pkgpop_hide()" class="cross_menu"><i></i></div>
+<ul class="lft_tabs_gry light_font solaccordion">
+ <li id="lftCareerA" ><a href="career.php.html"><i></i>Overview</a></li>
+ <li id="lftCareerC"><a href="career.php.html#culture"><i></i>Culture</a></li>
+
+    <li id="lftCareerB"><a href="career.php.html#benifit"><i></i>Benefits</a></li>
+<li id="lftCareerCO"><a href="current-opening.php.html"><i></i>Current Openings</a></li>
+  <!--<div class="content-2 content">
+   <a href="career.php">Career</a>
+   <a href="submit_resume.php">Submit Resume</a>
+  </div>-->
+<li><a href="submit-resume.php.html"><i></i>Submit Your Resume</a></li>
+</ul>    </section>
+    </td>
+    <td>
+     <div class="rgt_pg_cntr">
+     <div class="inr_tp_link"><div id="gear-right" onclick="leftboxshowhide()" class="list_menu"><i></i></div>
+      <div class="pageloction pageloction_full_page">
+        <a href="../index.php.html" class="first">Home</a>
+        <a href="career.php.html">Career</a>
+        <a href="current-opening.php.html">Current Opennings</a>
+        <a href="job-details.php@id=NTk=.html#" class="last">Job Details</a>
+       </div>
+      </div>
+      <div class="page_ctnt_cover">
+       <h1 class="bold_font page_title ana">QA / Sr. QA</h1>
+       
+       <a href="submit-resume.php.html" class="applyforthis">Apply for this job now</a>
+       
+            <p class="light_font"><strong class="paragraph_title">Job Description  :</strong><br>
+     Should be good at writing SQL queries.
+3. Experience of API testing using Postman or Jmeter.
+4. Experience with performance and/or security testing is a plus.
+5. Should be logically and analytically sound.
+6. Should have knowledge of SDLC/STLC and bug life cycle.
+7. Should have knowledge of JIRA.
+8. Should have experience in writing clear, concise, and comprehensive test scenarios and test cases.
+9. Should have strong knowledge of software QA methodologies, tools, and processes
+10. Should be a team player.
+11. Identify, Evaluate, troubleshoot and test the software repeatedly in search of bugs and errors.
+</p><br>
+            <p class="light_font"><strong class="paragraph_title">Experience  :</strong><b>roven work experience of 3-5 years in Manual QA + knowledge of Selenium with JAVA or any other programming language.</b>
+                <br>
+                <br>
+            <strong class="paragraph_title">Requriment  :</strong><br>
+         <ul class="job_details" style="list-style: none !important;">
+               
+                          <li style="list-style-type: circle;" ><span>Manual Testing</span></li>
+                       <li style="list-style-type: circle;" ><span>Api Testing</span></li>
+                       <li style="list-style-type: circle;" ><span>Web Testing</span></li>
+          <!--          <li><span>Knowledge about UX and UI</span></li>
+          <li><span>Visualization of Design and Creating Wire-Frames</span></li>
+          <li><span>Creating Proof-Of-Concept in HTML /CSS / Jquery</span></li>
+          <li><span>Expert in Photoshop</span></li>
+          <li><span>W3C Validation of html/CSS</span></li>-->
+         </ul>
+         
+         <p class="light_font"><strong class="paragraph_title">Skills Required  :</strong></p>
+       
+          <ul class="job_details" style="list-style: none !important">
+                                <li style="list-style-type: circle;"><span>Api Testing</span></li>
+                        <li style="list-style-type: circle;"><span>Web Testing </span></li>
+                        <li style="list-style-type: circle;"><span>IOS/ Android Testing</span></li>
+          <!--          <li><span>Knowledge about UX and UI</span></li>
+          <li><span>Visualization of Design and Creating Wire-Frames</span></li>
+          <li><span>Creating Proof-Of-Concept in HTML /CSS / Jquery</span></li>
+          <li><span>Expert in Photoshop</span></li>
+          <li><span>W3C Validation of html/CSS</span></li>-->
+         </ul>
+
+         <p>&nbsp;</p>
+         <a href="submit-resume.php.html" class="applyforthis">Apply for this job now</a>
+          <div class="addthis_sharing_toolbox" style="float:right; margin-top: 5px;"></div>
+       </div>
+     </div>
+   </td>
+   </tr>
+   </table>
+  </div>
+ </div>
+<!-- Footer Part Start Here -->
+ <div class="wrapper-fix">
+  <div class="footer-main">
+   <!-- <div class="othr_sit_wpr">
+    <a href="http://thinkexam.com/" target="_blank" class="sprite thinkexam"></a>
+    <a href="http://omrhome.com/" target="_blank" class="sprite omrhome"></a>
+    <a href="http://www.previousyearpapers.com/" target="_blank" class="sprite pyp"></a>
+   </div>
+   <div class="folw_us new-flw">
+       <div class="folw-new">
+     <span class="light_font">Follow us on</span>
+     <a href="https://www.facebook.com/SEGwebsindia/" target="_blank" class="sprite fb face"></a>
+     <a href="#" target="_blank" class="sprite twt"></a>
+     <a href="https://plus.google.com/+SEGwebs/posts" target="_blank" class="sprite g"></a>
+     <a href="http://in.linkedin.com/company/SEG-webs" target="_blank" class="sprite in"></a>
+       </div>
+   </div>
+   <div class="color_line">
+    <span class="green"></span>
+    <span class="red"></span>
+    <span class="orange"></span>
+   </div> -->
+   <center>
+    <ul>
+     <li><a href="../index.php.html">Home</a></li>
+     <li><a href="../about-seg/who-we-are.php.html">About Us</a></li>
+     <li><a href="../products/verificare.php.html">Products</a></li>
+     <li><a href="../clients/clients-speak.php.html">Testimonial</a></li>
+     <li><a href="career.php.html">Career</a></li>
+     <li><a href="../about-seg/news.php.html">News</a></li>
+     <li><a href="../clients/client-list.php.html">Clients</a></li>
+     <li><a href="../contact-seg.php.html" id="contactUs1">Contact Us</a></li>
+     
+    </ul>
+    <span>Copyright © SEG SKILSS 2024. All rights reserved.</span>
+   </center>
+  </div> 
+</div>
+<div class="scroll-to-top" title="Go to top">
+ <b class="light_font"></b>
+</div>
+
+<!-- Footer Part End Here -->
+
+
+<script src="../js/slider/jquery.js"></script>
+<script src="../js/slider/jquery.event.move.js"></script>
+<script src="../js/slider/responsive-slider.js"></script>
+
+<!--<script src="js/menu-scriptnew.js"></script>-->
+
+<!--jQuery Scroll-->
+
+<!--<script src="https://www.SEGwebs.com/js/retina.js"></script>-->
+<script src="../js/jquery.accordion.source.js"></script>
+    <script>            
+      jQuery(document).ready(function() {
+        var offset = 0;
+        var duration = 200;
+        jQuery(window).scroll(function() {
+          if (jQuery(this).scrollTop() > offset) {
+            jQuery('.scroll-to-top').show();
+          } else {
+            jQuery('.scroll-to-top').hide();
+          }
+        });
+        
+        jQuery('.scroll-to-top').click(function(event) {
+          event.preventDefault();
+          jQuery('html, body').animate({scrollTop: 0}, duration);
+          return false;
+        })
+      });
+     //Js for accordian start
+      $(document).ready(function() {
+            $("#accordion section h1").click(function(e) {
+            $(this).parents().siblings("section").addClass("ac_hidden");
+            $(this).parents("section").removeClass("ac_hidden");
+
+              e.preventDefault();
+            });
+       //Js for accordian end
+        });
+  </script>
+
+<script>
+function show(){
+  $("#dialog").css("display" , "block");
+  $('#dialog').fadeIn('slow');
+  }
+function showhide(){
+  $("#dialog").css("display" , "none");
+  }
+</script>
+<!--Testimonila script start-->
+<script>
+$(document).ready(function(fadeLoop) {
+  
+  var fad = $('.fader');
+  var counter = 0;
+  var divs = $('.fader').hide(); // Selecting fader divs instead of each by name.
+  var dur = 500;
+  
+  fad.children().filter('.fader').each(function(fad) {
+    
+    function animator(currentItem) {
+      
+      animator(fad.children(":first"));
+      
+      fad.mouseenter(function(){
+        $(".fader").stop(); 
+      });
+      fad.mouseleave(function(){
+        animator(fad.children(":first"));
+      });
+    };
+    
+  });
+  
+  function showDiv() {
+    divs.fadeOut(dur) // hide all divs
+    .filter(function(index) {
+      return index == counter % divs.length;
+    }) // figure out correct div to show
+    .delay(dur) // delay until fadeout is finished
+    .fadeIn(dur); // and show it
+    counter++;
+  }; // function to loop through divs and show correct div
+  
+  showDiv(); // show first div    
+  
+  return setInterval(function() {  // return interval so we can stop the loop
+    showDiv(); // show next div
+  }, 2 * 3000); // do this every 5 seconds    
+});
+
+// JavaScript Document
+//@ sourceURL=pen.js
+</script>
+<!--Testimonila script end-->
+
+
+<!--<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7240574-16']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90313633-1', 'auto');
+  ga('send', 'pageview');
+
+
+         
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var window_top = $(window).scrollTop() + 0; // the "12" should equal the margin-top value for nav.stick
+            var div_top = $('#nav-anchor').offset().top;
+                if (window_top > div_top) {
+                    $('.nav_fixed, body').addClass('stick');
+                } else {
+                    $('.nav_fixed, body').removeClass('stick');
+                }
+        });
+    
+    });
+
+
+
+function popitup(url) {
+  newwindow=window.open(url,'name','height=400,width=400');
+  if (window.focus) {newwindow.focus()}
+  return false;
+}
+
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+</body>
+</html>
+<script type="text/javascript">
+ $(window).load(function(){
+  $("#browse").click(function () {
+  $("#test").click();
+ })
+				
+  $('#test').change(function () {
+  $('#testfile').val($(this).val());
+ })
+});  
+			
+</script>
+<script src="../js/jquery.accordion.source.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	// <![CDATA[
+		
+	$(document).ready(function () {
+		$('ul.accordion').accordion();
+		$('ul.faq_accordion').accordion();
+		
+		$('#openWashington').click(function(){
+			$('a[href=#antarctica]').trigger('activate-node');
+		});
+		
+	});
+			
+	// ]]>
+</script>
+<!--Slider start-->
+<script type="text/javascript" src="../js/slider/jquery.excoloSlider.js"></script>
+<script type="text/javascript" src="../js/slider/jquery.excoloSlider.min.js"></script>
+<script type="text/javascript">
+	 $(function () {
+            $("#sliderB").excoloSlider();
+        });
+</script> 
+<!--Slider start-->
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e27fd3674a91b87" async="async"></script>

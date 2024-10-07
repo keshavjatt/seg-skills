@@ -1,0 +1,111 @@
+.ri-grid {
+    background: #fff none repeat scroll 0 0;
+    height: auto;
+    margin: 30px auto;
+    position: relative;
+}
+.ri-grid ul {
+    background: #fff none repeat scroll 0 0 !important;
+    display: block;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    width: 93%;
+}
+.ri-grid ul::before, .ri-grid ul::after {
+    content: "";
+    display: table;
+}
+.ri-grid ul::after {
+    clear: both;
+}
+.ri-grid ul {
+    padding: 20px;
+}
+.ri-grid ul li {
+   background: #fff none repeat scroll 0 0;
+    border-bottom: 5px solid #dcdcdc;
+    border-right: 5px solid #dcdcdc;
+    display: inline-block;
+    float: none;
+    height: 107px ;
+    margin-bottom: -4px;
+    overflow: hidden;
+    padding: 20px;
+    perspective: 400px;
+    position: relative;
+    text-align: center;
+    width: 137px ;
+}
+
+.ri-grid ul li:nth-child(3n+4) { border-right: none;}
+.ri-grid ul li:nth-child(1n+8) { border-bottom: none;}
+.ri-grid ul li:nth-child(1) {display: none;}
+.ri-grid ul li:nth-child(1n+11) {display: none;}
+
+
+.ri-grid ul li a {
+    backface-visibility: hidden;
+    background-color: #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+/*    background-size: 100% 100%;*/
+    box-sizing: content-box;
+    display: block;
+    height: 100%;
+    left: 0;
+    outline: medium none;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transform-style: preserve-3d;
+    width: 100%;
+/*    background: 100%;
+    width: 100px;
+    height: 100px;*/
+}
+.ri-grid ul li a img{
+
+}
+.ri-grid-size-1 {
+    width: 55%;
+}
+.ri-grid-size-2 {
+    width: 100%;
+}
+.ri-grid-size-3 {
+    margin-top: 0;
+    width: 100%;
+}
+.ri-shadow::after, .ri-shadow::before {
+    bottom: 15px;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    content: "";
+    height: 20%;
+    left: 10px;
+    max-height: 100px;
+    max-width: 300px;
+    position: absolute;
+    transform: rotate(-3deg);
+    width: 50%;
+    z-index: -2;
+}
+.ri-shadow::after {
+    left: auto;
+    right: 10px;
+    transform: rotate(3deg);
+}
+.ri-grid-loading::after, .ri-grid-loading::before {
+    display: none;
+}
+.ri-loading-image {
+    display: none;
+}
+.ri-grid-loading .ri-loading-image {
+    display: block;
+    height: 30px;
+    left: 50%;
+    margin: 100px 0 0 -15px;
+    position: relative;
+    width: 30px;
+}
